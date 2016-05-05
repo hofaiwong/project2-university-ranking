@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "split_rank <- function(rank) {\n  if (grepl('-',rank)) {\n    x = as.numeric(strsplit(rank, split='-')[[1]][1])\n    y = as.numeric(strsplit(rank, split='-')[[1]][2])\n    new_rank = round(x + (y-x)/2)\n  } else {\n    new_rank = rank\n  }\n  return(new_rank)\n}\n\ncompuni <- function(df, yvar) {\n  compuni <- gvisColumnChart(df,\n                               xvar=\"new_name\", \n                               yvar=yvar,\n                               options=list(height=500))\n  compuni\n}",
+    "created" : 1462451429324.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3962633369",
+    "id" : "82C853EC",
+    "lastKnownWriteTime" : 1462453199,
+    "last_content_update" : 1462453199325,
+    "path" : "~/Desktop/Project 2/world-university-ranking/helpers.R",
+    "project_path" : "helpers.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,9 @@
+{
+    "path" : "~/Desktop/Project 2/world-university-ranking",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
