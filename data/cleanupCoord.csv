@@ -1,614 +1,848 @@
-"","new_name","country","year","rank_cwur","rank_times","rank_shanghai","address","lon","lat"
-"1","Harvard University","United States of America",2015,1,2,1,"Harvard University, United States of America",-71.1166286,42.3800977
-"2","Stanford University","United States of America",2015,2,4,2,"Stanford University, United States of America",-147.8562204,64.8412424
-"3","Massachusetts Institute of Technology","United States of America",2015,3,6,3,"Massachusetts Institute of Technology, United States of America",-71.0934,42.3591
-"4","University of Cambridge","United Kingdom",2015,4,5,5,"University of Cambridge, United Kingdom",0.1177882,52.2016671
-"5","University of Oxford","United Kingdom",2015,5,3,10,"University of Oxford, United Kingdom",-0.1263912,51.5177859
-"6","Columbia University","United States of America",2015,6,14,8,"Columbia University, United States of America",-147.8260096,64.8608382
-"7","University of California, Berkeley","United States of America",2015,7,8,4,"University of California, Berkeley, United States of America",-122.2804342,37.8764984
-"8","University of Chicago","United States of America",2015,8,11,9,"University of Chicago, United States of America",-82.3924269,28.0282578
-"9","Princeton University","United States of America",2015,9,7,6,"Princeton University, United States of America",-147.863249,64.8379212
-"10","Cornell University","United States of America",2015,10,19,13,"Cornell University, United States of America",-147.8681361,64.842281
-"11","Yale University","United States of America",2015,11,9,11,"Yale University, United States of America",-147.8524686,64.84172
-"12","California Institute of Technology","United States of America",2015,12,1,7,"California Institute of Technology, United States of America",-121.157729,38.673863
-"13","University of Tokyo","Japan",2015,13,23,21,"University of Tokyo, Japan",NA,NA
-"14","University of Pennsylvania","United States of America",2015,14,16,17,"University of Pennsylvania, United States of America",-77.1945247,41.2033216
-"15","University of California, Los Angeles","United States of America",2015,15,12,12,"University of California, Los Angeles, United States of America",-118.2534733,34.0533937
-"16","Johns Hopkins University","United States of America",2015,16,15,16,"Johns Hopkins University, United States of America",-76.6003432,39.32726
-"17","Kyoto University","Japan",2015,17,59,26,"Kyoto University, Japan",135.7680294,35.0116363
-"18","New York University","United States of America",2015,18,38,27,"New York University, United States of America",-106.496973,31.777508
-"19","University of Michigan","United States of America",2015,19,17,22,"University of Michigan, United States of America",-82.4522711,28.0674065
-"20","Swiss Federal Institute of Technology in Zurich","Switzerland",2015,20,13,20,"Swiss Federal Institute of Technology in Zurich, Switzerland",8.541694,47.3768866
-"21","University of California, San Diego","United States of America",2015,21,41,14,"University of California, San Diego, United States of America",-117.1651567,32.715133
-"22","Northwestern University","United States of America",2015,22,21,27,"Northwestern University, United States of America",-97.7140117,30.2660497
-"23","Hebrew University of Jerusalem","Israel",2015,23,213,67,"Hebrew University of Jerusalem, Israel",35.197143,31.779299
-"24","Seoul National University","South Korea",2015,24,50,126,"Seoul National University, South Korea",126.9779692,NA
-"25","University of Wisconsin - Madison","United States of America",2015,25,29,24,"University of Wisconsin - Madison, United States of America",-89.4301473,43.0412831
-"26","University of California, San Francisco","United States of America",2015,26,NA,18,"University of California, San Francisco, United States of America",-122.4767893,37.7233035
-"27","University College London","United Kingdom",2015,27,22,18,"University College London, United Kingdom",-0.1335692,51.5247063
-"28","Duke University","United States of America",2015,28,18,31,"Duke University, United States of America",-147.8526904,64.8408617
-"29","Rockefeller University","United States of America",2015,29,NA,33,"Rockefeller University, United States of America",-73.9559421,40.7626225
-"30","University of Texas at Austin","United States of America",2015,30,28,37,"University of Texas at Austin, United States of America",-97.7335226,30.2850284
-"31","University of Washington","United States of America",2015,31,26,15,"University of Washington, United States of America",-106.440736,31.767879
-"32","University of Toronto","Canada",2015,32,20,25,"University of Toronto, Canada",-79.3947916,43.659598
-"33","University of Illinois at Urbana-Champaign","United States of America",2015,33,29,29,"University of Illinois at Urbana-Champaign, United States of America",NA,NA
-"34","Keio University","Japan",2015,34,NA,350,"Keio University, Japan",NA,NA
-"35","Imperial College London","United Kingdom",2015,35,9,23,"Imperial College London, United Kingdom",-0.1731784,51.5177367
-"36","Ecole Polytechnique","France",2015,36,61,350,"Ecole Polytechnique, France",2.3473044,48.8480063
-"37","Ecole Normale Superieure - Paris","France",2015,37,78,72,"Ecole Normale Superieure - Paris, France",2.3522219,NA
-"38","Waseda University","Japan",2015,38,376,NA,"Waseda University, Japan",NA,NA
-"39","Weizmann Institute of Science","Israel",2015,39,NA,126,"Weizmann Institute of Science, Israel",NA,NA
-"40","University of North Carolina at Chapel Hill","United States of America",2015,40,46,39,"University of North Carolina at Chapel Hill, United States of America",-78.9399682,35.9681485
-"41","University of Virginia","United States of America",2015,41,130,126,"University of Virginia, United States of America",-93.1147395,44.9494426
-"42","McGill University","Canada",2015,42,39,64,"McGill University, Canada",-97.1465173,49.7975879
-"43","Purdue University - West Lafayette","United States of America",2015,43,102,61,"Purdue University - West Lafayette, United States of America",-86.9337787,40.4137374
-"44","Dartmouth College","United States of America",2015,44,152,250,"Dartmouth College, United States of America",-147.8581336,64.8438576
-"45","Osaka University","Japan",2015,45,157,85,"Osaka University, Japan",135.5021651,34.6937378
-"46","University of Pittsburgh","United States of America",2015,46,91,70,"University of Pittsburgh, United States of America",-79.9531501,40.444331
-"47","Pennsylvania State University","United States of America",2015,47,58,60,"Pennsylvania State University, United States of America",-77.8600012,40.7933949
-"48","University of Minnesota","United States of America",2015,48,46,30,"University of Minnesota, United States of America",-95.0589,46.9059
-"49","Ohio State University","United States of America",2015,49,68,67,"Ohio State University, United States of America",-83.0202802,39.9578076
-"50","Rutgers University-New Brunswick","United States of America",2015,50,144,64,"Rutgers University-New Brunswick, United States of America",-74.4490235,40.5028168
-"51","University of Southern California","United States of America",2015,51,75,49,"University of Southern California, United States of America",-85.7659121,38.1999105
-"52","Washington University in St Louis","United States of America",2015,52,42,32,"Washington University in St Louis, United States of America",-90.3308854,38.6846489
-"53","University of California, Davis","United States of America",2015,53,55,57,"University of California, Davis, United States of America",-121.7526141,38.5412104
-"54","University of Colorado at Boulder","United States of America",2015,54,97,34,"University of Colorado at Boulder, United States of America",-105.2591119,40.0082221
-"55","University of Edinburgh","United Kingdom",2015,55,36,47,"University of Edinburgh, United Kingdom",-3.1796292,55.9493918
-"56","Peking University","China",2015,56,48,126,"Peking University, China",116.3497578,39.9917319
-"57","National Taiwan University","Taiwan",2015,57,155,176,"National Taiwan University, Taiwan",121.5273658,25.0254571
-"58","University of Paris-Sud","France",2015,58,120,41,"University of Paris-Sud, France",NA,NA
-"59","Lomonosov Moscow State University","Russia",2015,59,196,86,"Lomonosov Moscow State University, Russia",NA,NA
-"60","University of Florida","United States of America",2015,60,126,83,"University of Florida, United States of America",-82.4593395,28.0665864
-"61","Carnegie Mellon University","United States of America",2015,61,24,61,"Carnegie Mellon University, United States of America",-79.9441368,40.4432289
-"62","University of British Columbia","Canada",2015,62,32,40,"University of British Columbia, Canada",-79.427313,43.631679
-"63","Pierre and Marie Curie University","France",2015,63,103,36,"Pierre and Marie Curie University, France",NA,NA
-"64","University of California, Santa Barbara","United States of America",2015,64,37,38,"University of California, Santa Barbara, United States of America",-117.8082831,33.6858022
-"65","National University of Singapore","Singapore",2015,65,25,126,"National University of Singapore, Singapore",NA,NA
-"66","Boston University","United States of America",2015,66,57,73,"Boston University, United States of America",-106.5005851,31.7763226
-"67","University of Manchester","United Kingdom",2015,67,52,41,"University of Manchester, United Kingdom",-2.6902872,53.7565609
-"68","University of Arizona","United States of America",2015,68,86,90,"University of Arizona, United States of America",-82.4530718,28.067177
-"69","Vanderbilt University","United States of America",2015,69,96,53,"Vanderbilt University, United States of America",-90.3278627,38.6604194
-"70","University of Utah","United States of America",2015,70,162,93,"University of Utah, United States of America",-111.8884532,33.4249307
-"71","Karolinska Institute","Sweden",2015,71,44,48,"Karolinska Institute, Sweden",18.0214528,59.3494376
-"72","University of Maryland, College Park","United States of America",2015,72,132,43,"University of Maryland, College Park, United States of America",-76.922904,38.9809132
-"73","Tohoku University","Japan",2015,73,165,126,"Tohoku University, Japan",NA,NA
-"74","University of Copenhagen","Denmark",2015,74,160,35,"University of Copenhagen, Denmark",12.572771,55.6852
-"75","University of Texas Southwestern Medical Center","United States of America",2015,75,NA,44,"University of Texas Southwestern Medical Center, United States of America",-96.845988,32.8171391
-"76","Ruprecht Karl University of Heidelberg","Germany",2015,76,70,46,"Ruprecht Karl University of Heidelberg, Germany",8.6724335,NA
-"77","University of Notre Dame","United States of America",2015,77,86,250,"University of Notre Dame, United States of America",-86.2377772,41.6973401
-"78","Tsinghua University","China",2015,78,49,126,"Tsinghua University, China",116.3246671,39.9990443
-"79","Ludwig Maximilian University of Munich","Germany",2015,79,29,52,"Ludwig Maximilian University of Munich, Germany",11.5819806,48.1351253
-"80","Georgia Institute of Technology","United States of America",2015,80,27,126,"Georgia Institute of Technology, United States of America",-84.3988806,33.7784626
-"81","University of Rochester","United States of America",2015,81,121,126,"University of Rochester, United States of America",NA,NA
-"82","Katholieke Universiteit Leuven","Belgium",2015,82,55,90,"Katholieke Universiteit Leuven, Belgium",4.7004882,50.8759566
-"83","Brown University","United States of America",2015,83,54,75,"Brown University, United States of America",-106.48281,31.7724254
-"84","Emory University","United States of America",2015,84,93,126,"Emory University, United States of America",-81.0318397,29.2637357
-"85","Erasmus University Rotterdam","Netherlands",2015,85,72,176,"Erasmus University Rotterdam, Netherlands",NA,NA
-"86","Tel Aviv University","Israel",2015,86,188,176,"Tel Aviv University, Israel",34.8046418,32.1036377
-"87","Utrecht University","Netherlands",2015,87,79,56,"Utrecht University, Netherlands",5.1214201,52.0907374
-"88","University of Sydney","Australia",2015,88,60,126,"University of Sydney, Australia",151.1598462,-33.8628753
-"89","University of California, Irvine","United States of America",2015,89,88,50,"University of California, Irvine, United States of America",-117.8352875,33.6369838
-"90","University of Texas MD Anderson Cancer Center","United States of America",2015,90,NA,126,"University of Texas MD Anderson Cancer Center, United States of America",NA,NA
-"91","Swiss Federal Institute of Technology Lausanne","Switzerland",2015,91,34,126,"Swiss Federal Institute of Technology Lausanne, Switzerland",NA,NA
-"92","University of Geneva","Switzerland",2015,92,107,58,"University of Geneva, Switzerland",6.1008613,46.2243735
-"93","University of Melbourne","Australia",2015,93,33,44,"University of Melbourne, Australia",144.9590866,-37.8019927
-"94","King's College London","United Kingdom",2015,94,40,55,"King's College London, United Kingdom",-0.1164836,51.5119334
-"95","Tufts University","United States of America",2015,95,88,126,"Tufts University, United States of America",-104.997842,39.6331178
-"96","University of Zurich","Switzerland",2015,96,103,54,"University of Zurich, Switzerland",8.5600613,47.3589251
-"97","Arizona State University","United States of America",2015,97,182,93,"Arizona State University, United States of America",-111.8879509,33.4232051
-"98","Yonsei University","South Korea",2015,98,213,250,"Yonsei University, South Korea",NA,NA
-"99","University of Oslo","Norway",2015,99,186,58,"University of Oslo, Norway",-116.6389765,NA
-"100","Kyushu University","Japan",2015,100,376,250,"Kyushu University, Japan",NA,NA
-"101","Technical University of Munich","Germany",2015,101,98,51,"Technical University of Munich, Germany",11.5671215,48.1495771
-"102","Texas A&M University","United States of America",2015,102,141,100,"Texas A&M University, United States of America",-99.9018131,31.9685988
-"103","University of Queensland","Australia",2015,103,65,77,"University of Queensland, Australia",146.7872377,-19.3176715
-"104","Mines ParisTech","France",2015,104,238,450,"Mines ParisTech, France",NA,NA
-"105","Case Western Reserve University","United States of America",2015,105,116,126,"Case Western Reserve University, United States of America",-117.2987262,34.0740102
-"106","Indiana University - Bloomington","United States of America",2015,106,150,126,"Indiana University - Bloomington, United States of America",-86.5269373,39.1670467
-"107","University of Alberta","Canada",2015,107,124,126,"University of Alberta, Canada",-79.432773,43.677718
-"108","Leiden University","Netherlands",2015,108,64,82,"Leiden University, Netherlands",4.481357,52.1569487
-"109","Tokyo Institute of Technology","Japan",2015,109,141,176,"Tokyo Institute of Technology, Japan",NA,NA
-"110","University of Groningen","Netherlands",2015,110,117,75,"University of Groningen, Netherlands",6.5665018,53.2193835
-"111","University of Helsinki","Finland",2015,111,103,67,"University of Helsinki, Finland",34.79197,NA
-"112","Sapienza University of Rome","Italy",2015,112,326,176,"Sapienza University of Rome, Italy",12.5125693,41.9014226
-"113","Georgetown University","United States of America",2015,113,173,350,"Georgetown University, United States of America",-77.0722585,38.9076089
-"114","University of Amsterdam","Netherlands",2015,114,77,126,"University of Amsterdam, Netherlands",4.9470315,52.3561962
-"115","Korea University","South Korea",2015,115,213,250,"Korea University, South Korea",-90.3408641,NA
-"116","University of Barcelona","Spain",2015,116,213,176,"University of Barcelona, Spain",2.1734035,41.3850639
-"117","Lund University","Sweden",2015,117,119,126,"Lund University, Sweden",-80.631022,NA
-"118","Michigan State University","United States of America",2015,118,82,99,"Michigan State University, United States of America",-83.0511744,42.332507
-"119","Ghent University","Belgium",2015,119,90,71,"Ghent University, Belgium",3.7407719,51.0241197
-"120","Rice University","United States of America",2015,120,69,84,"Rice University, United States of America",-93.1061138,44.9638763
-"121","Baylor College of Medicine","United States of America",2015,121,NA,126,"Baylor College of Medicine, United States of America",-97.0951017,32.9338011
-"122","Aarhus University","Denmark",2015,122,153,73,"Aarhus University, Denmark",12.1021324,55.6954021
-"123","University of Bristol","United Kingdom",2015,123,74,66,"University of Bristol, United Kingdom",-2.6259899,51.4771065
-"124","Uppsala University","Sweden",2015,124,98,61,"Uppsala University, Sweden",NA,NA
-"125","Nagoya University","Japan",2015,125,238,77,"Nagoya University, Japan",NA,NA
-"126","Royal Institute of Technology","Sweden",2015,126,126,250,"Royal Institute of Technology, Sweden",74.1769788,NA
-"127","University of Colorado at Denver","United States of America",2015,127,NA,350,"University of Colorado at Denver, United States of America",-105.0445755,39.6478985
-"128","University of Glasgow","United Kingdom",2015,128,94,126,"University of Glasgow, United Kingdom",-4.288761,55.87151
-"129","VU University Amsterdam","Netherlands",2015,129,136,98,"VU University Amsterdam, Netherlands",NA,NA
-"130","University of New South Wales","Australia",2015,130,109,126,"University of New South Wales, Australia",151.7035792,-32.8963787
-"131","Paris Diderot University - Paris 7","France",2015,131,180,126,"Paris Diderot University - Paris 7, France",2.3075232,48.8588342
-"132","University of Sao Paulo","Brazil",2015,132,213,126,"University of Sao Paulo, Brazil",-51.1602134,-23.3131265
-"133","University of Western Ontario","Canada",2015,133,238,250,"University of Western Ontario, Canada",-80.5394907,43.4570369
-"134","Radboud University Nijmegen","Netherlands",2015,134,140,126,"Radboud University Nijmegen, Netherlands",5.8372264,51.8125626
-"135","Nanyang Technological University","Singapore",2015,135,61,176,"Nanyang Technological University, Singapore",120.7760636,NA
-"136","Technion Israel Institute of Technology","Israel",2015,136,213,77,"Technion Israel Institute of Technology, Israel",NA,NA
-"137","University of Miami","United States of America",2015,137,169,176,"University of Miami, United States of America",-80.2792843,25.7216374
-"138","Stony Brook University","United States of America",2015,138,188,250,"Stony Brook University, United States of America",-96.2939904,30.5129581
-"139","University of Texas at Dallas","United States of America",2015,139,213,350,"University of Texas at Dallas, United States of America",-96.7543188,32.9854538
-"140","University of Nottingham","United Kingdom",2015,140,171,126,"University of Nottingham, United Kingdom",-1.1939984,52.9346979
-"141","University of Iowa","United States of America",2015,141,175,176,"University of Iowa, United States of America",-111.8891072,33.4242541
-"142","Southern Methodist University","United States of America",2015,142,NA,NA,"Southern Methodist University, United States of America",NA,NA
-"143","Icahn School of Medicine at Mount Sinai","United States of America",2015,143,NA,126,"Icahn School of Medicine at Mount Sinai, United States of America",-73.0295495,40.9470432
-"144","Korea Advanced Institute of Science and Technology","South Korea",2015,144,52,250,"Korea Advanced Institute of Science and Technology, South Korea",NA,NA
-"145","Monash University","Australia",2015,145,83,126,"Monash University, Australia",145.1303881,-37.914517
-"146","University of Alabama at Birmingham","United States of America",2015,146,NA,250,"University of Alabama at Birmingham, United States of America",-84.2991072,30.4563298
-"147","Free University of Berlin","Germany",2015,147,81,NA,"Free University of Berlin, Germany",13.404954,52.5200066
-"148","University of Southampton","United Kingdom",2015,148,132,126,"University of Southampton, United Kingdom",-1.396213,50.9353961
-"149","University of the Witwatersrand","South Africa",2015,149,263,250,"University of the Witwatersrand, South Africa",28.0437484,-26.1800289
-"150","McMaster University","Canada",2015,150,94,96,"McMaster University, Canada",-79.4008767,43.6784669
-"151","University of Montreal","Canada",2015,151,113,126,"University of Montreal, Canada",-73.5671943,45.5016933
-"152","University of Birmingham","United Kingdom",2015,152,148,126,"University of Birmingham, United Kingdom",-1.9256429,52.4484819
-"153","Humboldt University of Berlin","Germany",2015,153,80,NA,"Humboldt University of Berlin, Germany",13.5333041,52.4321218
-"154","University of California, Santa Cruz","United States of America",2015,154,109,93,"University of California, Santa Cruz, United States of America",-117.3163115,33.981043
-"155","Albert Ludwig University of Freiburg","Germany",2015,155,163,126,"Albert Ludwig University of Freiburg, Germany",7.8421043,47.9990077
-"156","University of Tübingen","Germany",2015,156,113,176,"University of Tübingen, Germany",9.0576448,48.5216364
-"157","University of Cincinnati","United States of America",2015,157,288,250,"University of Cincinnati, United States of America",-106.4981503,31.7801651
-"158","University of Bonn","Germany",2015,158,195,97,"University of Bonn, Germany",7.091353,50.7243357
-"159","Wake Forest University","United States of America",2015,159,213,450,"Wake Forest University, United States of America",-147.8634295,64.8366123
-"160","University of Basel","Switzerland",2015,160,75,87,"University of Basel, Switzerland",34.7892138,NA
-"161","University of Leeds","United Kingdom",2015,161,146,126,"University of Leeds, United Kingdom",-1.5534731,53.8070423
-"162","University of Hamburg","Germany",2015,162,NA,176,"University of Hamburg, Germany",9.9883584,53.563021
-"163","Université Libre de Bruxelles","Belgium",2015,163,213,126,"Université Libre de Bruxelles, Belgium",4.3821646,50.8135979
-"164","Indiana University-Purdue University Indianapolis","United States of America",2015,164,NA,250,"Indiana University-Purdue University Indianapolis, United States of America",-86.0577399,39.9673126
-"165","Pohang University of Science and Technology","South Korea",2015,165,66,350,"Pohang University of Science and Technology, South Korea",129.3434808,36.0190178
-"166","Oregon Health and Science University","United States of America",2015,166,NA,176,"Oregon Health and Science University, United States of America",-122.6854607,45.4990977
-"167","University of Calgary","Canada",2015,167,238,250,"University of Calgary, Canada",-114.1239754,51.069272
-"168","Stockholm University","Sweden",2015,168,98,77,"Stockholm University, Sweden",17.9430376,59.2190446
-"169","University of Padua","Italy",2015,169,326,176,"University of Padua, Italy",11.893188,45.410225
-"170","University of Hong Kong","Hong Kong",2015,170,43,176,"University of Hong Kong, Hong Kong",114.203926,22.417442
-"171","Yeshiva University","United States of America",2015,171,186,250,"Yeshiva University, United States of America",-73.9290202,40.8511337
-"172","University of Milan","Italy",2015,172,288,176,"University of Milan, Italy",8.8324247,45.818325
-"173","University of Sheffield","United Kingdom",2015,173,121,126,"University of Sheffield, United Kingdom",-1.48406,53.38071
-"174","Technical University of Denmark","Denmark",2015,174,121,126,"Technical University of Denmark, Denmark",9.9615901,57.0532387
-"175","University of Maryland, Baltimore","United States of America",2015,175,NA,250,"University of Maryland, Baltimore, United States of America",-76.9384877,38.9685891
-"176","Goethe University Frankfurt","Germany",2015,176,213,126,"Goethe University Frankfurt, Germany",8.6670057,50.1267568
-"177","University of Goettingen","Germany",2015,177,67,126,"University of Goettingen, Germany",9.9525578,51.5608461
-"178","Hokkaido University","Japan",2015,178,376,176,"Hokkaido University, Japan",NA,NA
-"179","Australian National University","Australia",2015,179,45,77,"Australian National University, Australia",108.9977225,NA
-"180","Shanghai Jiao Tong University","China",2015,180,288,126,"Shanghai Jiao Tong University, China",121.4237432,31.1790053
-"181","University of New Mexico","United States of America",2015,181,263,250,"University of New Mexico, United States of America",-108.084507,35.0886487
-"182","University of Strasbourg","France",2015,182,213,87,"University of Strasbourg, France",7.7521113,48.5734053
-"183","University of Massachusetts Medical School","United States of America",2015,183,NA,126,"University of Massachusetts Medical School, United States of America",NA,NA
-"184","University of Houston","United States of America",2015,184,326,250,"University of Houston, United States of America",-106.444998,31.787718
-"185","Trinity College Dublin","Ireland",2015,185,138,176,"Trinity College Dublin, Ireland",-6.2576899,53.3454782
-"186","University of Lausanne","Switzerland",2015,186,136,250,"University of Lausanne, Switzerland",6.6528621,46.5287859
-"187","Iowa State University","United States of America",2015,187,193,176,"Iowa State University, United States of America",-91.590374,41.876447
-"188","Joseph Fourier University","France",2015,188,178,176,"Joseph Fourier University, France",NA,NA
-"189","Wayne State University","United States of America",2015,189,326,350,"Wayne State University, United States of America",-77.8121099,40.811234
-"190","University of South Florida","United States of America",2015,190,263,250,"University of South Florida, United States of America",-104.9687315,39.6893406
-"191","Zhejiang University","China",2015,191,326,126,"Zhejiang University, China",120.1689207,30.2929634
-"192","Hanyang University","South Korea",2015,192,376,350,"Hanyang University, South Korea",114.224979,NA
-"193","University of Ottawa","Canada",2015,193,188,250,"University of Ottawa, Canada",-83.0182189,42.3077541
-"194","University of Missouri–Columbia","United States of America",2015,194,376,350,"University of Missouri–Columbia, United States of America",-92.2785174,38.9033716
-"195","Fudan University","China",2015,195,193,176,"Fudan University, China",121.5014465,31.2985307
-"196","University of Kansas","United States of America",2015,196,326,250,"University of Kansas, United States of America",-94.7254893,38.8991444
-"197","University of Cologne","Germany",2015,197,326,176,"University of Cologne, Germany",6.9602786,50.937531
-"198","University of Georgia","United States of America",2015,198,288,176,"University of Georgia, United States of America",-90.3105335,38.7366343
-"199","University of Liverpool","United Kingdom",2015,199,157,126,"University of Liverpool, United Kingdom",-2.7254291,53.7512998
-"200","University of Bern","Switzerland",2015,200,132,176,"University of Bern, Switzerland",121.0977098,NA
-"201","Cardiff University","United Kingdom",2015,201,213,176,"Cardiff University, United Kingdom",-3.1868361,51.4919075
-"202","George Washington University","United States of America",2015,202,200,250,"George Washington University, United States of America",-77.0470916,38.8991756
-"203","University of Illinois at Chicago","United States of America",2015,203,213,176,"University of Illinois at Chicago, United States of America",-87.6704474,41.8696656
-"204","University of Erlangen-Nuremberg","Germany",2015,204,288,250,"University of Erlangen-Nuremberg, Germany",11.0273891,49.5737593
-"205","University of Münster","Germany",2015,205,263,126,"University of Münster, Germany",7.271265,51.4471925
-"206","Aix Marseille University","France",2015,206,NA,126,"Aix Marseille University, France",5.5693374,43.2897647
-"207","Claude Bernard University Lyon 1","France",2015,207,376,250,"Claude Bernard University Lyon 1, France",NA,NA
-"208","University of Bologna","Italy",2015,208,288,250,"University of Bologna, Italy",8.8774096,45.7880924
-"209","Queen Mary University of London","United Kingdom",2015,209,107,176,"Queen Mary University of London, United Kingdom",-0.0591022,51.5169409
-"210","Dresden University of Technology","Germany",2015,210,135,250,"Dresden University of Technology, Germany",NA,NA
-"211","Sungkyunkwan University","South Korea",2015,211,148,250,"Sungkyunkwan University, South Korea",NA,NA
-"212","Newcastle University","United Kingdom",2015,212,213,250,"Newcastle University, United Kingdom",-1.6268973,54.9665195
-"213","Karlsruhe Institute of Technology","Germany",2015,213,165,250,"Karlsruhe Institute of Technology, Germany",NA,NA
-"214","University of California, Riverside","United States of America",2015,214,150,126,"University of California, Riverside, United States of America",-117.3310404,34.0138733
-"215","University of Kiel","Germany",2015,215,238,176,"University of Kiel, Germany",-115.1401608,NA
-"216","University of Western Australia","Australia",2015,216,157,87,"University of Western Australia, Australia",130.8667531,-12.3707906
-"217","University of Paris Descartes","France",2015,217,NA,176,"University of Paris Descartes, France",NA,NA
-"218","University of Connecticut","United States of America",2015,218,326,350,"University of Connecticut, United States of America",-81.0291938,29.2226697
-"219","University of Massachusetts Amherst","United States of America",2015,219,91,126,"University of Massachusetts Amherst, United States of America",-72.5312372,42.3951291
-"220","Chinese University of Hong Kong","Hong Kong",2015,220,129,176,"Chinese University of Hong Kong, Hong Kong",114.203926,22.417442
-"221","University of Turin","Italy",2015,221,263,176,"University of Turin, Italy",8.8744546,45.7901029
-"222","University of Manitoba","Canada",2015,222,326,350,"University of Manitoba, Canada",-105.5034556,50.3927659
-"223","University of Vienna","Austria",2015,223,182,176,"University of Vienna, Austria",16.3359792,48.2747157
-"224","University of Montpellier","France",2015,224,288,250,"University of Montpellier, France",3.876716,43.610769
-"225","Maastricht University","Netherlands",2015,225,101,250,"Maastricht University, Netherlands",5.6886039,50.8442878
-"226","National Cheng Kung University","Taiwan",2015,226,376,350,"National Cheng Kung University, Taiwan",NA,NA
-"227","University of Tennessee - Knoxville","United States of America",2015,227,NA,176,"University of Tennessee - Knoxville, United States of America",-83.9422647,35.9403636
-"228","Complutense University of Madrid","Spain",2015,228,NA,250,"Complutense University of Madrid, Spain",NA,NA
-"229","Laval University","Canada",2015,229,238,250,"Laval University, Canada",-97.1451647,49.7990974
-"230","RWTH Aachen University","Germany",2015,230,156,250,"RWTH Aachen University, Germany",NA,NA
-"231","Catholic University of Louvain","Belgium",2015,231,171,176,"Catholic University of Louvain, Belgium",NA,NA
-"232","North Carolina State University","United States of America",2015,232,NA,176,"North Carolina State University, United States of America",-79.056442,36.0578965
-"233","Johannes Gutenberg University of Mainz","Germany",2015,233,NA,250,"Johannes Gutenberg University of Mainz, Germany",8.2472526,NA
-"234","University of Texas Health Science Center at San Antonio","United States of America",2015,234,NA,350,"University of Texas Health Science Center at San Antonio, United States of America",-98.4936282,29.4241219
-"235","Julius-Maximilian's University of Würzburg","Germany",2015,235,NA,NA,"Julius-Maximilian's University of Würzburg, Germany",9.9533548,49.7913044
-"236","Paul Sabatier University - Toulouse III","France",2015,236,NA,250,"Paul Sabatier University - Toulouse III, France",NA,NA
-"237","University of Gothenburg","Sweden",2015,237,238,176,"University of Gothenburg, Sweden",11.9853213,57.6954209
-"238","University College Dublin","Ireland",2015,238,238,350,"University College Dublin, Ireland",-6.2168851,53.305257
-"239","University of Science and Technology of China","China",2015,239,213,176,"University of Science and Technology of China, China",116.3622099,39.9905638
-"240","University of Leicester","United Kingdom",2015,240,199,250,"University of Leicester, United Kingdom",-1.0920024,52.6075689
-"241","Autonomous University of Barcelona","Spain",2015,241,238,250,"Autonomous University of Barcelona, Spain",2.1734035,41.3850639
-"242","University of Dundee","United Kingdom",2015,242,213,250,"University of Dundee, United Kingdom",-3.023085,56.455827
-"243","Norwegian University of Science and Technology","Norway",2015,243,288,126,"Norwegian University of Science and Technology, Norway",NA,NA
-"244","Nanjing University","China",2015,244,263,250,"Nanjing University, China",118.9612698,32.1278598
-"245","Okayama University","Japan",2015,245,NA,450,"Okayama University, Japan",133.9195019,34.6551456
-"246","London School of Hygiene & Tropical Medicine","United Kingdom",2015,246,NA,350,"London School of Hygiene & Tropical Medicine, United Kingdom",-0.1330843,51.5225729
-"247","University of Florence","Italy",2015,247,376,250,"University of Florence, Italy",11.2692291,43.7779676
-"248","University of Cape Town","South Africa",2015,248,124,250,"University of Cape Town, South Africa",18.4598667,-33.9577461
-"249","University of Texas Health Science Center at Houston","United States of America",2015,249,NA,250,"University of Texas Health Science Center at Houston, United States of America",-95.3698028,29.7604267
-"250","Moscow Institute of Physics and Technology","Russia",2015,250,NA,NA,"Moscow Institute of Physics and Technology, Russia",37.6173,55.755826
-"251","University of Düsseldorf","Germany",2015,251,NA,350,"University of Düsseldorf, Germany",6.7734556,51.2277411
-"252","Florida State University","United States of America",2015,252,NA,250,"Florida State University, United States of America",-84.3369554,30.4011161
-"253","University of Sussex","United Kingdom",2015,253,111,176,"University of Sussex, United Kingdom",0.272273,50.7886322
-"254","Thomas Jefferson University","United States of America",2015,254,NA,350,"Thomas Jefferson University, United States of America",-77.6044712,43.1727273
-"255","Delft University of Technology","Netherlands",2015,255,71,250,"Delft University of Technology, Netherlands",4.3570677,NA
-"256","Virginia Polytechnic Institute and State University","United States of America",2015,256,288,250,"Virginia Polytechnic Institute and State University, United States of America",NA,NA
-"257","University of Lisbon","Portugal",2015,257,376,250,"University of Lisbon, Portugal",-9.1487286,38.7181334
-"258","Drexel University","United States of America",2015,258,326,350,"Drexel University, United States of America",-147.8646944,64.8363204
-"259","Virginia Commonwealth University","United States of America",2015,259,NA,176,"Virginia Commonwealth University, United States of America",-77.47766,38.3242649
-"260","Oregon State University","United States of America",2015,260,326,176,"Oregon State University, United States of America",-123.086563,44.051085
-"261","Durham University","United Kingdom",2015,261,83,250,"Durham University, United Kingdom",-1.586,54.768
-"262","University of Tsukuba","Japan",2015,262,326,250,"University of Tsukuba, Japan",140.0766423,36.0834857
-"263","University of Reading","United Kingdom",2015,263,213,350,"University of Reading, United Kingdom",-0.805388,51.3363534
-"264","Lehigh University","United States of America",2015,264,376,NA,"Lehigh University, United States of America",-147.858826,64.8391522
-"265","Medical University of Vienna","Austria",2015,265,263,250,"Medical University of Vienna, Austria",16.3738189,48.2081743
-"266","University of Auckland","New Zealand",2015,266,175,250,"University of Auckland, New Zealand",174.7699782,-36.8490661
-"267","University of Kentucky","United States of America",2015,267,NA,250,"University of Kentucky, United States of America",-117.3305834,33.9804348
-"268","University of Naples Federico II","Italy",2015,268,NA,350,"University of Naples Federico II, Italy",NA,NA
-"269","University of Waterloo","Canada",2015,269,263,250,"University of Waterloo, Canada",-80.541671,43.473289
-"270","Charles University in Prague","Czech Republic",2015,270,326,250,"Charles University in Prague, Czech Republic",14.4790226,50.0739978
-"271","Colorado State University","United States of America",2015,271,288,250,"Colorado State University, United States of America",-105.1257457,40.1531694
-"272","Tulane University","United States of America",2015,272,326,350,"Tulane University, United States of America",-90.3302509,38.6628918
-"273","University at Buffalo","United States of America",2015,273,191,250,"University at Buffalo, United States of America",-82.3456738,36.3050274
-"274","Brandeis University","United States of America",2015,274,147,250,"Brandeis University, United States of America",-85.7614305,38.2192846
-"275","Northeastern University","United States of America",2015,275,185,250,"Northeastern University, United States of America",-71.0894884,42.340082
-"276","Wageningen University and Research Centre","Netherlands",2015,276,73,126,"Wageningen University and Research Centre, Netherlands",5.6653948,51.9691868
-"277","Sun Yat-sen University","China",2015,277,326,176,"Sun Yat-sen University, China",113.292871,23.092124
-"278","University of Ulm","Germany",2015,278,213,350,"University of Ulm, Germany",9.9488069,48.4226264
-"279","London School of Economics and Political Science","United Kingdom",2015,279,34,126,"London School of Economics and Political Science, United Kingdom",NA,NA
-"280","Vrije Universiteit Brussel","Belgium",2015,280,376,250,"Vrije Universiteit Brussel, Belgium",4.3063576,50.8892103
-"281","University of Delaware","United States of America",2015,281,180,176,"University of Delaware, United States of America",-77.5829719,43.157618
-"282","Rensselaer Polytechnic Institute","United States of America",2015,282,238,350,"Rensselaer Polytechnic Institute, United States of America",NA,NA
-"283","University of Bergen","Norway",2015,283,213,250,"University of Bergen, Norway",5.3220544,60.3912628
-"284","Queen's University","Canada",2015,284,263,250,"Queen's University, Canada",-52.7305585,47.5773383
-"285","University of Aberdeen","United Kingdom",2015,285,178,250,"University of Aberdeen, United Kingdom",-2.0970459,57.1749492
-"286","Dalhousie University","Canada",2015,286,238,250,"Dalhousie University, Canada",-97.1453994,49.7887693
-"287","Umea University","Sweden",2015,287,376,350,"Umea University, Sweden",NA,NA
-"288","University of Duisburg-Essen","Germany",2015,288,326,350,"University of Duisburg-Essen, Germany",6.7868875,51.4287845
-"289","City University of New York City College","United States of America",2015,289,NA,350,"City University of New York City College, United States of America",NA,NA
-"290","Hiroshima University","Japan",2015,290,NA,450,"Hiroshima University, Japan",132.4552927,34.3852029
-"291","University of Texas at San Antonio","United States of America",2015,291,NA,NA,"University of Texas at San Antonio, United States of America",-97.744439,30.277257
-"292","Hannover Medical School","Germany",2015,292,NA,350,"Hannover Medical School, Germany",9.7320104,52.3758916
-"293","University of Warwick","United Kingdom",2015,293,103,92,"University of Warwick, United Kingdom",-1.563191,52.379411
-"294","University of Valencia","Spain",2015,294,326,350,"University of Valencia, Spain",-6.3770934,39.4576621
-"295","University of Pisa","Italy",2015,295,326,176,"University of Pisa, Italy",14.6547033,41.5606325
-"296","Ruhr University Bochum","Germany",2015,296,376,350,"Ruhr University Bochum, Germany",7.2586022,51.4471312
-"297","Medical College of Wisconsin","United States of America",2015,297,NA,NA,"Medical College of Wisconsin, United States of America",-87.8197543,42.5785266
-"298","University of Louisville","United States of America",2015,298,NA,NA,"University of Louisville, United States of America",-85.7626595,38.2189292
-"299","University of Bordeaux","France",2015,299,NA,250,"University of Bordeaux, France",-0.5780251,44.8370298
-"300","University of South Carolina","United States of America",2015,300,288,250,"University of South Carolina, United States of America",-79.950825,32.787049
-"301","National and Kapodistrian University of Athens","Greece",2015,301,NA,350,"National and Kapodistrian University of Athens, Greece",NA,NA
-"302","University of Leipzig","Germany",2015,302,NA,250,"University of Leipzig, Germany",12.3730747,51.3396955
-"303","Medical University of South Carolina","United States of America",2015,303,NA,450,"Medical University of South Carolina, United States of America",-79.950825,32.787049
-"304","Autonomous University of Madrid","Spain",2015,304,326,250,"Autonomous University of Madrid, Spain",-3.7101598,40.4069567
-"305","Dalian University of Technology","China",2015,305,NA,350,"Dalian University of Technology, China",121.5319155,38.8769137
-"306","Stellenbosch University","South Africa",2015,306,288,450,"Stellenbosch University, South Africa",18.6264694,-33.8812733
-"307","Kyungpook National University","South Korea",2015,307,NA,450,"Kyungpook National University, South Korea",NA,NA
-"308","University of Porto","Portugal",2015,308,NA,350,"University of Porto, Portugal",-8.5962233,41.1785734
-"309","University of St Andrews","United Kingdom",2015,309,111,350,"University of St Andrews, United Kingdom",-2.7930852,56.3412112
-"310","Gwangju Institute of Science and Technology","South Korea",2015,310,NA,NA,"Gwangju Institute of Science and Technology, South Korea",126.8526012,35.1595454
-"311","Chulalongkorn University","Thailand",2015,311,NA,NA,"Chulalongkorn University, Thailand",-112.0343639,NA
-"312","University of Antwerp","Belgium",2015,312,170,350,"University of Antwerp, Belgium",4.4131738,51.2236072
-"313","Xiamen University","China",2015,313,NA,350,"Xiamen University, China",118.0933388,24.4357457
-"314","University of Nebraska - Lincoln","United States of America",2015,314,288,250,"University of Nebraska - Lincoln, United States of America",-98.683717,40.7953392
-"315","Nankai University","China",2015,315,NA,350,"Nankai University, China",117.1787466,39.1036898
-"316","University of Stuttgart","Germany",2015,316,326,250,"University of Stuttgart, Germany",-96.3040913,30.5692339
-"317","University of Roma - Tor Vergata","Italy",2015,317,NA,450,"University of Roma - Tor Vergata, Italy",12.6200302,41.8484155
-"318","University of Regensburg","Germany",2015,318,NA,450,"University of Regensburg, Germany",-96.3067708,30.5719736
-"319","Hong Kong University of Science and Technology","Hong Kong",2015,319,51,250,"Hong Kong University of Science and Technology, Hong Kong",114.2715461,22.2917485
-"320","Kobe University","Japan",2015,320,NA,350,"Kobe University, Japan",135.1955112,34.690083
-"321","University of Liege","Belgium",2015,321,376,250,"University of Liege, Belgium",-71.4285737,NA
-"322","Federal University of Rio de Janeiro","Brazil",2015,322,NA,350,"Federal University of Rio de Janeiro, Brazil",-43.2258954,-22.8626877
-"323","Rush University","United States of America",2015,323,NA,450,"Rush University, United States of America",-104.6071451,38.2563877
-"324","University of Vermont","United States of America",2015,324,376,350,"University of Vermont, United States of America",-97.1564797,31.5863636
-"325","University of York","United Kingdom",2015,325,113,250,"University of York, United Kingdom",1.069896,51.3085131
-"326","Boston College","United States of America",2015,326,126,450,"Boston College, United States of America",-106.5005851,31.7763226
-"327","University of Pavia","Italy",2015,327,263,450,"University of Pavia, Italy",9.1582069,45.1847248
-"328","University of Jena","Germany",2015,328,NA,450,"University of Jena, Germany",11.5892372,50.927054
-"329","Vita-Salute San Raffaele University","Italy",2015,329,NA,NA,"Vita-Salute San Raffaele University, Italy",NA,NA
-"330","University of Genoa","Italy",2015,330,NA,450,"University of Genoa, Italy",8.8770319,45.7892014
-"331","Tianjin University","China",2015,331,NA,350,"Tianjin University, China",117.1671447,39.110096
-"332","Louisiana State University - Baton Rouge","United States of America",2015,332,NA,250,"Louisiana State University - Baton Rouge, United States of America",-91.1346386,30.4470192
-"333","University of Exeter","United Kingdom",2015,333,154,176,"University of Exeter, United Kingdom",-3.5180167,50.7208387
-"334","National Autonomous University of Mexico","Mexico",2015,334,NA,250,"National Autonomous University of Mexico, Mexico",-99.1843676,19.3188895
-"335","University of Adelaide","Australia",2015,335,164,176,"University of Adelaide, Australia",138.5960609,-34.9088112
-"336","University of East Anglia","United Kingdom",2015,336,198,250,"University of East Anglia, United Kingdom",1.2406141,52.6184758
-"337","York University","Canada",2015,337,238,NA,"York University, Canada",-79.500519,43.776279
-"338","University of Navarra","Spain",2015,338,376,NA,"University of Navarra, Spain",-0.9173876,41.6583303
-"339","University of Oregon","United States of America",2015,339,NA,350,"University of Oregon, United States of America",-82.47247,28.0465059
-"340","St George's, University of London","United Kingdom",2015,340,196,NA,"St George's, University of London, United Kingdom",-0.1105825,51.5619276
-"341","Indian Institute of Technology Delhi","India",2015,341,NA,NA,"Indian Institute of Technology Delhi, India",77.193806,28.5429676
-"342","University of Trieste","Italy",2015,342,213,450,"University of Trieste, Italy",8.8092218,45.7853935
-"343","Queen's University Belfast","United Kingdom",2015,343,263,350,"Queen's University Belfast, United Kingdom",-80.8919666,NA
-"344","University of Perugia","Italy",2015,344,NA,450,"University of Perugia, Italy",12.3908279,43.1107168
-"345","Technical University of Berlin","Germany",2015,345,238,350,"Technical University of Berlin, Germany",NA,NA
-"346","University of Marburg","Germany",2015,346,NA,250,"University of Marburg, Germany",8.7667933,50.8021728
-"347","University of Innsbruck","Austria",2015,347,213,250,"University of Innsbruck, Austria",11.3436853,47.2643597
-"348","Eindhoven University of Technology","Netherlands",2015,348,144,350,"Eindhoven University of Technology, Netherlands",5.4521652,51.4118931
-"349","Ben-Gurion University of the Negev","Israel",2015,349,NA,450,"Ben-Gurion University of the Negev, Israel",34.7809839,30.8572092
-"350","University of Oklahoma","United States of America",2015,350,326,450,"University of Oklahoma, United States of America",-97.4432884,35.1924456
-"351","Wesleyan University","United States of America",2015,351,NA,NA,"Wesleyan University, United States of America",-77.7761614,36.017482
-"352","University of Victoria","Canada",2015,352,173,250,"University of Victoria, Canada",-105.5165923,50.3808235
-"353","Kansas State University","United States of America",2015,353,326,450,"Kansas State University, United States of America",-77.8647309,40.787115
-"354","Hong Kong Polytechnic University","Hong Kong",2015,354,213,350,"Hong Kong Polytechnic University, Hong Kong",114.178928,22.302516
-"355","Linkoping University","Sweden",2015,355,376,350,"Linkoping University, Sweden",15.6213727,58.410807
-"356","University of Southern Denmark","Denmark",2015,356,326,250,"University of Southern Denmark, Denmark",NA,NA
-"357","University of Otago","New Zealand",2015,357,263,250,"University of Otago, New Zealand",170.513132,-45.863208
-"358","Justus Liebig University Giessen","Germany",2015,358,NA,350,"Justus Liebig University Giessen, Germany",8.6784031,50.5840512
-"359","University of New Hampshire","United States of America",2015,359,NA,350,"University of New Hampshire, United States of America",-76.9864864,38.9930467
-"360","College of William and Mary","United States of America",2015,360,213,NA,"College of William and Mary, United States of America",-76.7100318,37.2701796
-"361","San Diego State University","United States of America",2015,361,326,350,"San Diego State University, United States of America",-117.1689358,32.7279087
-"362","Simon Fraser University","Canada",2015,362,238,250,"Simon Fraser University, Canada",-106.589195,52.124815
-"363","University of Santiago de Compostela","Spain",2015,363,NA,450,"University of Santiago de Compostela, Spain",-8.5448445,42.8782132
-"364","Saint Louis University","United States of America",2015,364,NA,450,"Saint Louis University, United States of America",-90.287589,38.6853936
-"365","Colorado School of Mines","United States of America",2015,365,141,NA,"Colorado School of Mines, United States of America",-105.229537,39.7524606
-"366","University of Eastern Finland","Finland",2015,366,376,450,"University of Eastern Finland, Finland",NA,NA
-"367","University of Buenos Aires","Argentina",2015,367,NA,176,"University of Buenos Aires, Argentina",-58.3951433,-34.5810691
-"368","University of Guelph","Canada",2015,368,NA,250,"University of Guelph, Canada",-80.225481,43.529442
-"369","University of Ferrara","Italy",2015,369,376,450,"University of Ferrara, Italy",11.6219939,44.8288737
-"370","Polytechnic University of Catalonia","Spain",2015,370,NA,450,"Polytechnic University of Catalonia, Spain",1.5208624,41.5911589
-"371","Versailles Saint-Quentin-en-Yvelines University","France",2015,371,NA,NA,"Versailles Saint-Quentin-en-Yvelines University, France",NA,NA
-"372","Saarland University","Germany",2015,372,NA,NA,"Saarland University, Germany",NA,NA
-"373","City University of Hong Kong","Hong Kong",2015,373,192,250,"City University of Hong Kong, Hong Kong",114.1720025,22.3374868
-"374","Technical University of Darmstadt","Germany",2015,374,263,450,"Technical University of Darmstadt, Germany",8.6511929,NA
-"375","Pompeu Fabra University","Spain",2015,375,165,250,"Pompeu Fabra University, Spain",NA,NA
-"376","Pontifical Catholic University of Chile","Chile",2015,376,NA,450,"Pontifical Catholic University of Chile, Chile",NA,NA
-"377","University of Bari Aldo Moro","Italy",2015,377,376,NA,"University of Bari Aldo Moro, Italy",NA,NA
-"378","University of Texas Medical Branch at Galveston","United States of America",2015,378,NA,450,"University of Texas Medical Branch at Galveston, United States of America",-95.2355901,29.6630547
-"379","University of Delhi","India",2015,379,NA,NA,"University of Delhi, India",77.1183137,28.7499867
-"380","Washington State University","United States of America",2015,380,376,350,"Washington State University, United States of America",-77.8097999,40.835219
-"381","Temple University","United States of America",2015,381,NA,350,"Temple University, United States of America",-75.1495788,39.980825
-"382","University of Milan - Bicocca","Italy",2015,382,238,450,"University of Milan - Bicocca, Italy",9.2082569,45.5193521
-"383","University of Turku","Finland",2015,383,376,350,"University of Turku, Finland",22.2666303,60.4518126
-"384","Chonnam National University","South Korea",2015,384,NA,NA,"Chonnam National University, South Korea",NA,NA
-"385","University of Lorraine","France",2015,385,NA,250,"University of Lorraine, France",6.4529978,48.1678772
-"386","National Chiao Tung University","Taiwan",2015,386,288,350,"National Chiao Tung University, Taiwan",NA,NA
-"387","Catholic University of the Sacred Heart","Italy",2015,387,NA,450,"Catholic University of the Sacred Heart, Italy",3.3326546,NA
-"388","State University of New York Albany","United States of America",2015,388,238,350,"State University of New York Albany, United States of America",-73.9036413,40.8784209
-"389","Xian Jiao Tong University","China",2015,389,NA,250,"Xian Jiao Tong University, China",108.942284,34.2162798
-"390","Ewha Womans University","South Korea",2015,390,376,450,"Ewha Womans University, South Korea",NA,NA
-"391","Jilin University","China",2015,391,NA,250,"Jilin University, China",125.3195857,43.8833943
-"392","Tokyo Medical and Dental University","Japan",2015,392,288,450,"Tokyo Medical and Dental University, Japan",139.6917064,NA
-"393","Scuola Normale Superiore di Pisa","Italy",2015,393,63,350,"Scuola Normale Superiore di Pisa, Italy",10.4004543,43.7196569
-"394","University of Central Florida","United States of America",2015,394,NA,350,"University of Central Florida, United States of America",-82.4553299,28.0530332
-"395","Innsbruck Medical University","Austria",2015,395,NA,NA,"Innsbruck Medical University, Austria",11.4041024,47.2692124
-"396","Beijing Normal University","China",2015,396,NA,250,"Beijing Normal University, China",116.3049709,39.9314428
-"397","Polytechnic University of Milan","Italy",2015,397,326,250,"Polytechnic University of Milan, Italy",9.1859243,45.4654219
-"398","University of Seville","Spain",2015,398,NA,450,"University of Seville, Spain",-90.3535416,NA
-"399","University of Nebraska Medical Center","United States of America",2015,399,326,NA,"University of Nebraska Medical Center, United States of America",-95.9786222,41.2549998
-"400","Huazhong University of Science and Technology","China",2015,400,NA,250,"Huazhong University of Science and Technology, China",114.4109032,30.5171328
-"401","Kyung Hee University","South Korea",2015,401,NA,350,"Kyung Hee University, South Korea",NA,NA
-"402","Chalmers University of Technology","Sweden",2015,402,288,350,"Chalmers University of Technology, Sweden",NA,NA
-"403","Brigham Young University","United States of America",2015,403,NA,350,"Brigham Young University, United States of America",-81.1858094,28.5750583
-"404","University of Campinas","Brazil",2015,404,326,350,"University of Campinas, Brazil",-51.1892999,-23.3035384
-"405","University of Bath","United Kingdom",2015,405,326,450,"University of Bath, United Kingdom",-2.325886,51.3639371
-"406","Saint Petersburg State University","Russia",2015,406,NA,350,"Saint Petersburg State University, Russia",30.3350986,59.9342802
-"407","National Tsing Hua University","Taiwan",2015,407,263,250,"National Tsing Hua University, Taiwan",NA,NA
-"408","University of Twente","Netherlands",2015,408,213,350,"University of Twente, Netherlands",6.8491442,52.2462129
-"409","University of Alabama - Tuscaloosa","United States of America",2015,409,NA,NA,"University of Alabama - Tuscaloosa, United States of America",-87.4748546,33.1915242
-"410","Harbin Institute of Technology","China",2015,410,NA,250,"Harbin Institute of Technology, China",126.6901205,45.7835064
-"411","University of Verona","Italy",2015,411,NA,NA,"University of Verona, Italy",8.7976037,45.7780081
-"412","Oklahoma State University","United States of America",2015,412,NA,450,"Oklahoma State University, United States of America",-97.430033,35.229222
-"413","Shandong University","China",2015,413,NA,350,"Shandong University, China",117.0593187,36.6716339
-"414","George Mason University","United States of America",2015,414,376,176,"George Mason University, United States of America",-77.307587,38.83419
-"415","Wuhan University","China",2015,415,376,350,"Wuhan University, China",114.4017819,30.5181622
-"416","Swedish University of Agricultural Sciences","Sweden",2015,416,263,250,"Swedish University of Agricultural Sciences, Sweden",NA,NA
-"417","Concordia University","Canada",2015,417,NA,NA,"Concordia University, Canada",-83.682841,42.273544
-"418","Chiba University","Japan",2015,418,NA,350,"Chiba University, Japan",NA,NA
-"419","Kumamoto University","Japan",2015,419,NA,NA,"Kumamoto University, Japan",NA,NA
-"420","Tongji University","China",2015,420,NA,350,"Tongji University, China",121.50631,31.282182
-"421","Aalto University","Finland",2015,421,263,450,"Aalto University, Finland",NA,NA
-"422","Chonbuk National University","South Korea",2015,422,NA,NA,"Chonbuk National University, South Korea",NA,NA
-"423","Peking Union Medical College","China",2015,423,NA,450,"Peking Union Medical College, China",116.4164843,39.9111331
-"424","Georgia Regents University","United States of America",2015,424,NA,NA,"Georgia Regents University, United States of America",-82.9000751,32.1656221
-"425","University of Chile","Chile",2015,425,NA,350,"University of Chile, Chile",-70.650391,-33.443809
-"426","Lancaster University","United Kingdom",2015,426,131,350,"Lancaster University, United Kingdom",-2.7852725,54.0070009
-"427","Vienna University of Technology","Austria",2015,427,238,450,"Vienna University of Technology, Austria",16.3358371,48.1625026
-"428","University of Denver","United States of America",2015,428,NA,NA,"University of Denver, United States of America",-111.8779046,40.7530258
-"429","University of Arkansas for Medical Sciences","United States of America",2015,429,NA,NA,"University of Arkansas for Medical Sciences, United States of America",NA,NA
-"430","Grenoble Institute of Technology","France",2015,430,NA,NA,"Grenoble Institute of Technology, France",5.724524,45.188529
-"431","University of Granada","Spain",2015,431,NA,350,"University of Granada, Spain",-3.6020343,37.1776261
-"432","University of Modena and Reggio Emilia","Italy",2015,432,NA,NA,"University of Modena and Reggio Emilia, Italy",10.6296859,44.6989932
-"433","Ajou University","South Korea",2015,433,NA,NA,"Ajou University, South Korea",NA,NA
-"434","Gyeongsang National University","South Korea",2015,434,NA,NA,"Gyeongsang National University, South Korea",NA,NA
-"435","Technical University of Madrid","Spain",2015,435,NA,NA,"Technical University of Madrid, Spain",NA,NA
-"436","University College Cork","Ireland",2015,436,288,450,"University College Cork, Ireland",-8.4911977,51.893609
-"437","Loyola University Chicago","United States of America",2015,437,NA,NA,"Loyola University Chicago, United States of America",-87.8364936,41.8610565
-"438","Central South University","China",2015,438,NA,350,"Central South University, China",113.3991582,23.0443826
-"439","South China University of Technology","China",2015,439,NA,350,"South China University of Technology, China",113.4053324,23.0466219
-"440","Polytechnic University of Valencia","Spain",2015,440,NA,350,"Polytechnic University of Valencia, Spain",-0.3762881,39.4699075
-"441","West Virginia University","United States of America",2015,441,NA,NA,"West Virginia University, United States of America",-104.9989933,39.7075456
-"442","University of Tampere","Finland",2015,442,326,NA,"University of Tampere, Finland",23.7609535,61.4977524
-"443","Southeast University","China",2015,443,NA,350,"Southeast University, China",118.1832835,39.6750049
-"444","Miami University","United States of America",2015,444,NA,NA,"Miami University, United States of America",-84.7316109,39.5105848
-"445","University of Dayton","United States of America",2015,445,NA,NA,"University of Dayton, United States of America",-84.180085,39.7405392
-"446","University of Siena","Italy",2015,446,NA,NA,"University of Siena, Italy",11.3307574,43.318809
-"447","University of Oulu","Finland",2015,447,NA,350,"University of Oulu, Finland",NA,NA
-"448","Indian Institute of Science","India",2015,448,288,350,"Indian Institute of Science, India",77.566677,13.0220277
-"449","Macquarie University","Australia",2015,449,326,250,"Macquarie University, Australia",151.1131306,-33.7756994
-"450","University of Rostock","Germany",2015,450,NA,450,"University of Rostock, Germany",NA,NA
-"451","Jagiellonian University","Poland",2015,451,NA,350,"Jagiellonian University, Poland",NA,NA
-"452","Pusan National University","South Korea",2015,452,NA,450,"Pusan National University, South Korea",129.0756416,35.1795543
-"453","University of Strathclyde","United Kingdom",2015,453,NA,NA,"University of Strathclyde, United Kingdom",-4.243943,55.862949
-"454","University of Nevada, Reno","United States of America",2015,454,NA,NA,"University of Nevada, Reno, United States of America",-119.8145014,39.5440732
-"455","University of Saskatchewan","Canada",2015,455,NA,350,"University of Saskatchewan, Canada",-106.6236777,52.138997
-"456","University of Parma","Italy",2015,456,NA,450,"University of Parma, Italy",10.3279036,44.801485
-"457","Kanazawa University","Japan",2015,457,NA,450,"Kanazawa University, Japan",136.6562051,36.5613254
-"458","Eotvos Lorand University","Hungary",2015,458,NA,450,"Eotvos Lorand University, Hungary",NA,NA
-"459","Aristotle University of Thessaloniki","Greece",2015,459,NA,450,"Aristotle University of Thessaloniki, Greece",22.9444191,NA
-"460","Ohio University","United States of America",2015,460,NA,NA,"Ohio University, United States of America",-111.8889687,33.4230033
-"461","University of Iceland","Iceland",2015,461,263,NA,"University of Iceland, Iceland",-21.9493575,64.1404869
-"462","University of Warsaw","Poland",2015,462,326,350,"University of Warsaw, Poland",121.0977669,NA
-"463","Syracuse University","United States of America",2015,463,177,450,"Syracuse University, United States of America",-147.8628983,64.8432475
-"464","Bielefeld University","Germany",2015,464,376,450,"Bielefeld University, Germany",NA,NA
-"465","Juntendo University","Japan",2015,465,NA,NA,"Juntendo University, Japan",NA,NA
-"466","University of Wyoming","United States of America",2015,466,NA,350,"University of Wyoming, United States of America",-106.4727075,31.7738129
-"467","University of Wollongong","Australia",2015,467,288,250,"University of Wollongong, Australia",150.8849642,-34.4112787
-"468","Niigata University","Japan",2015,468,NA,NA,"Niigata University, Japan",NA,NA
-"469","Texas Tech University","United States of America",2015,469,NA,450,"Texas Tech University, United States of America",-106.4888518,31.7648243
-"470","Middle East Technical University","Turkey",2015,470,85,NA,"Middle East Technical University, Turkey",33.0307541,NA
-"471","Ecole Normale Superieure - Lyon","France",2015,471,160,250,"Ecole Normale Superieure - Lyon, France",4.835659,45.764043
-"472","Brunel University","United Kingdom",2015,472,238,450,"Brunel University, United Kingdom",-0.4728634,51.5328782
-"473","Nihon University","Japan",2015,473,NA,NA,"Nihon University, Japan",125.3682251,NA
-"474","Osaka City University","Japan",2015,474,NA,NA,"Osaka City University, Japan",NA,NA
-"475","University of Rennes 1","France",2015,475,NA,450,"University of Rennes 1, France",-77.6160535,NA
-"476","University of Oklahoma Health Sciences Center","United States of America",2015,476,NA,NA,"University of Oklahoma Health Sciences Center, United States of America",-97.4907923,35.4777482
-"477","East China University of Science and Technology","China",2015,477,NA,450,"East China University of Science and Technology, China",121.4252165,31.1409789
-"478","University of KwaZulu-Natal","South Africa",2015,478,NA,450,"University of KwaZulu-Natal, South Africa",31.0093701,-29.8590352
-"479","Sichuan University","China",2015,479,NA,350,"Sichuan University, China",104.0911486,30.6356501
-"480","Illinois Institute of Technology","United States of America",2015,480,326,NA,"Illinois Institute of Technology, United States of America",-87.6272216,41.8313852
-"481","Tokyo University of Science","Japan",2015,481,NA,NA,"Tokyo University of Science, Japan",-118.2066079,NA
-"482","University of Science, Malaysia","Malaysia",2015,482,NA,450,"University of Science, Malaysia, Malaysia",101.5848034,3.2195403
-"483","Clemson University","United States of America",2015,483,NA,450,"Clemson University, United States of America",-117.3423757,33.9898194
-"484","University of Zaragoza","Spain",2015,484,NA,450,"University of Zaragoza, Spain",-0.8992662,41.643859
-"485","University of the Basque Country","Spain",2015,485,NA,450,"University of the Basque Country, Spain",NA,NA
-"486","Nagasaki University","Japan",2015,486,NA,NA,"Nagasaki University, Japan",NA,NA
-"487","Technical University of Dortmund","Germany",2015,487,NA,NA,"Technical University of Dortmund, Germany",7.4652981,51.5135872
-"488","University of Hawaii at Manoa","United States of America",2015,488,263,176,"University of Hawaii at Manoa, United States of America",NA,NA
-"489","University of Nebraska Omaha","United States of America",2015,489,NA,NA,"University of Nebraska Omaha, United States of America",-95.9786222,41.2549998
-"490","University of Konstanz","Germany",2015,490,238,450,"University of Konstanz, Germany",9.1732384,47.6779496
-"491","Panjab University","India",2015,491,288,NA,"Panjab University, India",76.7653924,30.7606188
-"492","University of Hanover","Germany",2015,492,NA,450,"University of Hanover, Germany",9.7244737,52.3536735
-"493","University of Maryland, Baltimore County","United States of America",2015,493,NA,450,"University of Maryland, Baltimore County, United States of America",-76.9422054,38.9822549
-"494","University of Newcastle","Australia",2015,494,263,350,"University of Newcastle, Australia",151.6970537,-32.8944481
-"495","University of Ulsan","South Korea",2015,495,NA,NA,"University of Ulsan, South Korea",129.3113596,35.5383773
-"496","Renmin University of China","China",2015,496,326,NA,"Renmin University of China, China",116.3078309,39.9682472
-"497","Martin Luther University of Halle-Wittenberg","Germany",2015,497,NA,450,"Martin Luther University of Halle-Wittenberg, Germany",NA,NA
-"498","University of Malaya","Malaysia",2015,498,NA,350,"University of Malaya, Malaysia",101.6579145,3.1191481
-"499","University of Savoy","France",2015,499,NA,NA,"University of Savoy, France",1.9304856,47.8376224
-"500","Tokyo Metropolitan University","Japan",2015,501,238,NA,"Tokyo Metropolitan University, Japan",139.6917064,35.6894875
-"501","University of Ljubljana","Slovenia",2015,504,NA,450,"University of Ljubljana, Slovenia",14.5185278,46.0512135
-"502","University of Nice Sophia Antipolis","France",2015,505,NA,450,"University of Nice Sophia Antipolis, France",NA,NA
-"503","University of Coimbra","Portugal",2015,507,NA,450,"University of Coimbra, Portugal",-8.5059903,40.1179531
-"504","Creighton University","United States of America",2015,508,326,NA,"Creighton University, United States of America",-95.954459,41.265804
-"505","Catholic University of Korea","South Korea",2015,511,NA,450,"Catholic University of Korea, South Korea",NA,NA
-"506","University of Tokushima","Japan",2015,512,NA,450,"University of Tokushima, Japan",134.5548438,34.0702703
-"507","Lanzhou University","China",2015,514,NA,350,"Lanzhou University, China",103.8605305,36.0462293
-"508","University of Crete","Greece",2015,515,326,NA,"University of Crete, Greece",24.8092691,35.240117
-"509","University of Bayreuth","Germany",2015,520,376,450,"University of Bayreuth, Germany",11.5713346,49.9456399
-"510","Bar-Ilan University","Israel",2015,521,NA,450,"Bar-Ilan University, Israel",34.747186,32.013978
-"511","University of Tasmania","Australia",2015,523,NA,350,"University of Tasmania, Australia",147.3255538,-42.9045304
-"512","University of Surrey","United Kingdom",2015,525,NA,450,"University of Surrey, United Kingdom",-0.5904827,51.2423009
-"513","Federal University of Minas Gerais","Brazil",2015,526,NA,450,"Federal University of Minas Gerais, Brazil",-48.2580759,-18.916396
-"514","University of Tromsø - The Arctic University of Norway","Norway",2015,527,376,NA,"University of Tromsø - The Arctic University of Norway, Norway",-70.5448096,44.2139566
-"515","University of Palermo","Italy",2015,528,NA,450,"University of Palermo, Italy",8.8753929,45.7891476
-"516","University of Canterbury","New Zealand",2015,533,326,NA,"University of Canterbury, New Zealand",1.0760948,51.2704842
-"517","University of Bremen","Germany",2015,535,263,450,"University of Bremen, Germany",8.6493781,53.1678088
-"518","Royal Holloway, University of London","United Kingdom",2015,540,118,NA,"Royal Holloway, University of London, United Kingdom",-0.5722843,51.4156216
-"519","James Cook University","Australia",2015,541,NA,350,"James Cook University, Australia",146.7598451,-19.3293709
-"520","Nara Institute of Science and Technology","Japan",2015,547,NA,450,"Nara Institute of Science and Technology, Japan",135.8050002,34.6850869
-"521","Auburn University","United States of America",2015,549,NA,450,"Auburn University, United States of America",-85.4861115,32.6033726
-"522","University of Arkansas at Fayetteville","United States of America",2015,550,NA,450,"University of Arkansas at Fayetteville, United States of America",-78.8783585,35.0526641
-"523","National University of Ireland, Galway","Ireland",2015,558,263,NA,"National University of Ireland, Galway, Ireland",-9.0654626,53.2847921
-"524","University of Trento","Italy",2015,561,263,NA,"University of Trento, Italy",8.8334433,45.8187548
-"525","Chang Gung University","Taiwan",2015,563,NA,450,"Chang Gung University, Taiwan",NA,NA
-"526","Aalborg University","Denmark",2015,565,376,350,"Aalborg University, Denmark",9.9782838,57.0207906
-"527","Utah State University","United States of America",2015,566,NA,450,"Utah State University, United States of America",-111.6569362,40.2698641
-"528","Bangor University","United Kingdom",2015,568,326,NA,"Bangor University, United Kingdom",-68.7778138,44.8011821
-"529","King Saud University","Saudi Arabia",2015,569,NA,176,"King Saud University, Saudi Arabia",46.6270967,24.7224191
-"530","University of Fribourg","Switzerland",2015,573,288,NA,"University of Fribourg, Switzerland",7.1619719,46.8064773
-"531","Medical University of Graz","Austria",2015,574,NA,450,"Medical University of Graz, Austria",15.4496119,47.0787761
-"532","Deakin University","Australia",2015,579,326,350,"Deakin University, Australia",145.1158415,-37.8499622
-"533","Federal University of Rio Grande do Sul","Brazil",2015,583,NA,450,"Federal University of Rio Grande do Sul, Brazil",-51.1183331,-30.0699383
-"534","University of Graz","Austria",2015,584,376,450,"University of Graz, Austria",15.4499838,47.0777993
-"535","University of Montana - Missoula","United States of America",2015,585,326,350,"University of Montana - Missoula, United States of America",-113.939507,46.872505
-"536","Plymouth University","United Kingdom",2015,587,288,NA,"Plymouth University, United Kingdom",-4.1372129,50.3732054
-"537","Victoria University of Wellington","New Zealand",2015,588,288,NA,"Victoria University of Wellington, New Zealand",174.7425453,-41.2852714
-"538","University of Alaska Fairbanks","United States of America",2015,591,NA,450,"University of Alaska Fairbanks, United States of America",-147.7764499,64.8598132
-"539","Carleton University","Canada",2015,593,238,450,"Carleton University, Canada",-75.698312,45.3830819
-"540","Curtin University","Australia",2015,595,376,250,"Curtin University, Australia",115.8945948,-32.0076092
-"541","Indian Institute of Technology Bombay","India",2015,596,376,NA,"Indian Institute of Technology Bombay, India",72.8384624,19.0515532
-"542","University of Portsmouth","United Kingdom",2015,597,376,NA,"University of Portsmouth, United Kingdom",-0.7362328,51.3222924
-"543","University of Hertfordshire","United Kingdom",2015,604,376,NA,"University of Hertfordshire, United Kingdom",-0.3664644,51.6516442
-"544","Florida International University","United States of America",2015,605,NA,450,"Florida International University, United States of America",-80.7206765,28.313191
-"545","University of Rhode Island","United States of America",2015,606,NA,450,"University of Rhode Island, United States of America",-76.9465209,38.9457849
-"546","Griffith University","Australia",2015,613,NA,350,"Griffith University, Australia",153.384564,-27.963265
-"547","Soochow University","China",2015,615,NA,450,"Soochow University, China",120.6393479,31.3094486
-"548","Flinders University","Australia",2015,620,NA,350,"Flinders University, Australia",145.1701804,-38.2612843
-"549","Queensland University of Technology","Australia",2015,621,288,450,"Queensland University of Technology, Australia",NA,NA
-"550","Istanbul University","Turkey",2015,623,NA,450,"Istanbul University, Turkey",29.1344302,40.941668
-"551","China Agricultural University","China",2015,627,NA,350,"China Agricultural University, China",115.4903605,38.8509543
-"552","University of Minho","Portugal",2015,629,376,NA,"University of Minho, Portugal",-8.397568,41.557583
-"553","University of Essex","United Kingdom",2015,632,326,450,"University of Essex, United Kingdom",0.9531797,51.8768245
-"554","Technical University of Braunschweig","Germany",2015,636,NA,450,"Technical University of Braunschweig, Germany",10.5267696,52.2688736
-"555","Indian Institute of Technology Roorkee","India",2015,638,376,NA,"Indian Institute of Technology Roorkee, India",77.8953181,29.8662184
-"556","Hong Kong Baptist University","Hong Kong",2015,649,326,NA,"Hong Kong Baptist University, Hong Kong",114.1829159,22.3354512
-"557","University of Los Andes (Colombia)","Colombia",2015,652,263,NA,"University of Los Andes (Colombia), Colombia",-76.5381883,3.4326203
-"558","University of Quebec","Canada",2015,663,NA,450,"University of Quebec, Canada",-79.4209993,43.6334638
-"559","UNESP, São Paulo State University","Brazil",2015,664,NA,350,"UNESP, São Paulo State University, Brazil",NA,NA
-"560","University of Jyvaskyla","Finland",2015,671,326,450,"University of Jyvaskyla, Finland",25.7472567,62.2426034
-"561","Wuhan University of Technology","China",2015,677,376,NA,"Wuhan University of Technology, China",114.3523886,30.5173109
-"562","Swinburne University of Technology","Australia",2015,688,376,350,"Swinburne University of Technology, Australia",110.3573188,NA
-"563","Tilburg University","Netherlands",2015,689,288,NA,"Tilburg University, Netherlands",NA,NA
-"564","Sharif University of Technology","Iran",2015,697,326,450,"Sharif University of Technology, Iran",51.3277804,35.7569204
-"565","Birkbeck, University of London","United Kingdom",2015,698,238,NA,"Birkbeck, University of London, United Kingdom",-0.3523973,51.5397814
-"566","Roma Tre University","Italy",2015,701,376,NA,"Roma Tre University, Italy",11.9089567,42.150398
-"567","King Abdullah University of Science and Technology","Saudi Arabia",2015,704,NA,350,"King Abdullah University of Science and Technology, Saudi Arabia",NA,NA
-"568","Beihang University","China",2015,705,NA,350,"Beihang University, China",116.3498961,39.9826114
-"569","Royal College of Surgeons in Ireland","Ireland",2015,711,376,NA,"Royal College of Surgeons in Ireland, Ireland",-8.24389,53.41291
-"570","Aston University","United Kingdom",2015,720,376,NA,"Aston University, United Kingdom",-1.8906637,52.4837557
-"571","University of Belgrade","Serbia",2015,726,NA,350,"University of Belgrade, Serbia",20.4559904,44.8262834
-"572","University of Szeged","Hungary",2015,731,NA,450,"University of Szeged, Hungary",20.1468541,46.248986
-"573","Istanbul Technical University","Turkey",2015,742,165,NA,"Istanbul Technical University, Turkey",28.9783589,41.0082376
-"574","University of South Australia","Australia",2015,751,288,NA,"University of South Australia, Australia",130.8689998,-12.3745345
-"575","University of Salento","Italy",2015,765,263,NA,"University of Salento, Italy",NA,NA
-"576","University of Tehran","Iran",2015,768,NA,250,"University of Tehran, Iran",51.4000833,35.7048679
-"577","University of Stirling","United Kingdom",2015,784,326,NA,"University of Stirling, United Kingdom",-2.0697416,51.8963837
-"578","Capital Medical University","China",2015,788,NA,450,"Capital Medical University, China",116.3530323,39.8676818
-"579","Cairo University","Egypt",2015,796,NA,450,"Cairo University, Egypt",31.2009519,30.0260766
-"580","National Sun Yat-Sen University","Taiwan",2015,803,376,450,"National Sun Yat-Sen University, Taiwan",113.2919465,NA
-"581","Aberystwyth University","United Kingdom",2015,814,376,NA,"Aberystwyth University, United Kingdom",-4.065922,52.417776
-"582","University of Technology Sydney","Australia",2015,815,238,350,"University of Technology Sydney, Australia",151.2020978,-33.8827039
-"583","Florida Institute of Technology","United States of America",2015,823,200,NA,"Florida Institute of Technology, United States of America",NA,NA
-"584","Murdoch University","Australia",2015,829,376,NA,"Murdoch University, Australia",145.1896006,-38.159341
-"585","Boğaziçi University","Turkey",2015,837,139,NA,"Boğaziçi University, Turkey",NA,NA
-"586","Bilkent University","Turkey",2015,842,213,NA,"Bilkent University, Turkey",NA,NA
-"587","King Fahd University of Petroleum and Minerals","Saudi Arabia",2015,847,NA,450,"King Fahd University of Petroleum and Minerals, Saudi Arabia",50.1498042,26.3048047
-"588","University of Seoul","South Korea",2015,860,376,NA,"University of Seoul, South Korea",126.9779692,37.566535
-"589","University of Western Sydney","Australia",2015,882,376,NA,"University of Western Sydney, Australia",150.9909189,-33.9380986
-"590","Nanjing Medical University","China",2015,886,NA,450,"Nanjing Medical University, China",118.773841,32.0456888
-"591","Isfahan University of Technology","Iran",2015,914,376,NA,"Isfahan University of Technology, Iran",51.5616308,32.7373617
-"592","National Taiwan University of Science and Technology","Taiwan",2015,916,376,NA,"National Taiwan University of Science and Technology, Taiwan",NA,NA
-"593","University of Waikato","New Zealand",2015,937,376,NA,"University of Waikato, New Zealand",175.312121,-37.787183
-"594","Charles Darwin University","Australia",2015,942,326,NA,"Charles Darwin University, Australia",130.87062,-12.37274
-"595","Federico Santa María Technical University","Chile",2015,960,263,NA,"Federico Santa María Technical University, Chile",NA,NA
-"596","China Medical University (PRC)","China",2015,982,NA,350,"China Medical University (PRC), China",NA,NA
-"597","Novosibirsk State University","Russia",2015,985,326,NA,"Novosibirsk State University, Russia",83.0938315,54.8437862
-"598","King Abdulaziz University","Saudi Arabia",2015,995,NA,176,"King Abdulaziz University, Saudi Arabia",39.2640102,21.5189057
-"599","Sabancı University","Turkey",2015,NA,182,NA,"Sabancı University, Turkey",29.3768722,40.8924477
-"600","University of Würzburg","Germany",2015,NA,238,176,"University of Würzburg, Germany",9.9533548,49.7913044
-"601","Lappeenranta University of Technology","Finland",2015,NA,288,NA,"Lappeenranta University of Technology, Finland",28.1896628,61.0549929
-"602","University of Macau","Macau",2015,NA,288,NA,"University of Macau, Macau",113.5575513,22.1634112
-"603","Koç University","Turkey",2015,NA,326,NA,"Koç University, Turkey",29.0749608,41.2083389
-"604","University of Marrakech Cadi Ayyad","Morocco",2015,NA,326,NA,"University of Marrakech Cadi Ayyad, Morocco",NA,NA
-"605","King Mongkut’s University of Technology Thonburi","Thailand",2015,NA,376,NA,"King Mongkut’s University of Technology Thonburi, Thailand",100.4874338,13.7164911
-"606","Mayo Medical School","United States of America",2015,NA,NA,126,"Mayo Medical School, United States of America",NA,NA
-"607","Toulouse School of Economics","France",2015,NA,NA,250,"Toulouse School of Economics, France",1.444209,43.604652
-"608","ESPCI ParisTech","France",2015,NA,NA,350,"ESPCI ParisTech, France",NA,NA
-"609","Paris Dauphine University (Paris 9)","France",2015,NA,NA,350,"Paris Dauphine University (Paris 9), France",2.3075232,48.8588342
-"610","State University of New York Health Science Center at Brooklyn","United States of America",2015,NA,NA,450,"State University of New York Health Science Center at Brooklyn, United States of America",-73.9441579,40.6781784
-"611","Stockholm School of Economics","Sweden",2015,NA,NA,450,"Stockholm School of Economics, Sweden",NA,NA
-"612","University of Arkansas at Little Rock","United States of America",2015,NA,NA,450,"University of Arkansas at Little Rock, United States of America",NA,NA
-"613","University of Auvergne","France",2015,NA,NA,450,"University of Auvergne, France",3.3448536,45.7032695
+new_name,country,lon,lat
+Clarkson University,United States of America,-147.8729731,64.8418088
+Cornell University,United States of America,-76.473492,42.453473
+Drexel University,United States of America,-147.8646944,64.8363204
+Wake Forest University,United States of America,-147.8634295,64.8366123
+Princeton University,United States of America,-74.651427,40.343972
+Syracuse University,United States of America,-147.8628983,64.8432475
+Lehigh University,United States of America,-147.858826,64.8391522
+Dartmouth College,United States of America,-147.8581336,64.8438576
+Stanford University,United States of America,-122.16958,37.427432
+Duke University,United States of America,-78.938272,36.001434
+Yale University,United States of America,-72.9223,41.316324
+Baylor University,United States of America,-147.8009743,64.8852156
+University of Alaska Fairbanks,United States of America,-147.7764499,64.8598132
+Hunter College,United States of America,-147.6960657,64.858932
+Oregon State University,United States of America,-123.086563,44.051085
+Portland State University,United States of America,-122.6885447,45.513099
+Oregon Health and Science University,United States of America,-122.6854607,45.4990977
+"University of California, San Francisco",United States of America,-122.4767893,37.7233035
+San Francisco State University,United States of America,-122.4760196,37.7244047
+"University of California, Berkeley",United States of America,-122.2804342,37.8764984
+Albany Medical College,United States of America,-122.2676485,37.8627601
+"University of California, Davis",United States of America,-121.7526141,38.5412104
+"University of California, Merced",United States of America,-121.4091996,38.5351978
+Marquette University,United States of America,-121.4033403,38.5527826
+California Institute of Technology,United States of America,-121.157729,38.673863
+"University of Nevada, Reno",United States of America,-119.8145014,39.5440732
+"University of California, Los Angeles",United States of America,-118.2534733,34.0533937
+"University of California, Irvine",United States of America,-117.8352875,33.6369838
+"University of California, Santa Barbara",United States of America,-117.8082831,33.6858022
+Clemson University,United States of America,-117.3423757,33.9898194
+"University of California, Riverside",United States of America,-117.3310404,34.0138733
+University of Kentucky,United States of America,-117.3305834,33.9804348
+"University of California, Santa Cruz",United States of America,-117.3163115,33.981043
+Case Western Reserve University,United States of America,-117.2987262,34.0740102
+Loma Linda University,United States of America,-117.2644858,34.0499856
+San Diego State University,United States of America,-117.1689358,32.7279087
+"University of California, San Diego",United States of America,-117.1651567,32.715133
+"University of Nevada, Las Vegas",United States of America,-115.1361798,36.2008431
+Northern Arizona University,United States of America,-114.3412464,34.4974836
+University of Calgary,Canada,-114.1239754,51.069272
+University of Montana - Missoula,United States of America,-113.939507,46.872505
+University of Lethbridge,Canada,-112.8764986,49.6810928
+University of Iowa,United States of America,-111.8891072,33.4242541
+Ohio University,United States of America,-111.8889687,33.4230033
+University of Utah,United States of America,-111.8884532,33.4249307
+Arizona State University,United States of America,-111.8879509,33.4232051
+University of Idaho,United States of America,-111.8869319,33.4244691
+University of Denver,United States of America,-111.8779046,40.7530258
+Utah State University,United States of America,-111.6569362,40.2698641
+Montana State University - Bozeman,United States of America,-111.034353,45.6739655
+University of New Mexico,United States of America,-108.084507,35.0886487
+New Mexico State University,United States of America,-106.6509598,35.0858948
+University of Saskatchewan,Canada,-106.6236777,52.138997
+Simon Fraser University,Canada,-106.589195,52.124815
+Trent University,Canada,-106.580618,52.117207
+Boston College,United States of America,-106.5005851,31.7763226
+Boston University,United States of America,-106.5005851,31.7763226
+University of Texas at El Paso,United States of America,-106.499073,31.7693274
+University of Cincinnati,United States of America,-106.4981503,31.7801651
+New York University,United States of America,-106.496973,31.777508
+Texas Tech University,United States of America,-106.4888518,31.7648243
+Brown University,United States of America,-106.48281,31.7724254
+University of Wyoming,United States of America,-106.4727075,31.7738129
+University of Houston,United States of America,-106.444998,31.787718
+University of Washington,United States of America,-106.440736,31.767879
+University of Victoria,Canada,-105.5165923,50.3808235
+University of Manitoba,Canada,-105.5034556,50.3927659
+University of Colorado at Boulder,United States of America,-105.2591119,40.0082221
+Colorado School of Mines,United States of America,-105.229537,39.7524606
+Colorado State University,United States of America,-105.1257457,40.1531694
+University of Colorado at Denver,United States of America,-105.0445755,39.6478985
+West Virginia University,United States of America,-104.9989933,39.7075456
+Tufts University,United States of America,-104.997842,39.6331178
+University of South Florida,United States of America,-104.9687315,39.6893406
+University of South Alabama,United States of America,-104.9317246,39.6938706
+Rush University,United States of America,-104.6071451,38.2563877
+University of Regina,Canada,-104.5887159,50.4201512
+Texas A&M Health Science Center,United States of America,-99.9018131,31.9685988
+Texas A&M University,United States of America,-99.9018131,31.9685988
+National Autonomous University of Mexico,Mexico,-99.1843676,19.3188895
+University of Nebraska - Lincoln,United States of America,-98.683717,40.7953392
+University of Texas Health Science Center at San Antonio,United States of America,-98.4936282,29.4241219
+University of Texas at San Antonio,United States of America,-97.744439,30.277257
+University of Texas at Austin,United States of America,-97.7335226,30.2850284
+Northwestern University,United States of America,-97.7140117,30.2660497
+University of Oklahoma Health Sciences Center,United States of America,-97.4907923,35.4777482
+University of Oklahoma,United States of America,-97.4432884,35.1924456
+Oklahoma State University,United States of America,-97.430033,35.229222
+University of Vermont,United States of America,-97.1564797,31.5863636
+McGill University,Canada,-97.1465173,49.7975879
+Dalhousie University,Canada,-97.1453994,49.7887693
+Laval University,Canada,-97.1451647,49.7990974
+Ryerson University,Canada,-97.1437302,49.7866568
+University of Texas at Arlington,United States of America,-97.1071714,32.7295854
+Baylor College of Medicine,United States of America,-97.0951017,32.9338011
+"University of North Texas, Denton",United States of America,-97.0852603,33.2336997
+University of Texas Southwestern Medical Center,United States of America,-96.845988,32.8171391
+University of Texas at Dallas,United States of America,-96.7543188,32.9854538
+University of Regensburg,Germany,-96.3067708,30.5719736
+University of Stuttgart,Germany,-96.3040913,30.5692339
+University of Oldenburg,Germany,-96.3001924,30.5616614
+Stony Brook University,United States of America,-96.2939904,30.5129581
+University of Nebraska Medical Center,United States of America,-95.9786222,41.2549998
+University of Nebraska Omaha,United States of America,-95.9786222,41.2549998
+Creighton University,United States of America,-95.954459,41.265804
+University of Texas Health Science Center at Houston,United States of America,-95.3698028,29.7604267
+University of Texas Medical Branch at Galveston,United States of America,-95.2355901,29.6630547
+University of New Orleans,United States of America,-95.1385378,29.6885364
+University of Minnesota,United States of America,-95.0589,46.9059
+University of Kansas,United States of America,-94.7254893,38.8991444
+Oakland University,United States of America,-93.1239993,44.9405995
+University of Virginia,United States of America,-93.1147395,44.9494426
+Rice University,United States of America,-93.1061138,44.9638763
+Louisiana Tech University,United States of America,-92.6528499,32.5301559
+University of Missouri–Columbia,United States of America,-92.2785174,38.9033716
+Iowa State University,United States of America,-91.590374,41.876447
+Louisiana State University - Baton Rouge,United States of America,-91.1346386,30.4470192
+Washington University in St Louis,United States of America,-90.3308854,38.6846489
+Tulane University,United States of America,-90.3302509,38.6628918
+Vanderbilt University,United States of America,-90.3278627,38.6604194
+University of Georgia,United States of America,-90.3105335,38.7366343
+Saint Louis University,United States of America,-90.287589,38.6853936
+University of Missouri–St. Louis,United States of America,-90.287589,38.6853936
+University of Missouri–Kansas City,United States of America,-90.2188993,38.7134283
+University of Mississippi Medical Center,United States of America,-90.1685014,32.3343018
+LSU Health Sciences Center New Orleans,United States of America,-90.0715323,29.9510658
+University of Southern Mississippi,United States of America,-89.9444701,35.1159002
+University of Memphis,United States of America,-89.940639,35.11837
+University of Mississippi - Oxford Campus,United States of America,-89.5125712,34.3630968
+University of Wisconsin - Madison,United States of America,-89.4301473,43.0412831
+Mississippi State University,United States of America,-88.7903868,33.4555279
+University of Wisconsin–Milwaukee,United States of America,-87.8814302,43.075164
+Loyola University Chicago,United States of America,-87.8364936,41.8610565
+Medical College of Wisconsin,United States of America,-87.8197543,42.5785266
+University of Illinois at Chicago,United States of America,-87.6704474,41.8696656
+Northern Illinois University,United States of America,-87.6341005,41.8829936
+Illinois Institute of Technology,United States of America,-87.6272216,41.8313852
+University of Alabama - Tuscaloosa,United States of America,-87.4748546,33.1915242
+Purdue University - West Lafayette,United States of America,-86.9337787,40.4137374
+University of Alabama in Huntsville,United States of America,-86.6599148,34.7392496
+Indiana University - Bloomington,United States of America,-86.5269373,39.1670467
+University of Notre Dame,United States of America,-86.2377772,41.6973401
+Indiana University-Purdue University Indianapolis,United States of America,-86.0577399,39.9673126
+University of Southern California,United States of America,-85.7659121,38.1999105
+University of Louisville,United States of America,-85.7626595,38.2189292
+Brandeis University,United States of America,-85.7614305,38.2192846
+Auburn University,United States of America,-85.4861115,32.6033726
+Miami University,United States of America,-84.7316109,39.5105848
+Georgia Institute of Technology,United States of America,-84.3988806,33.7784626
+Florida State University,United States of America,-84.3369554,30.4011161
+University of Alabama at Birmingham,United States of America,-84.2991072,30.4563298
+University of Dayton,United States of America,-84.180085,39.7405392
+Wright State University - Dayton,United States of America,-84.0651383,39.7875367
+University of Tennessee - Knoxville,United States of America,-83.9422647,35.9403636
+Georgia State University,United States of America,-83.90536,32.5297685
+Concordia University,Canada,-83.682841,42.273544
+Michigan Technological University,United States of America,-83.2499678,42.4740967
+University of Toledo,United States of America,-83.0952509,42.3243464
+SUNY Downstate Medical Center,United States of America,-83.0562734,42.3543741
+Michigan State University,United States of America,-83.0511744,42.332507
+University of Windsor,Canada,-83.0382508,42.3168908
+Ohio State University,United States of America,-83.0202802,39.9578076
+University of Ottawa,Canada,-83.0182189,42.3077541
+Georgia Regents University,United States of America,-82.9000751,32.1656221
+University of North Dakota,United States of America,-82.4748741,28.0234949
+University of Oregon,United States of America,-82.47247,28.0465059
+University of Florida,United States of America,-82.4593395,28.0665864
+University of Central Florida,United States of America,-82.4553299,28.0530332
+University of Arizona,United States of America,-82.4530718,28.067177
+University of Michigan,United States of America,-82.4522711,28.0674065
+Catholic University of America,United States of America,-82.4013272,28.0645039
+University of Chicago,United States of America,-82.3924269,28.0282578
+University at Buffalo,United States of America,-82.3456738,36.3050274
+University of Akron,United States of America,-81.5113878,41.0757602
+Kent State University,United States of America,-81.4176553,41.1566596
+East Carolina University,United States of America,-81.2826216,29.0254798
+Brigham Young University,United States of America,-81.1858094,28.5750583
+Emory University,United States of America,-81.0318397,29.2637357
+University of Connecticut,United States of America,-81.0291938,29.2226697
+Florida Atlantic University,United States of America,-81.0031363,29.2167645
+University of North Carolina at Charlotte,United States of America,-80.7263216,35.2869669
+Florida International University,United States of America,-80.7206765,28.313191
+University of Waterloo,Canada,-80.541671,43.473289
+University of Western Ontario,Canada,-80.5394907,43.4570369
+University of Miami,United States of America,-80.2792843,25.7216374
+Wilfrid Laurier University,Canada,-80.2302743,43.51908
+University of Guelph,Canada,-80.225481,43.529442
+University of North Carolina at Greensboro,United States of America,-80.180657,35.8757027
+University of Pittsburgh,United States of America,-79.9531501,40.444331
+Medical University of South Carolina,United States of America,-79.950825,32.787049
+University of South Carolina,United States of America,-79.950825,32.787049
+Carnegie Mellon University,United States of America,-79.9441368,40.4432289
+York University,Canada,-79.500519,43.776279
+Brock University,Canada,-79.4364757,43.6521257
+University of Alberta,Canada,-79.432773,43.677718
+University of British Columbia,Canada,-79.427313,43.631679
+University of Quebec,Canada,-79.4209993,43.6334638
+University of New Brunswick,Canada,-79.4158951,43.6321491
+McMaster University,Canada,-79.4008767,43.6784669
+University of Toronto,Canada,-79.3947916,43.659598
+North Carolina State University,United States of America,-79.056442,36.0578965
+University of North Carolina at Chapel Hill,United States of America,-78.9399682,35.9681485
+University of Arkansas at Fayetteville,United States of America,-78.8783585,35.0526641
+Kansas State University,United States of America,-77.8647309,40.787115
+Pennsylvania State University,United States of America,-77.8600012,40.7933949
+Wayne State University,United States of America,-77.8121099,40.811234
+Washington State University,United States of America,-77.8097999,40.835219
+Wesleyan University,United States of America,-77.7761614,36.017482
+Rochester Institute of Technology,United States of America,-77.6737734,43.0800758
+Thomas Jefferson University,United States of America,-77.6044712,43.1727273
+University of Delaware,United States of America,-77.5829719,43.157618
+Virginia Commonwealth University,United States of America,-77.47766,38.3242649
+George Mason University,United States of America,-77.307587,38.83419
+University of Pennsylvania,United States of America,-77.1945247,41.2033216
+Georgetown University,United States of America,-77.0722585,38.9076089
+George Washington University,United States of America,-77.0470916,38.8991756
+Howard University,United States of America,-77.0204624,38.9212171
+University of New Hampshire,United States of America,-76.9864864,38.9930467
+University of Rhode Island,United States of America,-76.9465209,38.9457849
+"University of Maryland, Baltimore County",United States of America,-76.9422054,38.9822549
+"University of Maryland, Baltimore",United States of America,-76.9384877,38.9685891
+"University of Maryland, College Park",United States of America,-76.922904,38.9809132
+College of William and Mary,United States of America,-76.7100318,37.2701796
+Johns Hopkins University,United States of America,-76.6003432,39.32726
+University of Los Andes (Colombia),Colombia,-76.5381883,3.4326203
+Old Dominion University,United States of America,-76.3040214,36.8838958
+State University of New York Upstate Medical University,United States of America,-76.1413774,43.0438004
+Binghamton University,United States of America,-76.028319,42.117732
+Carleton University,Canada,-75.698312,45.3830819
+Temple University,United States of America,-75.1495788,39.980825
+Rutgers University-New Brunswick,United States of America,-74.4490235,40.5028168
+"Rutgers, The State University of New Jersey - Newark",United States of America,-74.1833997,40.7363654
+New Jersey Institute of Technology,United States of America,-74.1282427,40.3249291
+Rockefeller University,United States of America,-73.9559421,40.7626225
+State University of New York Health Science Center at Brooklyn,United States of America,-73.9441579,40.6781784
+Yeshiva University,United States of America,-73.9290202,40.8511337
+State University of New York Albany,United States of America,-73.9036413,40.8784209
+City University of New York City College,United States of America,-73.8465009,40.7857783
+"Queens College, City University of New York",United States of America,-73.8244593,40.7370967
+École Polytechnique de Montréal,Canada,-73.6130801,45.504661
+University of Sherbrooke,Canada,-73.573484,45.505109
+University of Montreal,Canada,-73.5671943,45.5016933
+New York Medical College,United States of America,-73.1146681,40.9098883
+University of Concepción,Chile,-73.038889,-36.8275
+Icahn School of Medicine at Mount Sinai,United States of America,-73.0295495,40.9470432
+University of Massachusetts Amherst,United States of America,-72.5312372,42.3951291
+University of Massachusetts Lowell,United States of America,-71.8257868,42.2468714
+Harvard University,United States of America,-71.1166286,42.3800977
+Massachusetts Institute of Technology,United States of America,-71.0934,42.3591
+University of Massachusetts Boston,United States of America,-71.0934,42.3591
+Northeastern University,United States of America,-71.0894884,42.340082
+University of Chile,Chile,-70.650391,-33.443809
+University of Tromsø - The Arctic University of Norway,Norway,-70.5448096,44.2139566
+Bangor University,United Kingdom,-68.7778138,44.8011821
+"University of Maine, Orono",United States of America,-68.6714486,44.8922637
+University of Puerto Rico at Mayagüez,Puerto Rico,-67.1451517,18.2013463
+National University of Córdoba,Argentina,-64.1887761,-31.4200833
+University of Buenos Aires,Argentina,-58.3951433,-34.5810691
+National University of La Plata,Argentina,-57.9535657,-34.9204948
+Queen's University,Canada,-52.7305585,47.5773383
+University of Campinas,Brazil,-51.1892999,-23.3035384
+University of Brasília,Brazil,-51.1754408,-23.2928657
+University of Sao Paulo,Brazil,-51.1602134,-23.3131265
+Federal University of Rio Grande do Sul,Brazil,-51.1183331,-30.0699383
+Federal University of Santa Catarina,Brazil,-50.2188556,-27.2423392
+Federal University of Paraná,Brazil,-49.2677116,-25.4291044
+Federal University of Minas Gerais,Brazil,-48.2580759,-18.916396
+Federal University of Santa Maria,Brazil,-48.2580759,-18.916396
+Federal University of São Carlos,Brazil,-47.8909263,-22.0087082
+Federal University of ABC,Brazil,-46.5265494,-23.6476859
+Federal University of São Paulo,Brazil,-46.5265494,-23.6476859
+Federal University of Bahia,Brazil,-45.0218618,-12.1484877
+Federal University of Rio de Janeiro,Brazil,-43.2258954,-22.8626877
+Rio de Janeiro State University,Brazil,-43.1728965,-22.9068467
+Federal University of Ceará,Brazil,-40.3367746,-3.6812737
+Federal University of Pernambuco,Brazil,-37.2418632,-9.3722349
+University of Iceland,Iceland,-21.9493575,64.1404869
+Jaume I University,Spain,-15.4549534,28.0755143
+Universidade Nova de Lisboa,Portugal,-9.1603293,38.7325996
+University of Lisbon,Portugal,-9.1487286,38.7181334
+"National University of Ireland, Galway",Ireland,-9.0654626,53.2847921
+University of Vigo,Spain,-8.8006641,42.2018823
+University of Aveiro,Portugal,-8.653527,40.6282384
+University of Porto,Portugal,-8.5962233,41.1785734
+University of Limerick,Ireland,-8.5663,52.67923
+University of Santiago de Compostela,Spain,-8.5448445,42.8782132
+University of Coimbra,Portugal,-8.5059903,40.1179531
+University College Cork,Ireland,-8.4911977,51.893609
+University of Minho,Portugal,-8.397568,41.557583
+Royal College of Surgeons in Ireland,Ireland,-8.24389,53.41291
+University of A Coruña,Spain,-7.8627803,42.3306852
+"National University of Ireland, Maynooth",Ireland,-6.5918499,53.3812896
+University of Córdoba (Spain),Spain,-6.3800471,39.4548686
+University of Valencia,Spain,-6.3770934,39.4576621
+University of Málaga,Spain,-6.3766227,39.4677265
+University of Extremadura,Spain,-6.3678554,39.4835608
+University of Cádiz,Spain,-6.3034112,36.5335142
+Dublin City University,Ireland,-6.2588538,53.3853811
+Trinity College Dublin,Ireland,-6.2576899,53.3454782
+University College Dublin,Ireland,-6.2168851,53.305257
+University of Salamanca,Spain,-6.0832929,37.3710677
+University of Ulster,United Kingdom,-5.9291219,54.5863619
+University of Glasgow,United Kingdom,-4.288761,55.87151
+University of Strathclyde,United Kingdom,-4.243943,55.862949
+Plymouth University,United Kingdom,-4.1372129,50.3732054
+Aberystwyth University,United Kingdom,-4.065922,52.417776
+University of Cantabria,Spain,-3.9878427,43.1828396
+Swansea University,United Kingdom,-3.9854934,51.6215514
+University of Castilla–La Mancha,Spain,-3.9176515,38.987051
+University of Jaén,Spain,-3.7849057,37.7795941
+University of Alcalá,Spain,-3.7617775,40.365473
+Autonomous University of Madrid,Spain,-3.7101598,40.4069567
+Carlos III University of Madrid,Spain,-3.7101598,40.4069567
+University of Granada,Spain,-3.6020343,37.1776261
+University of Exeter,United Kingdom,-3.5180167,50.7208387
+Cardiff University,United Kingdom,-3.1868361,51.4919075
+University of Edinburgh,United Kingdom,-3.1796292,55.9493918
+University of Dundee,United Kingdom,-3.023085,56.455827
+Liverpool John Moores University,United Kingdom,-2.9748672,53.4103136
+University of Western Brittany,France,-2.9326435,48.2020471
+University of St Andrews,United Kingdom,-2.7930852,56.3412112
+Lancaster University,United Kingdom,-2.7852725,54.0070009
+University of Liverpool,United Kingdom,-2.7254291,53.7512998
+University of Central Lancashire,United Kingdom,-2.7050991,53.7678484
+University of Manchester,United Kingdom,-2.6902872,53.7565609
+University of Bristol,United Kingdom,-2.6259899,51.4771065
+University of Almería,Spain,-2.4637136,36.834047
+University of Bath,United Kingdom,-2.325886,51.3639371
+Manchester Metropolitan University,United Kingdom,-2.275025,53.487286
+Keele University,United Kingdom,-2.2745983,53.0039516
+University of Aberdeen,United Kingdom,-2.0970459,57.1749492
+University of Stirling,United Kingdom,-2.0697416,51.8963837
+University of Birmingham,United Kingdom,-1.9256429,52.4484819
+Aston University,United Kingdom,-1.8906637,52.4837557
+University of Bradford,United Kingdom,-1.7619899,53.7915621
+Public University of Navarre,Spain,-1.6760691,42.6953909
+Newcastle University,United Kingdom,-1.6268973,54.9665195
+Durham University,United Kingdom,-1.586,54.768
+University of Warwick,United Kingdom,-1.563191,52.379411
+University of Leeds,United Kingdom,-1.5534731,53.8070423
+University of Nantes,France,-1.5512435,47.2112078
+University of Sheffield,United Kingdom,-1.48406,53.38071
+University of Southampton,United Kingdom,-1.396213,50.9353961
+Loughborough University,United Kingdom,-1.2189891,52.7686355
+University of Nottingham,United Kingdom,-1.1939984,52.9346979
+University of Murcia,Spain,-1.1306544,37.9922399
+University of Leicester,United Kingdom,-1.0920024,52.6075689
+University of Navarra,Spain,-0.9173876,41.6583303
+University of Zaragoza,Spain,-0.8992662,41.643859
+Open University (UK),United Kingdom,-0.8905446,52.2445113
+University of Reading,United Kingdom,-0.805388,51.3363534
+University of Portsmouth,United Kingdom,-0.7362328,51.3222924
+Miguel Hernández University of Elche,Spain,-0.6842187,38.2749004
+University of Pau and Pays de l'Adour,France,-0.6673545,43.4081695
+Cranfield University,United Kingdom,-0.6300115,52.0742111
+University of Kent,United Kingdom,-0.628784,52.073955
+University of Surrey,United Kingdom,-0.5904827,51.2423009
+University of Bordeaux,France,-0.5780251,44.8370298
+"Royal Holloway, University of London",United Kingdom,-0.5722843,51.4156216
+University of Angers,France,-0.563166,47.478419
+University of Alicante,Spain,-0.528309,38.38403
+Brunel University,United Kingdom,-0.4728634,51.5328782
+Polytechnic University of Valencia,Spain,-0.3762881,39.4699075
+University of Caen Lower Normandy,France,-0.370679,49.182863
+University of Hull,United Kingdom,-0.368825,53.769253
+University of Hertfordshire,United Kingdom,-0.3664644,51.6516442
+"Birkbeck, University of London",United Kingdom,-0.3523973,51.5397814
+"Royal Veterinary College, University of London",United Kingdom,-0.1900293,51.7108116
+Imperial College London,United Kingdom,-0.1731784,51.5177367
+University of Brighton,United Kingdom,-0.1349366,50.8241295
+University College London,United Kingdom,-0.1335692,51.5247063
+London School of Hygiene & Tropical Medicine,United Kingdom,-0.1330843,51.5225729
+University of Oxford,United Kingdom,-0.1263912,51.5177859
+King's College London,United Kingdom,-0.1164836,51.5119334
+"St George's, University of London",United Kingdom,-0.1105825,51.5619276
+Queen Mary University of London,United Kingdom,-0.0591022,51.5169409
+City University London,United Kingdom,-0.058781,51.5165535
+University of Cambridge,United Kingdom,0.1177882,52.2016671
+University of Sussex,United Kingdom,0.272273,50.7886322
+University of Lleida,Spain,0.6200146,41.6175899
+"University François Rabelais, Tours",France,0.6813896,47.3963222
+University of Essex,United Kingdom,0.9531797,51.8768245
+University of York,United Kingdom,1.069896,51.3085131
+University of Canterbury,New Zealand,1.0760948,51.2704842
+University of Rouen,France,1.099971,49.443232
+University of East Anglia,United Kingdom,1.2406141,52.6184758
+National Polytechnic Institute of Toulouse,France,1.444209,43.604652
+Toulouse School of Economics,France,1.444209,43.604652
+Polytechnic University of Catalonia,Spain,1.5208624,41.5911589
+University of Franche-Comté,France,1.921086,47.843201
+University of Savoy,France,1.9304856,47.8376224
+University of Orléans,France,1.9557411,47.8490599
+Blaise Pascal University,France,2.1364062,48.8185833
+University of Évry Val d'Essonne,France,2.1569416,48.4585698
+Autonomous University of Barcelona,Spain,2.1734035,41.3850639
+University of Barcelona,Spain,2.1734035,41.3850639
+Paris Dauphine University (Paris 9),France,2.3075232,48.8588342
+Paris Diderot University - Paris 7,France,2.3075232,48.8588342
+École Centrale Paris,France,2.3272053,48.8635276
+Ecole Polytechnique,France,2.3473044,48.8480063
+Paris-Est Créteil Val-de-Marne University,France,2.3522219,48.856614
+University of Paris 13,France,2.4095529,48.8789786
+University of Girona,Spain,2.8214264,41.9794005
+University of the Balearic Islands,Spain,3,39.5
+Lille 2 University of Health and Law,France,3.057256,50.62925
+University of Auvergne,France,3.3448536,45.7032695
+Ghent University,Belgium,3.7407719,51.0241197
+University of Montpellier,France,3.876716,43.610769
+University of Mons,Belgium,3.956659,50.4542408
+University of Reims Champagne-Ardenne,France,4.031696,49.258329
+Vrije Universiteit Brussel,Belgium,4.3063576,50.8892103
+Université Libre de Bruxelles,Belgium,4.3821646,50.8135979
+University of Antwerp,Belgium,4.4131738,51.2236072
+Leiden University,Netherlands,4.481357,52.1569487
+Katholieke Universiteit Leuven,Belgium,4.7004882,50.8759566
+Ecole Normale Superieure - Lyon,France,4.835659,45.764043
+Institut national des sciences Appliquées de Lyon,France,4.835659,45.764043
+Université de Namur,Belgium,4.8719854,50.4673883
+University of Amsterdam,Netherlands,4.9470315,52.3561962
+Utrecht University,Netherlands,5.1214201,52.0907374
+University of Bergen,Norway,5.3220544,60.3912628
+Hasselt University,Belgium,5.3610845,50.9372065
+Eindhoven University of Technology,Netherlands,5.4521652,51.4118931
+Aix Marseille University,France,5.5693374,43.2897647
+Wageningen University and Research Centre,Netherlands,5.6653948,51.9691868
+Maastricht University,Netherlands,5.6886039,50.8442878
+Grenoble Institute of Technology,France,5.724524,45.188529
+Radboud University Nijmegen,Netherlands,5.8372264,51.8125626
+University of Geneva,Switzerland,6.1008613,46.2243735
+University of Lorraine,France,6.4529978,48.1678772
+University of Groningen,Netherlands,6.5665018,53.2193835
+University of Lausanne,Switzerland,6.6528621,46.5287859
+University of Düsseldorf,Germany,6.7734556,51.2277411
+University of Duisburg-Essen,Germany,6.7868875,51.4287845
+University of Twente,Netherlands,6.8491442,52.2462129
+University of Neuchâtel,Switzerland,6.9292732,46.9899874
+University of Cologne,Germany,6.9602786,50.937531
+University of Bonn,Germany,7.091353,50.7243357
+University of Fribourg,Switzerland,7.1619719,46.8064773
+Ruhr University Bochum,Germany,7.2586022,51.4471312
+University of Münster,Germany,7.271265,51.4471925
+Technical University of Dortmund,Germany,7.4652981,51.5135872
+Polytechnic University of Turin,Italy,7.6868565,45.070312
+University of Strasbourg,France,7.7521113,48.5734053
+Albert Ludwig University of Freiburg,Germany,7.8421043,47.9990077
+University of Osnabrück,Germany,8.022895,52.286698
+University of Siegen,Germany,8.0290541,50.9057904
+University of Mannheim,Germany,8.4660395,49.4874592
+Swiss Federal Institute of Technology in Zurich,Switzerland,8.541694,47.3768866
+University of Sassari,Italy,8.5556826,40.7259269
+University of Zurich,Switzerland,8.5600613,47.3589251
+University of Bremen,Germany,8.6493781,53.1678088
+Jacobs University Bremen,Germany,8.6505383,53.1682713
+Goethe University Frankfurt,Germany,8.6670057,50.1267568
+Justus Liebig University Giessen,Germany,8.6784031,50.5840512
+University of Marburg,Germany,8.7667933,50.8021728
+University of Verona,Italy,8.7976037,45.7780081
+University of Trieste,Italy,8.8092218,45.7853935
+University of Milan,Italy,8.8324247,45.818325
+University of Trento,Italy,8.8334433,45.8187548
+University of Turin,Italy,8.8744546,45.7901029
+University of Palermo,Italy,8.8753929,45.7891476
+University of Genoa,Italy,8.8770319,45.7892014
+University of Bologna,Italy,8.8774096,45.7880924
+University of Tübingen,Germany,9.0576448,48.5216364
+University of Cagliari,Italy,9.1216613,39.2238411
+University of Pavia,Italy,9.1582069,45.1847248
+University of Konstanz,Germany,9.1732384,47.6779496
+Polytechnic University of Milan,Italy,9.1859243,45.4654219
+University of Milan - Bicocca,Italy,9.2082569,45.5193521
+University of Hohenheim,Germany,9.2170429,48.715394
+University of Hanover,Germany,9.7244737,52.3536735
+Hannover Medical School,Germany,9.7320104,52.3758916
+University of Ulm,Germany,9.9488069,48.4226264
+University of Goettingen,Germany,9.9525578,51.5608461
+Julius-Maximilian's University of Würzburg,Germany,9.9533548,49.7913044
+University of Würzburg,Germany,9.9533548,49.7913044
+Technical University of Denmark,Denmark,9.9615901,57.0532387
+Aalborg University,Denmark,9.9782838,57.0207906
+University of Hamburg,Germany,9.9883584,53.563021
+University of Brescia,Italy,10.2118019,45.5415526
+University of Parma,Italy,10.3279036,44.801485
+Scuola Normale Superiore di Pisa,Italy,10.4004543,43.7196569
+Technical University of Braunschweig,Germany,10.5267696,52.2688736
+University of Modena and Reggio Emilia,Italy,10.6296859,44.6989932
+University of Lübeck,Germany,10.6865593,53.8654673
+University of Augsburg,Germany,10.89779,48.3705449
+University of Erlangen-Nuremberg,Germany,11.0273891,49.5737593
+University of Florence,Italy,11.2692291,43.7779676
+University of Siena,Italy,11.3307574,43.318809
+University of Innsbruck,Austria,11.3436853,47.2643597
+Innsbruck Medical University,Austria,11.4041024,47.2692124
+Technical University of Munich,Germany,11.5671215,48.1495771
+University of Bayreuth,Germany,11.5713346,49.9456399
+Ludwig Maximilian University of Munich,Germany,11.5819806,48.1351253
+University of Jena,Germany,11.5892372,50.927054
+University of Ferrara,Italy,11.6219939,44.8288737
+Otto-von-Guericke University Magdeburg,Germany,11.6372627,52.1424096
+University of Padua,Italy,11.893188,45.410225
+Roma Tre University,Italy,11.9089567,42.150398
+University of Gothenburg,Sweden,11.9853213,57.6954209
+Aarhus University,Denmark,12.1021324,55.6954021
+University of Leipzig,Germany,12.3730747,51.3396955
+University of Perugia,Italy,12.3908279,43.1107168
+Sapienza University of Rome,Italy,12.5125693,41.9014226
+University of Copenhagen,Denmark,12.572771,55.6852
+University of Roma - Tor Vergata,Italy,12.6200302,41.8484155
+University of Potsdam,Germany,12.96976,52.41323
+University of Salzburg,Austria,13.0411939,47.8232621
+University of Camerino,Italy,13.0683254,43.1356503
+University of Udine,Italy,13.2345794,46.0710668
+University of Greifswald,Germany,13.3923414,54.0865463
+University of L'Aquila,Italy,13.3995091,42.3498479
+Free University of Berlin,Germany,13.404954,52.5200066
+Humboldt University of Berlin,Germany,13.5333041,52.4321218
+"G. d'Annunzio University, Chieti-Pescara",Italy,14.2160898,42.4617902
+Second University of Naples,Italy,14.2681244,40.8517746
+Johannes Kepler University of Linz,Austria,14.2856695,48.290877
+Czech Technical University in Prague,Czech Republic,14.4378005,50.0755381
+"University of Chemistry and Technology, Prague",Czech Republic,14.4378005,50.0755381
+Charles University in Prague,Czech Republic,14.4790226,50.0739978
+University of Ljubljana,Slovenia,14.5185278,46.0512135
+University of Pisa,Italy,14.6547033,41.5606325
+University of Basilicata,Italy,14.6797989,41.5581424
+University of Calabria,Italy,14.6809791,41.5594519
+University of Catania,Italy,15.0830304,37.5078772
+Örebro University,Sweden,15.2134105,59.2752626
+Graz University of Technology,Austria,15.439504,47.070714
+Medical University of Graz,Austria,15.4496119,47.0787761
+University of Graz,Austria,15.4499838,47.0777993
+University of Messina,Italy,15.5547404,38.1934163
+Linkoping University,Sweden,15.6213727,58.410807
+University of Maribor,Slovenia,15.6458812,46.5546503
+University of Zagreb,Croatia,15.981919,45.8150108
+Vienna University of Technology,Austria,16.3358371,48.1625026
+University of Vienna,Austria,16.3359792,48.2747157
+Medical University of Vienna,Austria,16.3738189,48.2081743
+"University of Natural Resources and Life Sciences, Vienna",Austria,16.3738189,48.2081743
+Magna Græcia University of Catanzaro,Italy,16.5876516,38.9097919
+Adam Mickiewicz University in Poznań,Poland,16.9243717,52.4664886
+Wrocław University of Technology,Poland,17.0385376,51.1078852
+University of Wrocław,Poland,17.074989,51.1107912
+Comenius University in Bratislava,Slovakia,17.1077477,48.1485965
+"Palacký University, Olomouc",Czech Republic,17.2490648,49.586179
+Stockholm University,Sweden,17.9430376,59.2190446
+Karolinska Institute,Sweden,18.0214528,59.3494376
+University of Pécs,Hungary,18.232266,46.0727345
+University of Cape Town,South Africa,18.4598667,-33.9577461
+Stellenbosch University,South Africa,18.6264694,-33.8812733
+University of Silesia,Poland,18.6765269,50.2895721
+Budapest University of Technology and Economics,Hungary,19.040235,47.497912
+AGH University of Science and Technology,Poland,19.9070824,50.0676785
+University of Szeged,Hungary,20.1468541,46.248986
+University of Belgrade,Serbia,20.4559904,44.8262834
+University of Ioannina,Greece,20.8537466,39.6650288
+University of Debrecen,Hungary,21.620443,47.5584793
+University of Patras,Greece,21.734574,38.2466395
+University of Thessaly,Greece,22.047637,39.6102887
+Åbo Akademi University,Finland,22.2666303,60.4518126
+University of Turku,Finland,22.2666303,60.4518126
+Sofia University,Bulgaria,23.3216445,42.6957897
+Tampere University of Technology,Finland,23.7609535,61.4977524
+University of Tampere,Finland,23.7609535,61.4977524
+Babeș-Bolyai University,Romania,24.496977,47.1396669
+University of Crete,Greece,24.8092691,35.240117
+Vilnius University,Lithuania,25.2796514,54.6871555
+University of Jyvaskyla,Finland,25.7472567,62.2426034
+University of Bucharest,Romania,26.1025072,44.4355132
+University of Tartu,Estonia,26.7265098,58.3733281
+Dokuz Eylül University,Turkey,27.0322689,38.3946981
+Ankara University,Turkey,27.431021,37.0352214
+University of the Witwatersrand,South Africa,28.0437484,-26.1800289
+Lappeenranta University of Technology,Finland,28.1896628,61.0549929
+University of Pretoria,South Africa,28.2007589,-25.7328565
+Istanbul Technical University,Turkey,28.9783589,41.0082376
+Koç University,Turkey,29.0749608,41.2083389
+Istanbul University,Turkey,29.1344302,40.941668
+Sabancı University,Turkey,29.3768722,40.8924477
+Alexandria University,Egypt,29.9078899,31.1900438
+Saint Petersburg State University,Russia,30.3350986,59.9342802
+University of KwaZulu-Natal,South Africa,31.0093701,-29.8590352
+Cairo University,Egypt,31.2009519,30.0260766
+Ain Shams University,Egypt,31.2765847,30.0742446
+Mansoura University,Egypt,31.3623978,31.0414853
+Makerere University,Uganda,32.5681424,0.3398836
+University of Cyprus,Cyprus,33.0443356,34.6752289
+Bar-Ilan University,Israel,34.747186,32.013978
+Ben-Gurion University of the Negev,Israel,34.7809839,30.8572092
+Tel Aviv University,Israel,34.8046418,32.1036377
+University of Haifa,Israel,35.021463,32.759028
+Hebrew University of Jerusalem,Israel,35.197143,31.779299
+American University of Beirut,Lebanon,35.4780935,33.9021926
+Gazi University,Turkey,35.9025234,41.5686538
+Moscow Institute of Physics and Technology,Russia,37.6173,55.755826
+King Abdulaziz University,Saudi Arabia,39.2640102,21.5189057
+King Saud University,Saudi Arabia,46.6270967,24.7224191
+King Fahd University of Petroleum and Minerals,Saudi Arabia,50.1498042,26.3048047
+Sharif University of Technology,Iran,51.3277804,35.7569204
+Tehran University of Medical Sciences,Iran,51.3941382,35.7516264
+University of Tehran,Iran,51.4000833,35.7048679
+Shahid Beheshti University of Medical Sciences,Iran,51.4153544,35.7176988
+Isfahan University of Technology,Iran,51.5616308,32.7373617
+Shiraz University,Iran,52.5972479,29.7222318
+United Arab Emirates University,United Arab Emirates,55.6968239,24.2005508
+Indian Institute of Technology Bombay,India,72.8384624,19.0515532
+Kōchi University,Japan,76.2673041,9.9312328
+Panjab University,India,76.7653924,30.7606188
+University of Delhi,India,77.1183137,28.7499867
+Indian Institute of Technology Delhi,India,77.193806,28.5429676
+Indian Institute of Technology Kanpur,India,77.193806,28.5429676
+"All India Institute of Medical Sciences, New Delhi",India,77.2090212,28.6139391
+Indian Institute of Science,India,77.566677,13.0220277
+Indian Institute of Technology Roorkee,India,77.8953181,29.8662184
+University of Hyderabad,India,78.3330906,17.4560759
+Tata Institute of Fundamental Research,India,78.5845374,17.4730312
+Indian Institute of Technology Madras,India,80.2336907,12.9914929
+Banaras Hindu University,India,82.9904737,25.2685304
+Novosibirsk State University,Russia,83.0938315,54.8437862
+University of Calcutta,India,88.3794693,22.6292296
+Jadavpur University,India,88.394867,22.4828735
+Chiang Mai University,Thailand,97.968141,19.3341499
+Mahidol University,Thailand,100.3242456,13.7932157
+King Mongkut’s University of Technology Thonburi,Thailand,100.4874338,13.7164911
+"University of Science, Malaysia",Malaysia,101.5848034,3.2195403
+University of Malaya,Malaysia,101.6579145,3.1191481
+Lanzhou University,China,103.8605305,36.0462293
+Southwest Jiaotong University,China,104.054862,30.698826
+Sichuan University,China,104.0911486,30.6356501
+University of Electronic Science and Technology of China,China,104.098726,30.6727085
+Chongqing University,China,106.46608,29.564637
+Northwestern Polytechnical University,China,108.9168656,34.2413672
+Xidian University,China,108.9172138,34.229571
+Xian Jiao Tong University,China,108.942284,34.2162798
+Third Military Medical University,China,108.9806583,34.2713032
+Fourth Military Medical University,China,108.9858356,34.270077
+Second Military Medical University,China,108.9858356,34.270077
+Hunan University,China,112.9216588,28.2138999
+Hunan Normal University,China,112.9467923,28.1851154
+Xiangtan University,China,112.9967776,28.1354464
+Sun Yat-sen University,China,113.292871,23.092124
+Southern Medical University,China,113.3342098,23.1889976
+South China Normal University,China,113.345387,23.140348
+South China Agricultural University,China,113.3463393,23.1634306
+Jinan University,China,113.3477697,23.1281082
+Central South University,China,113.3991582,23.0443826
+South China University of Technology,China,113.4053324,23.0466219
+University of Macau,Macau,113.5575513,22.1634112
+Zhengzhou University,China,113.6453394,34.7426753
+Henan Normal University,China,113.7180518,34.7061452
+Shenzhen University,China,113.939567,22.5350039
+City University of Hong Kong,Hong Kong,114.1720025,22.3374868
+Hong Kong Polytechnic University,Hong Kong,114.178928,22.302516
+Hong Kong Baptist University,Hong Kong,114.1829159,22.3354512
+Chinese University of Hong Kong,Hong Kong,114.203926,22.417442
+University of Hong Kong,Hong Kong,114.203926,22.417442
+Hong Kong University of Science and Technology,Hong Kong,114.2715461,22.2917485
+Wuhan University of Technology,China,114.3523886,30.5173109
+Central China Normal University,China,114.3611861,30.5237834
+Wuhan University,China,114.4017819,30.5181622
+China University of Geosciences (Wuhan),China,114.4019908,30.5207598
+Huazhong University of Science and Technology,China,114.4109032,30.5171328
+East China Normal University,China,114.5852447,29.0278558
+Northeast Normal University,China,114.5852447,29.0278558
+China Agricultural University,China,115.4903605,38.8509543
+Curtin University,Australia,115.8945948,-32.0076092
+"Putra University, Malaysia",Malaysia,116.0838918,5.9686082
+Beijing Normal University,China,116.3049709,39.9314428
+Renmin University of China,China,116.3078309,39.9682472
+Tsinghua University,China,116.3246671,39.9990443
+Beijing Institute of Technology,China,116.3466986,39.6715172
+Peking University,China,116.3497578,39.9917319
+Beihang University,China,116.3498961,39.9826114
+Capital Medical University,China,116.3530323,39.8676818
+University of Science and Technology Beijing,China,116.3622099,39.9905638
+University of Science and Technology of China,China,116.3622099,39.9905638
+Peking Union Medical College,China,116.4164843,39.9111331
+Beijing University of Chemical Technology,China,116.4244376,39.9715272
+Beijing University of Technology,China,116.4805185,39.8779035
+Shandong University,China,117.0593187,36.6716339
+Tianjin University,China,117.1671447,39.110096
+Nankai University,China,117.1787466,39.1036898
+Tianjin Medical University,China,117.1837778,39.107426
+Hefei University of Technology,China,117.2917677,31.8461012
+Xiamen University,China,118.0933388,24.4357457
+China Medical University (Taiwan),Taiwan,118.1635579,24.4588193
+Northwest University (China),China,118.1832835,39.6750049
+Southeast University,China,118.1832835,39.6750049
+Southwest University,China,118.1832835,39.6750049
+Nanjing Normal University,China,118.7702206,32.0542891
+Nanjing Medical University,China,118.773841,32.0456888
+Nanjing University of Technology,China,118.7751402,32.0799763
+Jiangsu University,China,118.7811839,32.0735265
+Nanjing University of Aeronautics and Astronautics,China,118.8180754,32.0341244
+Nanjing Agricultural University,China,118.8466515,32.0376312
+Nanjing University of Science and Technology,China,118.853388,32.0356169
+China Pharmaceutical University,China,118.914127,31.897684
+Nanjing University,China,118.9612698,32.1278598
+Fuzhou University,China,119.2729128,26.0723692
+Yangzhou University,China,119.421628,32.4005386
+Zhejiang University of Technology,China,120.1629446,30.2929851
+Zhejiang University,China,120.1689207,30.2929634
+Jiangnan University,China,120.278585,31.48425
+Ocean University of China,China,120.3372672,36.0637225
+National Chung Hsing University,Taiwan,120.3528844,23.0267598
+Soochow University,China,120.6393479,31.3094486
+Chung Yuan Christian University,Taiwan,121.2348979,24.9553988
+Shanghai University,China,121.388812,31.320573
+Donghua University,China,121.4147689,31.2019139
+Shanghai Normal University,China,121.4193454,31.1615031
+Shanghai Jiao Tong University,China,121.4237432,31.1790053
+East China University of Science and Technology,China,121.4252165,31.1409789
+Fudan University,China,121.5014465,31.2985307
+Tongji University,China,121.50631,31.282182
+National Taiwan Normal University,Taiwan,121.5273658,25.0254571
+National Taiwan University,Taiwan,121.5273658,25.0254571
+Dalian University of Technology,China,121.5319155,38.8769137
+Taipei Medical University,Taiwan,121.5654177,25.0329694
+Toho University,Japan,121.7714791,39.0563638
+Northeastern University (China),China,123.4145076,41.7674641
+Jilin University,China,125.3195857,43.8833943
+Harbin Engineering University,China,126.667948,45.775375
+Harbin Institute of Technology,China,126.6901205,45.7835064
+Gwangju Institute of Science and Technology,South Korea,126.8526012,35.1595454
+University of Seoul,South Korea,126.9779692,37.566535
+Pusan National University,South Korea,129.0756416,35.1795543
+Ulsan National Institute of Science and Technology,South Korea,129.3113596,35.5383773
+University of Ulsan,South Korea,129.3113596,35.5383773
+Pohang University of Science and Technology,South Korea,129.3434808,36.0190178
+Kurume University,Japan,130.5083735,33.3192865
+Kagoshima University,Japan,130.5571158,31.5965535
+University of Western Australia,Australia,130.8667531,-12.3707906
+University of South Australia,Australia,130.8689998,-12.3745345
+Charles Darwin University,Australia,130.87062,-12.37274
+University of Miyazaki,Japan,131.4202411,31.9076736
+Hiroshima University,Japan,132.4552927,34.3852029
+Okayama University,Japan,133.9195019,34.6551456
+Tottori University,Japan,134.2350914,35.5011326
+University of Tokushima,Japan,134.5548438,34.0702703
+University of Hyogo,Japan,135.1830706,34.6912688
+Kobe University,Japan,135.1955112,34.690083
+Osaka University,Japan,135.5021651,34.6937378
+Osaka Prefecture University,Japan,135.5196609,34.6862971
+Kyoto Institute of Technology,Japan,135.7680294,35.0116363
+Kyoto Prefectural University of Medicine,Japan,135.7680294,35.0116363
+Kyoto University,Japan,135.7680294,35.0116363
+Nara Institute of Science and Technology,Japan,135.8050002,34.6850869
+University of Fukui,Japan,136.2194938,36.0640669
+Kanazawa University,Japan,136.6562051,36.5613254
+University of Toyama,Japan,137.2136768,36.6959518
+Shizuoka University,Japan,138.3827596,34.975562
+University of Yamanashi,Japan,138.5684486,35.6641575
+University of Adelaide,Australia,138.5960609,-34.9088112
+Gunma University,Japan,139.0604061,36.3906675
+Yokohama National University,Japan,139.6380256,35.4437078
+Saitama Medical University,Japan,139.6454822,35.8617292
+Saitama University,Japan,139.6454822,35.8617292
+Tokyo Metropolitan University,Japan,139.6917064,35.6894875
+Tokyo Women's Medical University,Japan,139.6917064,35.6894875
+University of Tsukuba,Japan,140.0766423,36.0834857
+Ibaraki University,Japan,140.4467935,36.3418112
+Sapporo Medical University,Japan,141.3543763,43.0620958
+University of Melbourne,Australia,144.9590866,-37.8019927
+RMIT University,Australia,144.9636886,-37.8081936
+La Trobe University,Australia,145.0591299,-37.7292904
+Deakin University,Australia,145.1158415,-37.8499622
+Monash University,Australia,145.1303881,-37.914517
+Flinders University,Australia,145.1701804,-38.2612843
+Murdoch University,Australia,145.1896006,-38.159341
+James Cook University,Australia,146.7598451,-19.3293709
+University of Queensland,Australia,146.7872377,-19.3176715
+University of Tasmania,Australia,147.3255538,-42.9045304
+University of Wollongong,Australia,150.8849642,-34.4112787
+University of Western Sydney,Australia,150.9909189,-33.9380986
+Macquarie University,Australia,151.1131306,-33.7756994
+University of Sydney,Australia,151.1598462,-33.8628753
+University of Technology Sydney,Australia,151.2020978,-33.8827039
+University of New England (Australia),Australia,151.639059,-30.4967317
+University of Newcastle,Australia,151.6970537,-32.8944481
+University of New South Wales,Australia,151.7035792,-32.8963787
+Griffith University,Australia,153.384564,-27.963265
+University of Otago,New Zealand,170.513132,-45.863208
+Victoria University of Wellington,New Zealand,174.7425453,-41.2852714
+University of Auckland,New Zealand,174.7699782,-36.8490661
+University of Waikato,New Zealand,175.312121,-37.787183
+Massey University,New Zealand,175.6140639,-40.3850866
+Australian National University,Australia,149.118506,-35.277709
+National University of Singapore,Singapore,103.776362,1.296793
+Nanyang Technological University,Singapore,103.683167,1.348267
+University of Hawaii at Manoa,United States of America,-157.818871,21.29997
+National Cheng Kung University,Taiwan,120.218116,22.999717
+University of Texas MD Anderson Cancer Center,United States of America,-95.397168,29.707242
+Weizmann Institute of Science,Israel,34.811388,31.907798
+Technion Israel Institute of Technology,Israel,35.023149,32.776868
+Southern Methodist University,United States of America,-96.784528,32.841236
+Kyushu University,Japan,130.425044,33.626909
+Nagoya University,Japan,136.967562,35.153482
+Tokyo Institute of Technology,Japan,139.683552,35.605097
+Keio University,Japan,139.742959,35.649226
+Waseda University,Japan,139.720826,35.709522
+University of Tokyo,Japan,139.761989,35.712965
+Korea Advanced Institute of Science and Technology,South Korea,127.364057,36.369358
+Seoul National University,South Korea,126.951873,37.460112
+Hanyang University,South Korea,127.045322,37.557215
+Sungkyunkwan University,South Korea,126.993606,37.58821
+Korea University,South Korea,127.02782,37.590816
+Tohoku University,Japan,140.874085,38.254045
+Middle East Technical University,Turkey,32.77892,39.892848
+University of Illinois at Urbana-Champaign,United States of America,-88.227086,40.101911
+Complutense University of Madrid,Spain,-3.728051,40.447808
+Columbia University,United States of America,-73.961528,40.807572
+Boğaziçi University,Turkey,29.050986,41.084765
+Pompeu Fabra University,Spain,2.179064,41.379353
+University of Massachusetts Medical School,United States of America,-71.761104,42.277236
+Hokkaido University,Japan,141.340013,43.077957
+University of Rochester,United States of America,-77.626057,43.130616
+Paul Sabatier University - Toulouse III,France,1.468681,43.560491
+Mayo Medical School,United States of America,-92.466996,44.021283
+Joseph Fourier University,France,5.767373,45.191729
+Claude Bernard University Lyon 1,France,4.868539,45.780343
+Swiss Federal Institute of Technology Lausanne,Switzerland,6.566822,46.519048
+University of Bern,Switzerland,7.43813,46.950482
+University of Basel,Switzerland,7.582568,47.560217
+University of Paris-Sud,France,2.176462,48.697897
+Ecole Normale Superieure - Paris,France,2.345158,48.842375
+Mines ParisTech,France,2.339664,48.845613
+Pierre and Marie Curie University,France,2.35752,48.847012
+University of Paris Descartes,France,2.34075,48.851237
+Karlsruhe Institute of Technology,Germany,8.416998,49.011927
+Ruprecht Karl University of Heidelberg,Germany,8.670271,49.419154
+Johannes Gutenberg University of Mainz,Germany,8.241169,49.993399
+Catholic University of Louvain,Belgium,4.614945,50.669728
+RWTH Aachen University,Germany,6.065676,50.780078
+Dresden University of Technology,Germany,13.728964,51.02924
+London School of Economics and Political Science,United Kingdom,-0.117387,51.514434
+Erasmus University Rotterdam,Netherlands,4.525994,51.915557
+Delft University of Technology,Netherlands,4.3714,52.000737
+VU University Amsterdam,Netherlands,4.865763,52.333711
+University of Kiel,Germany,10.114711,54.345917
+Lomonosov Moscow State University,Russia,37.528573,55.703868
+Lund University,Sweden,13.203547,55.711906
+Royal Institute of Technology,Sweden,18.070783,59.349752
+Uppsala University,Sweden,17.629913,59.85089
+University of Oslo,Norway,10.721846,59.939926
+University of Helsinki,Finland,24.951085,60.172704
+Norwegian University of Science and Technology,Norway,10.401755,63.419686
+Yuan Ze University,Taiwan,24.97023,121.2632
+Yonsei University,South Korea,37.56409,126.939

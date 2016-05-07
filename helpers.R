@@ -9,10 +9,30 @@ split_rank <- function(rank) {
   return(new_rank)
 }
 
+
+
+
+baruni <- function(df, yvar) {
+  baruni <- gvisColumnChart(df,
+                             yvar=yvar,
+                             options=list(height=500,
+                                          legend="{position: 'top', maxLines: 10}",
+                                          vAxis='{minValue:0, maxValue:100}'))
+  baruni
+}
+
+
+
 compuni <- function(df, yvar) {
   compuni <- gvisColumnChart(df,
                                xvar="new_name", 
                                yvar=yvar,
-                               options=list(height=500))
+                               options=list(height=500,
+                                            legend="bottom"))
   compuni
+}
+
+
+ranktoscore <- function(x) { 
+  return((1-x/1000) * 100) #n=1000 obs in CWUR 2015
 }

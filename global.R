@@ -17,7 +17,11 @@ cwur = read.csv("./data/cwurData.csv", stringsAsFactors = F) %>%
                                       gsub('The ','',university_name), 
                                       university_name)) %>%
   left_join(., cleanupRename, by = c('university_name')) %>%
-  mutate(., new_name = ifelse(is.na(new_name), university_name, new_name))
+  mutate(., new_name = ifelse(is.na(new_name), university_name, new_name)) %>%
+  filter(., year == 2015)
+#Missingness check: no NAs for 2015
+cwur[,c(5:12)] = sapply(cwur[,c(5:12)], ranktoscore) #Convert CWUR ranks to scores
+
 
 shanghaiData = read.csv("./data/shanghaiData.csv", stringsAsFactors = F) %>%
   left_join(., rbind(school_and_country_table,cleanupCountry), by = c('university_name')) %>%
@@ -25,7 +29,11 @@ shanghaiData = read.csv("./data/shanghaiData.csv", stringsAsFactors = F) %>%
                                       gsub('The ','',university_name), 
                                       university_name)) %>%
   left_join(., cleanupRename, by = c('university_name')) %>%
-  mutate(., new_name = ifelse(is.na(new_name), university_name, new_name))
+  mutate(., new_name = ifelse(is.na(new_name), university_name, new_name)) %>%
+  filter(., year == 2015)
+#Missingness check: total_score is missing for universities ranked >100 (do not use; take rank instead); use kNN for imputing ns NAs (sqrt(n) ~ 70)
+# shanghaiData.i = kNN(shanghaiData, k = 70)
+# shanghaiData = shanghaiData.i[,1:13]
 
 timesData = read.csv("./data/timesData.csv", stringsAsFactors = F) %>%
   mutate(., university_name = ifelse (grepl('^The ', university_name), 
@@ -35,16 +43,16 @@ timesData = read.csv("./data/timesData.csv", stringsAsFactors = F) %>%
   mutate(., new_name = ifelse(is.na(new_name), university_name, new_name),
          international = as.numeric(international),
          income = as.numeric(income),
-         total_score = as.numeric(total_score))
-
-#expenditure = read.csv("education_expenditure_supplementary_data.csv", stringsAsFactors = F)
-#attainment = read.csv("educational_attainment_supplementary_data.csv", stringsAsFactors = F)
+         total_score = as.numeric(total_score)) %>%
+  filter(., year == 2015)
+#Missingness check: total_score is missing for universities ranked >200 (do not use; take rank instead); use kNN for imputing NAs (sqrt(n) ~ 51)
+# timesData.i = kNN(timesData, k = 51)
+# timesData = timesData.i[,1:15]
 
 #Data frame of unique universities ranked in 2015
 rankings = unique(rbind(cwur[,c('new_name','country','year')],
                      timesData[,c('new_name','country','year')],
                      shanghaiData[,c('new_name','country','year')]) %>%
-  filter(., year == 2015) %>%
   mutate(., country = gsub('Republic of Ireland', 'Ireland', country)) %>%
   mutate(., country = gsub('USA','United States of America', country)) %>%
   mutate(., country = gsub('Unisted States of America','United States of America', country)) %>%
@@ -74,10 +82,12 @@ rankings = unique(rbind(cwur[,c('new_name','country','year')],
 countries = sort(unique(rankings$country))
 universities = sort(unique(rankings$new_name))
 
+#Quick way to get the means of the scoring criteria
 df.2015.mean = rankings[,c(2,6:23,25,28,30:36)] %>%
   group_by(country) %>% 
   summarise_each(funs(f = round(mean(., na.rm=TRUE))))
 
+#Data frame for mapping countries
 df.2015.country = rankings %>%
   group_by(., country) %>%
   summarise(., top_cwur = min(rank_cwur, na.rm=T), 
@@ -89,8 +99,9 @@ df.2015.country = rankings %>%
             count_cwur = sum(!is.na(rank_cwur)),
             count_times = sum(!is.na(rank_times)),
             count_shanghai = sum(!is.na(rank_shanghai))) %>%
-  left_join(., df.2015.mean, by = 'country')
+  left_join(., df.2015.mean, by = 'country') #Adding columns for the means of scoring criteria
 
-
+#Data frame for mapping universities
 df.2015.uni = rankings %>%
   filter(., !is.na(lon) & !is.na(lat)) ####---> Need to add more coordinates!!!!
+
