@@ -2,11 +2,11 @@ new_name,country,lon,lat
 Clarkson University,United States of America,-147.8729731,64.8418088
 Cornell University,United States of America,-76.473492,42.453473
 Drexel University,United States of America,-147.8646944,64.8363204
-Wake Forest University,United States of America,-147.8634295,64.8366123
+Wake Forest University,United States of America,-80.277983,36.131956
 Princeton University,United States of America,-74.651427,40.343972
-Syracuse University,United States of America,-147.8628983,64.8432475
+Syracuse University,United States of America,-76.135169,43.039161
 Lehigh University,United States of America,-147.858826,64.8391522
-Dartmouth College,United States of America,-147.8581336,64.8438576
+Dartmouth College,United States of America,-72.288693,43.704425
 Stanford University,United States of America,-122.16958,37.427432
 Duke University,United States of America,-78.938272,36.001434
 Yale University,United States of America,-72.9223,41.316324
@@ -845,4 +845,4 @@ University of Oslo,Norway,10.721846,59.939926
 University of Helsinki,Finland,24.951085,60.172704
 Norwegian University of Science and Technology,Norway,10.401755,63.419686
 Yuan Ze University,Taiwan,24.97023,121.2632
-Yonsei University,South Korea,37.56409,126.939
+Yonsei University,South Korea,126.938561,37.565775

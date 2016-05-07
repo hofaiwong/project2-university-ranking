@@ -71,72 +71,73 @@ shinyServer(function(input, output){
     df.2015.country[,c(1,4,3,2,7,6,5,10,9,8)]
   })
   
-  unimapdata = reactive ({
-    if (input$sourceUni==1) { #Shanghai
-      df = df.2015.uni %>%
-        filter(rank_shanghai>=input$s.sh.rank[1],
-               rank_shanghai<=input$s.sh.rank[2],
-               alumni>=input$s.sh.alumni[1],
-               alumni<=input$s.sh.alumni[2],
-               award>=input$s.sh.award[1],
-               award<=input$s.sh.award[2],
-               hici>=input$s.sh.hici[1],
-               hici<=input$s.sh.hici[2],
-               ns>=input$s.sh.ns[1],
-               ns<=input$s.sh.ns[2],
-               pub>=input$s.sh.pub[1],
-               pub<=input$s.sh.pub[2],
-               pcp>=input$s.sh.pcp[1],
-               pcp<=input$s.sh.pcp[2]
-        )
-    } else if (input$sourceUni==2) { #Times
-      df = df.2015.uni %>%
-        filter(rank_times>=input$s.t.rank[1],
-               rank_times<=input$s.t.rank[2],
-               teaching>=input$s.t.teaching[1],
-               teaching<=input$s.t.teaching[2],
-               international>=input$s.t.international[1],
-               international<=input$s.t.international[2],
-               research>=input$s.t.research[1],
-               research<=input$s.t.research[2],
-               citations_times>=input$s.t.citations_times[1],
-               citations_times<=input$s.t.citations_times[2],
-               income>=input$s.t.income[1],
-               income<=input$s.t.income[2]
-        )
-    }
-    
-  })
-  
-  #Tab2: World map with universities
-  output$unimap <- renderLeaflet({
-    unimap<-leaflet(data = unimapdata()) %>%
-      setView(lng=0, lat=0, zoom=2) %>%
-      addProviderTiles("Esri.WorldStreetMap") %>%
-      addCircleMarkers(~lon, ~lat,
-                       radius = 4, stroke = F, fillOpacity = 0.5,
-                       popup = ~paste(sep = "<br/>",new_name,
-                                      "Shanghai rank:",rank_shanghai,
-                                      "Times rank:",rank_times,
-                                      "CWUR rank:",rank_cwur))
-      unimap
-  })
-  
-  observe({
-    leafletProxy("unimap", data = unimapdata()) %>%
-      clearMarkers() %>%
-        addCircleMarkers(~lon, ~lat,
-                         radius = 4, stroke = F, fillOpacity = 0.5,
-                         popup = ~paste(sep = "<br/>",new_name,
-                                        "Shanghai rank:",rank_shanghai,
-                                        "Times rank:",rank_times,
-                                        "CWUR rank:",rank_cwur))
-  })
-  
-  #Tab2: World map with universities - Data table
-  output$uni.table <- renderDataTable({
-    df.2015.uni[,c('new_name','country','rank_shanghai','rank_times','rank_cwur')]
-  })  
+#Kaggle data only has uni name. Geocode sometimes gives incorrect lon/lat (e.g. Drexel) so not displaying this entire section  
+  # unimapdata = reactive ({
+  #   if (input$sourceUni==1) { #Shanghai
+  #     df = df.2015.uni %>%
+  #       filter(rank_shanghai>=input$s.sh.rank[1],
+  #              rank_shanghai<=input$s.sh.rank[2],
+  #              alumni>=input$s.sh.alumni[1],
+  #              alumni<=input$s.sh.alumni[2],
+  #              award>=input$s.sh.award[1],
+  #              award<=input$s.sh.award[2],
+  #              hici>=input$s.sh.hici[1],
+  #              hici<=input$s.sh.hici[2],
+  #              ns>=input$s.sh.ns[1],
+  #              ns<=input$s.sh.ns[2],
+  #              pub>=input$s.sh.pub[1],
+  #              pub<=input$s.sh.pub[2],
+  #              pcp>=input$s.sh.pcp[1],
+  #              pcp<=input$s.sh.pcp[2]
+  #       )
+  #   } else if (input$sourceUni==2) { #Times
+  #     df = df.2015.uni %>%
+  #       filter(rank_times>=input$s.t.rank[1],
+  #              rank_times<=input$s.t.rank[2],
+  #              teaching>=input$s.t.teaching[1],
+  #              teaching<=input$s.t.teaching[2],
+  #              international>=input$s.t.international[1],
+  #              international<=input$s.t.international[2],
+  #              research>=input$s.t.research[1],
+  #              research<=input$s.t.research[2],
+  #              citations_times>=input$s.t.citations_times[1],
+  #              citations_times<=input$s.t.citations_times[2],
+  #              income>=input$s.t.income[1],
+  #              income<=input$s.t.income[2]
+  #       )
+  #   }
+  #   
+  # })
+  # 
+  # #Tab2: World map with universities
+  # output$unimap <- renderLeaflet({
+  #   unimap<-leaflet(data = unimapdata()) %>%
+  #     setView(lng=0, lat=0, zoom=2) %>%
+  #     addProviderTiles("Esri.WorldStreetMap") %>%
+  #     addCircleMarkers(~lon, ~lat,
+  #                      radius = 4, stroke = F, fillOpacity = 0.5,
+  #                      popup = ~paste(sep = "<br/>",new_name,
+  #                                     "Shanghai rank:",rank_shanghai,
+  #                                     "Times rank:",rank_times,
+  #                                     "CWUR rank:",rank_cwur))
+  #     unimap
+  # })
+  # 
+  # observe({
+  #   leafletProxy("unimap", data = unimapdata()) %>%
+  #     clearMarkers() %>%
+  #       addCircleMarkers(~lon, ~lat,
+  #                        radius = 4, stroke = F, fillOpacity = 0.5,
+  #                        popup = ~paste(sep = "<br/>",new_name,
+  #                                       "Shanghai rank:",rank_shanghai,
+  #                                       "Times rank:",rank_times,
+  #                                       "CWUR rank:",rank_cwur))
+  # })
+  # 
+  # #Tab2: World map with universities - Data table
+  # output$uni.table <- renderDataTable({
+  #   df.2015.uni[,c('new_name','country','rank_shanghai','rank_times','rank_cwur')]
+  # })  
 
   
   #Scoring criteria details for one university
@@ -170,35 +171,35 @@ shinyServer(function(input, output){
   
   
     
-  #DELETE: Bar chart for school comparison
-  output$compare.shanghai <- renderGvis({
-      df = shanghaiData %>%
-        filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
-        select(., new_name, alumni, award, hici, ns, pub, pcp) %>%
-        arrange(., desc(new_name))
-      yvar = c("alumni", "award", "hici", "ns", "pub", "pcp")
-      args <- list(df, yvar)
-      do.call(compuni, args)
-  })
-  
-  output$compare.times <- renderGvis({
-    df = timesData %>%
-      filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
-      select(., new_name, teaching, international, research, citations, income) %>%
-      arrange(., desc(new_name))
-    yvar = c('teaching','international','research','citations','income')
-    args <- list(df, yvar)
-    do.call(compuni, args)
-  })
-  
-  output$compare.cwur <- renderGvis({
-    df = cwur %>%
-      filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
-      select(., new_name, quality_of_education,alumni_employment,quality_of_faculty,publications,influence,citations,broad_impact,patents) %>%
-      arrange(., desc(new_name))
-    yvar = c('quality_of_education','alumni_employment','quality_of_faculty','publications','influence','citations','broad_impact','patents')
-    args <- list(df, yvar)
-    do.call(compuni, args)
-  })
+  # #DELETE: Bar chart for school comparison
+  # output$compare.shanghai <- renderGvis({
+  #     df = shanghaiData %>%
+  #       filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
+  #       select(., new_name, alumni, award, hici, ns, pub, pcp) %>%
+  #       arrange(., desc(new_name))
+  #     yvar = c("alumni", "award", "hici", "ns", "pub", "pcp")
+  #     args <- list(df, yvar)
+  #     do.call(compuni, args)
+  # })
+  # 
+  # output$compare.times <- renderGvis({
+  #   df = timesData %>%
+  #     filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
+  #     select(., new_name, teaching, international, research, citations, income) %>%
+  #     arrange(., desc(new_name))
+  #   yvar = c('teaching','international','research','citations','income')
+  #   args <- list(df, yvar)
+  #   do.call(compuni, args)
+  # })
+  # 
+  # output$compare.cwur <- renderGvis({
+  #   df = cwur %>%
+  #     filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
+  #     select(., new_name, quality_of_education,alumni_employment,quality_of_faculty,publications,influence,citations,broad_impact,patents) %>%
+  #     arrange(., desc(new_name))
+  #   yvar = c('quality_of_education','alumni_employment','quality_of_faculty','publications','influence','citations','broad_impact','patents')
+  #   args <- list(df, yvar)
+  #   do.call(compuni, args)
+  # })
   
 })
