@@ -368,7 +368,7 @@ shinyServer(function(input, output){
     df.t = t(df[,2:ncol(df)])
     colnames(df.t) = df$country
     cbind(Metric = rownames(df.t), df.t)
-  })
+  }, options = list(searching=F, paging=F, bInfo=T))
   
   #Data: Table for Times stats for selected country
   output$selectcountry.times.table <- renderDataTable({
@@ -379,7 +379,7 @@ shinyServer(function(input, output){
     df.t = t(df[,2:ncol(df)])
     colnames(df.t) = df$country
     cbind(Metric = rownames(df.t), df.t)
-  })
+  }, options = list(searching=F, paging=F, bInfo=T))
   
   #Data: Table for CWUR stats for selected country
   output$selectcountry.cwur.table <- renderDataTable({
@@ -390,13 +390,40 @@ shinyServer(function(input, output){
     df.t = t(df[,2:ncol(df)])
     colnames(df.t) = df$country
     cbind(Metric = rownames(df.t), df.t)
-  })  
+  }, options = list(searching=F, paging=F, bInfo=T))
   
   
-  #Data: Table for university metrics
-  output$country.table <- renderDataTable({
+  #Data: Table for Shanghai stats for selected university
+  output$selectuni.shanghai.table <- renderDataTable({
+    df = rankings %>%
+      filter(new_name %in% input$selectUniData) %>%
+      select(c(1:3,26:34))
     
-  })
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$new_name
+    cbind(Metric = rownames(df.t), df.t)
+  }, options = list(searching=F, paging=F, bInfo=T))
   
+  #Data: Table for Times stats for selected university
+  output$selectuni.times.table <- renderDataTable({
+    df = rankings %>%
+      filter(new_name %in% input$selectUniData) %>%
+      select(c(1:3,15:25))
+    
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$new_name
+    cbind(Metric = rownames(df.t), df.t)
+  }, options = list(searching=F, paging=F, bInfo=T))
+  
+  #Data: Table for CWUR stats for selected university
+  output$selectuni.cwur.table <- renderDataTable({
+    df = rankings %>%
+      filter(new_name %in% input$selectUniData) %>%
+      select(c(1:3,4:14))
+    
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$new_name
+    cbind(Metric = rownames(df.t), df.t)
+  }, options = list(searching=F, paging=F, bInfo=T))
   
 })

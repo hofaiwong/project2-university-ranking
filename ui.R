@@ -100,7 +100,7 @@ shinyUI(
                                  ))
                       )
                ))),
-
+    
     
     
     
@@ -134,7 +134,7 @@ shinyUI(
                       hr(),
                       em("Note:"),
                       br(),
-                      helpText("Select organizations for X and Y axis. You can also zoom in on the map or search for a specific country")
+                      helpText("Select ranking organizations for X and Y axis. You can also zoom in on the plot or select one or more countries")
                       
                ),
                column(9,
@@ -151,11 +151,11 @@ shinyUI(
                                  condition = "input.sourceScatterY == 1", #Shanghai
                                  sliderInput("y.sh.rank", "Shanghai rank:", min=0, max=500, value=c(1,500)),
                                  sliderInput("y.sh.alumni", "Alumni score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.sh.award", "award score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.sh.hici", "hici score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.sh.ns", "ns score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.sh.pub", "pub score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.sh.pcp", "pcp score:", min=0, max=100, value=c(0,100))
+                                 sliderInput("y.sh.award", "Award score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.hici", "HiCi score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.ns", "N&S score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.pub", "PUB score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.pcp", "PCP score:", min=0, max=100, value=c(0,100))
                                ),
                                
                                conditionalPanel(
@@ -188,11 +188,11 @@ shinyUI(
                                  condition = "input.sourceScatterX == 1", #Shanghai
                                  sliderInput("x.sh.rank", "Shanghai rank:", min=0, max=500, value=c(1,500)),
                                  sliderInput("x.sh.alumni", "Alumni score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.sh.award", "award score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.sh.hici", "hici score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.sh.ns", "ns score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.sh.pub", "pub score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.sh.pcp", "pcp score:", min=0, max=100, value=c(0,100))
+                                 sliderInput("x.sh.award", "Award score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.hici", "HiCi score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.ns", "N&S score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.pub", "PUB score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.pcp", "PCP score:", min=0, max=100, value=c(0,100))
                                ),
                                
                                conditionalPanel(
@@ -230,14 +230,16 @@ shinyUI(
     
     tabPanel("University Profile",
              fluidRow(
-               column(width = 12,
+               column(width = 3,
                       selectInput('selectUni',
                                   'Select university',
                                   universities,
                                   selected = 'New York University',
-                                  selectize=TRUE),
-                      dataTableOutput("unirank.table")
-               )),
+                                  selectize=TRUE)
+               ),
+               column(width = 9,
+                      dataTableOutput("unirank.table"))
+             ),
              hr(),
              fluidRow(width=12,
                       box(width = 4,
@@ -264,23 +266,38 @@ shinyUI(
                         fluidRow(
                           column(12,
                                  selectizeInput('selectCountry',
-                                                'Select country',
+                                                'Select one or more countries',
                                                 countries,
                                                 multiple = TRUE,
                                                 selected='United States of America'),
                                  hr(),
                                  h4("Shanghai Rankings Data:"),
                                  div(dataTableOutput("selectcountry.shanghai.table"), style = "font-size:80%"),
+                                 hr(),
                                  h4("Times Rankings Data:"),
                                  div(dataTableOutput("selectcountry.times.table"), style = "font-size:80%"),
+                                 hr(),
                                  h4("CWUR Rankings Data:"),
                                  div(dataTableOutput("selectcountry.cwur.table"), style = "font-size:80%"))
                         )
                ),
                tabPanel("University Data",
                         fluidRow(
-                          column(12
-                          )
+                          column(12,
+                                 selectizeInput('selectUniData',
+                                                'Select one or more universities',
+                                                universities,
+                                                multiple = TRUE,
+                                                selected='New York University'),
+                                 hr(),
+                                 h4("Shanghai Rankings Data:"),
+                                 div(dataTableOutput("selectuni.shanghai.table"), style = "font-size:80%"),
+                                 hr(),
+                                 h4("Times Rankings Data:"),
+                                 div(dataTableOutput("selectuni.times.table"), style = "font-size:80%"),
+                                 hr(),
+                                 h4("CWUR Rankings Data:"),
+                                 div(dataTableOutput("selectuni.cwur.table"), style = "font-size:80%"))
                         )
                )
              )
