@@ -1,3 +1,4 @@
+library(plotly)
 library(shiny)
 library(leaflet)
 library(googleVis)
@@ -7,6 +8,52 @@ source('./helpers.R')
 ## server.R ##
 shinyServer(function(input, output){
   
+  #Scatter plot
+  output$country.scatter = renderPlotly({
+
+    df = rankings[,c(26,15,4,1,2)] %>%
+      select(as.numeric(input$sourceScatterX), 
+             as.numeric(input$sourceScatterY),
+             University = new_name,
+             country)
+    #Only keep the 2 rankings selected for the scatter
+    df = df[complete.cases(df),]
+    #Only keep the country(ies) involved, or all by default
+    if (!input$countryScatter=='All') {
+      df = df[df$country %in% input$countryScatter,]
+    }
+    
+    org.x = switch(input$sourceScatterX,
+                 '1' = list(df$rank_shanghai,'Shanghai Ranking'),
+                 '2' = list(df$rank_times,'Times Ranking'),
+                 '3' = list(df$rank_cwur,'CWUR Ranking'))
+    org.y = switch(input$sourceScatterY,
+                   '1' = list(df$rank_shanghai,'Shanghai Ranking'),
+                   '2' = list(df$rank_times,'Times Ranking'),
+                   '3' = list(df$rank_cwur,'CWUR Ranking'))
+    
+    xaxis = list(title = org.x[[2]]) #x-axis title
+    yaxis = list(title = org.y[[2]]) #y-axis title
+    max=max(df[,1:2])
+    
+    #Draw scatterplot
+    plot_ly(df, x = org.x[[1]], y = org.y[[1]],
+            text = paste(University,
+                         paste0(org.y[[2]],': ',org.y[[1]]),
+                         paste0(org.x[[2]],': ',org.x[[1]]), sep='<br>'),
+            mode = "markers",
+            color = country,
+            colors = 'Set1') %>%
+            layout(xaxis = xaxis, 
+                   yaxis = yaxis, 
+                   title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
+      add_trace(x = c(0,max), y = c(0,max), mode = "line", 
+                showlegend=T, name='')
+  })
+  
+  
+  
+  #Reactive for world map data by country
   country = reactive({
     args = if (input$sourceCountry == 1) { #Shanghai
       switch(input$selectedStat_shanghai,
@@ -82,38 +129,6 @@ shinyServer(function(input, output){
   
   
   
-  #Data: Table for Shanghai stats for selected country
-  output$selectcountry.shanghai.table <- renderDataTable({
-    df = df.2015.country %>%
-      filter(country %in% input$selectCountry) %>%
-      select(c(1,4,7,10,29:36))
-    
-    df.t = t(df[,2:ncol(df)])
-    colnames(df.t) = df$country
-    cbind(Metric = rownames(df.t), df.t)
-  })
-  
-  #Data: Table for Times stats for selected country
-  output$selectcountry.times.table <- renderDataTable({
-    df = df.2015.country %>%
-      filter(country %in% input$selectCountry) %>%
-      select(c(1,3,6,9,22:28))
-    
-    df.t = t(df[,2:ncol(df)])
-    colnames(df.t) = df$country
-    cbind(Metric = rownames(df.t), df.t)
-  })
-  
-  #Data: Table for CWUR stats for selected country
-  output$selectcountry.cwur.table <- renderDataTable({
-    df = df.2015.country %>%
-      filter(country %in% input$selectCountry) %>%
-      select(c(1,2,5,8,11:21))
-    
-    df.t = t(df[,2:ncol(df)])
-    colnames(df.t) = df$country
-    cbind(Metric = rownames(df.t), df.t)
-  })
   
   
   #Ranks for one university
@@ -158,11 +173,47 @@ shinyServer(function(input, output){
   
   
   
+  ################
+  ####Data Tab####
+  ################
+  
+  #Data: Table for Shanghai stats for selected country
+  output$selectcountry.shanghai.table <- renderDataTable({
+    df = df.2015.country %>%
+      filter(country %in% input$selectCountry) %>%
+      select(c(1,4,7,10,29:36))
+    
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$country
+    cbind(Metric = rownames(df.t), df.t)
+  })
+  
+  #Data: Table for Times stats for selected country
+  output$selectcountry.times.table <- renderDataTable({
+    df = df.2015.country %>%
+      filter(country %in% input$selectCountry) %>%
+      select(c(1,3,6,9,22:28))
+    
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$country
+    cbind(Metric = rownames(df.t), df.t)
+  })
+  
+  #Data: Table for CWUR stats for selected country
+  output$selectcountry.cwur.table <- renderDataTable({
+    df = df.2015.country %>%
+      filter(country %in% input$selectCountry) %>%
+      select(c(1,2,5,8,11:21))
+    
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$country
+    cbind(Metric = rownames(df.t), df.t)
+  })  
   
   
-  #Tab1: World map with country stats - Data table
+  #Data: Table for university metrics
   output$country.table <- renderDataTable({
-    df.2015.country[,c(1,4,3,2,7,6,5,10,9,8)]
+    
   })
   
   

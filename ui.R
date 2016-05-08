@@ -11,6 +11,36 @@ shinyUI(
     id = "nav",
     theme = shinytheme("united"),
     
+    tabPanel("Scatter",
+             fluidRow(
+               column(3,
+                      h4("Ranking organization"),
+                      radioButtons("sourceScatterY",
+                                   "Select organization for y-axis",
+                                   choices = list("Shanghai Rankings" = 1,
+                                                  "Times World University Rankings" = 2,
+                                                  "Center for World University Rankings" = 3),
+                                   selected = 2),
+                      radioButtons("sourceScatterX",
+                                   "Select organization for x-axis",
+                                   choices = list("Shanghai Rankings" = 1,
+                                                  "Times World University Rankings" = 2,
+                                                  "Center for World University Rankings" = 3),
+                                   selected = 1),
+                      br(),
+                      selectInput('countryScatter',
+                                  'Select country',
+                                  c('All',countries),
+                                  multiple = TRUE,
+                                  selected='All',
+                                  selectize = TRUE)
+               ),
+               column(9,
+                      plotlyOutput('country.scatter')
+               )
+             )
+    ),
+    
     tabPanel("Countries",
              
              fluidRow(
@@ -100,7 +130,7 @@ shinyUI(
                                   selected = 'New York University',
                                   selectize=TRUE),
                       dataTableOutput("unirank.table")
-             )),
+               )),
              hr(),
              fluidRow(width=12,
                       box(width = 4,
@@ -139,8 +169,7 @@ shinyUI(
                ),
                tabPanel("University Data",
                         fluidRow(
-                          column(12,
-                                 div(dataTableOutput("country.table"), style = "font-size:80%")
+                          column(12
                           )
                         )
                )
