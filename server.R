@@ -7,13 +7,18 @@ source('./helpers.R')
 
 ## server.R ##
 shinyServer(function(input, output){
+
+  
+  ####################
+  ####Scatter Plot####
+  ####################
   
   #Scatter plot
   output$country.scatter = renderPlotly({
-    
+    df = rankings %>% arrange(country)
     #Y-axis sliders
     if (input$sourceScatterY==1) { #Shanghai
-      df = rankings %>%
+      df = df %>%
         filter(rank_shanghai>=input$y.sh.rank[1],
                rank_shanghai<=input$y.sh.rank[2],
                alumni>=input$y.sh.alumni[1],
@@ -30,7 +35,7 @@ shinyServer(function(input, output){
                pcp<=input$y.sh.pcp[2]
         )
     } else if (input$sourceScatterY==2) { #Times
-      df = rankings %>%
+      df = df %>%
         filter(rank_times>=input$y.t.rank[1],
                rank_times<=input$y.t.rank[2],
                teaching>=input$y.t.teaching[1],
@@ -45,7 +50,7 @@ shinyServer(function(input, output){
                income<=input$y.t.income[2]
         )
     } else if (input$sourceScatterY==3) {
-      df = rankings %>%
+      df = df %>%
         filter(rank_cwur>=input$y.c.rank[1],
                rank_cwur<=input$y.c.rank[2],
                quality_of_education>=input$y.c.education[1],
@@ -131,7 +136,7 @@ shinyServer(function(input, output){
                     '2' = rank_times,
                     '3' = rank_cwur),
              University = new_name, Country = country)
-    
+
     #Only keep the country(ies) involved, or all by default
     if (!input$countryScatter=='All') {
       df = df[df$country %in% input$countryScatter,]
@@ -146,11 +151,10 @@ shinyServer(function(input, output){
                    '2' = list(df$rank_times,'Times Ranking'),
                    '3' = list(df$rank_cwur,'CWUR Ranking'))
     
-    xaxis = list(title = org.x[[2]]) #x-axis title
-    yaxis = list(title = org.y[[2]]) #y-axis title
+    xaxis = list(title = org.x[[2]], rangemode='tozero') #x-axis title
+    yaxis = list(title = org.y[[2]], rangemode='tozero') #y-axis title
     
-    
-    if (input$sourceScatterY!=input$sourceScatterX) {
+    if (input$sourceScatterY!=input$sourceScatterX & nrow(df) > 0) {
       max=max(df[,1:2], na.rm=T)
       
       #Draw scatterplot
@@ -159,14 +163,13 @@ shinyServer(function(input, output){
                            paste0(org.y[[2]],': ',org.y[[1]]),
                            paste0(org.x[[2]],': ',org.x[[1]]), sep='<br>'),
               mode = "markers",
-              color = Country,
-              colors = 'OrRd')
+              color = Country)
       layout(xaxis = xaxis,
              yaxis = yaxis,
              title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
         add_trace(x = c(0,max), y = c(0,max), mode = "line", color='black',
                   showlegend=F, name='')
-    } else {
+    } else if (input$sourceScatterY==input$sourceScatterX & nrow(df) > 0){
       max=max(df[,1], na.rm=T)
       
       #Draw scatterplot
@@ -175,17 +178,26 @@ shinyServer(function(input, output){
                            paste0(org.y[[2]],': ',org.y[[1]]),
                            paste0(org.x[[2]],': ',org.x[[1]]), sep='<br>'),
               mode = "markers",
-              color = Country,
-              colors = 'OrRd')
+              color = Country)
       layout(xaxis = xaxis,
              yaxis = yaxis,
              title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
         add_trace(x = c(0,max), y = c(0,max), mode = "line", color='black',
                   showlegend=F, name='')
-    }
+    } else { 
+      print(df)
+      df=rbind(df,c(0,0,NA))
+      plot_ly(df, x = df[,1], y = df[,1])
+      layout(xaxis = xaxis,
+             yaxis = yaxis,
+             title = paste(org.y[[2]],'by',org.x[[2]], sep=' '))
+      }
   })
   
   
+  #################
+  ####World Map####
+  #################
   
   #Reactive for world map data by country
   country = reactive({
@@ -262,7 +274,9 @@ shinyServer(function(input, output){
   })
   
   
-  
+  ###################
+  ####Uni Profile####
+  ###################
   
   
   #Ranks for one university
@@ -270,7 +284,7 @@ shinyServer(function(input, output){
     df = rankings %>%
       filter(new_name==input$selectUni) %>%
       select(country, rank_shanghai, rank_times, rank_cwur)
-    colnames(df) = c('Country','Shanhai Rank','Times Rank','CWUR Rank')
+    colnames(df) = c('Country','Shanghai Rank','Times Rank','CWUR Rank')
     df
   }, options = list(searching=F, paging=F, bInfo=F))
   
