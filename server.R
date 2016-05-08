@@ -7,9 +7,7 @@ source('./helpers.R')
 ## server.R ##
 shinyServer(function(input, output){
   
-  #Tab1: World map with country stats
-  output$country.map <- renderGvis({
-
+  country = reactive({
     args = if (input$sourceCountry == 1) { #Shanghai
       switch(input$selectedStat_shanghai,
              '1' = list(df.2015.country$top_shanghai, 'top_shanghai', "{colors: [\'green\', \'yellow\', \'red\']}"),
@@ -22,130 +20,118 @@ shinyServer(function(input, output){
              '9' = list(df.2015.country$pub, 'pub', "{colors: [\'red\', \'yellow\', \'green\']}"),
              '10' = list(df.2015.country$pcp, 'pcp', "{colors: [\'red\', \'yellow\', \'green\']}")
              
-             )} else if (input$sourceCountry == 2) { #Times
-               switch(input$selectedStat_times,
-                      '1' = list(df.2015.country$top_times, 'top_times', "{colors: [\'green\', \'yellow\', \'red\']}"),
-                      '2' = list(df.2015.country$median_times, 'median_times', "{colors: [\'green\', \'yellow\', \'red\']}"),
-                      '3' = list(df.2015.country$count_times, 'count_times', "{colors: [\'orange\', \'yellow\', \'green\']}"),
-                      '5' = list(df.2015.country$teaching, 'teaching', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                      '6' = list(df.2015.country$international, 'international', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                      '7' = list(df.2015.country$research, 'research', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                      '8' = list(df.2015.country$citations_times, 'citations_times', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                      '9' = list(df.2015.country$income, 'income', "{colors: [\'red\', \'yellow\', \'green\']}")
-                      
-               )} else if (input$sourceCountry == 3) { #CWUR
-                 switch(input$selectedStat_cwur,
-                        '1' = list(df.2015.country$top_cwur, 'top_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
-                        '2' = list(df.2015.country$median_cwur, 'median_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
-                        '3' = list(df.2015.country$count_cwur, 'count_cwur', "{colors: [\'orange\', \'yellow\', \'green\']}"),
-                        '5' = list(df.2015.country$quality_of_education, 'quality_of_education', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                        '6' = list(df.2015.country$alumni_employment, 'alumni_employment', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                        '7' = list(df.2015.country$quality_of_faculty, 'quality_of_faculty', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                        '8' = list(df.2015.country$publications, 'publications', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                        '9' = list(df.2015.country$influence, 'influence', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                        '10' = list(df.2015.country$citations_cwur, 'citations_cwur', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                        '11' = list(df.2015.country$broad_impact, 'broad_impact', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                        '12' = list(df.2015.country$patents, 'patents', "{colors: [\'red\', \'yellow\', \'green\']}")
-                 )}
+      )} else if (input$sourceCountry == 2) { #Times
+        switch(input$selectedStat_times,
+               '1' = list(df.2015.country$top_times, 'top_times', "{colors: [\'green\', \'yellow\', \'red\']}"),
+               '2' = list(df.2015.country$median_times, 'median_times', "{colors: [\'green\', \'yellow\', \'red\']}"),
+               '3' = list(df.2015.country$count_times, 'count_times', "{colors: [\'orange\', \'yellow\', \'green\']}"),
+               '5' = list(df.2015.country$teaching, 'teaching', "{colors: [\'red\', \'yellow\', \'green\']}"),
+               '6' = list(df.2015.country$international, 'international', "{colors: [\'red\', \'yellow\', \'green\']}"),
+               '7' = list(df.2015.country$research, 'research', "{colors: [\'red\', \'yellow\', \'green\']}"),
+               '8' = list(df.2015.country$citations_times, 'citations_times', "{colors: [\'red\', \'yellow\', \'green\']}"),
+               '9' = list(df.2015.country$income, 'income', "{colors: [\'red\', \'yellow\', \'green\']}")
+               
+        )} else if (input$sourceCountry == 3) { #CWUR
+          switch(input$selectedStat_cwur,
+                 '1' = list(df.2015.country$top_cwur, 'top_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '2' = list(df.2015.country$median_cwur, 'median_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '3' = list(df.2015.country$count_cwur, 'count_cwur', "{colors: [\'orange\', \'yellow\', \'green\']}"),
+                 '5' = list(df.2015.country$quality_of_education, 'quality_of_education', "{colors: [\'red\', \'yellow\', \'green\']}"),
+                 '6' = list(df.2015.country$alumni_employment, 'alumni_employment', "{colors: [\'red\', \'yellow\', \'green\']}"),
+                 '7' = list(df.2015.country$quality_of_faculty, 'quality_of_faculty', "{colors: [\'red\', \'yellow\', \'green\']}"),
+                 '8' = list(df.2015.country$publications, 'publications', "{colors: [\'red\', \'yellow\', \'green\']}"),
+                 '9' = list(df.2015.country$influence, 'influence', "{colors: [\'red\', \'yellow\', \'green\']}"),
+                 '10' = list(df.2015.country$citations_cwur, 'citations_cwur', "{colors: [\'red\', \'yellow\', \'green\']}"),
+                 '11' = list(df.2015.country$broad_impact, 'broad_impact', "{colors: [\'red\', \'yellow\', \'green\']}"),
+                 '12' = list(df.2015.country$patents, 'patents', "{colors: [\'red\', \'yellow\', \'green\']}")
+          )}
+  })
+  
+  #Tab1: World map with country stats
+  output$country.map <- renderGvis({
+    do.call(world_map, country())
+  })
+  
+  
+  #Tab1: Selected stat bar chart by country
+  output$country.bar <- renderGvis({
     
-    world_map <- function(var, stat, color) {
-      df = df.2015.country[!is.na(var),]
-      gvisGeoChart(data = df, 
-                   locationvar = "country", 
-                   colorvar = stat,
-                   options=list(
-                     projection="kavrayskiy-vii",
-                     colorAxis=color,
-                     width='100%',
-                     height='100%',
-                     keepAspectRatio = TRUE
-                   )
+    #Draw bar chart for countries by metric
+    barcountry <- function(var, stat, color) {
+      
+      df = if (grepl('top',stat) | grepl('median',stat)) {
+        df.2015.country[order(var),c('country',stat)]
+      } else {
+        df.2015.country[order(var, decreasing = TRUE),c('country',stat)]
+      }
+      
+      df = df[complete.cases(df),]
+      
+      gvisBarChart(data = df, 
+                   xvar = "country", 
+                   yvar = stat,
+                   options=list(legend="{position: 'top'}",
+                                height=900,
+                                align='top',
+                                fontSize=8)
       )}
     
-    do.call(world_map, args)
+    do.call(barcountry, country())
     
   })
   
-  #Tab1: World map with country stats - Data table
-  output$country.table <- renderDataTable({
-    df.2015.country[,c(1,4,3,2,7,6,5,10,9,8)]
+  
+  
+  #Data: Table for Shanghai stats for selected country
+  output$selectcountry.shanghai.table <- renderDataTable({
+    df = df.2015.country %>%
+      filter(country %in% input$selectCountry) %>%
+      select(c(1,4,7,10,29:36))
+    
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$country
+    cbind(Metric = rownames(df.t), df.t)
   })
   
-#Kaggle data only has uni name. Geocode sometimes gives incorrect lon/lat (e.g. Drexel) so not displaying this entire section  
-  # unimapdata = reactive ({
-  #   if (input$sourceUni==1) { #Shanghai
-  #     df = df.2015.uni %>%
-  #       filter(rank_shanghai>=input$s.sh.rank[1],
-  #              rank_shanghai<=input$s.sh.rank[2],
-  #              alumni>=input$s.sh.alumni[1],
-  #              alumni<=input$s.sh.alumni[2],
-  #              award>=input$s.sh.award[1],
-  #              award<=input$s.sh.award[2],
-  #              hici>=input$s.sh.hici[1],
-  #              hici<=input$s.sh.hici[2],
-  #              ns>=input$s.sh.ns[1],
-  #              ns<=input$s.sh.ns[2],
-  #              pub>=input$s.sh.pub[1],
-  #              pub<=input$s.sh.pub[2],
-  #              pcp>=input$s.sh.pcp[1],
-  #              pcp<=input$s.sh.pcp[2]
-  #       )
-  #   } else if (input$sourceUni==2) { #Times
-  #     df = df.2015.uni %>%
-  #       filter(rank_times>=input$s.t.rank[1],
-  #              rank_times<=input$s.t.rank[2],
-  #              teaching>=input$s.t.teaching[1],
-  #              teaching<=input$s.t.teaching[2],
-  #              international>=input$s.t.international[1],
-  #              international<=input$s.t.international[2],
-  #              research>=input$s.t.research[1],
-  #              research<=input$s.t.research[2],
-  #              citations_times>=input$s.t.citations_times[1],
-  #              citations_times<=input$s.t.citations_times[2],
-  #              income>=input$s.t.income[1],
-  #              income<=input$s.t.income[2]
-  #       )
-  #   }
-  #   
-  # })
-  # 
-  # #Tab2: World map with universities
-  # output$unimap <- renderLeaflet({
-  #   unimap<-leaflet(data = unimapdata()) %>%
-  #     setView(lng=0, lat=0, zoom=2) %>%
-  #     addProviderTiles("Esri.WorldStreetMap") %>%
-  #     addCircleMarkers(~lon, ~lat,
-  #                      radius = 4, stroke = F, fillOpacity = 0.5,
-  #                      popup = ~paste(sep = "<br/>",new_name,
-  #                                     "Shanghai rank:",rank_shanghai,
-  #                                     "Times rank:",rank_times,
-  #                                     "CWUR rank:",rank_cwur))
-  #     unimap
-  # })
-  # 
-  # observe({
-  #   leafletProxy("unimap", data = unimapdata()) %>%
-  #     clearMarkers() %>%
-  #       addCircleMarkers(~lon, ~lat,
-  #                        radius = 4, stroke = F, fillOpacity = 0.5,
-  #                        popup = ~paste(sep = "<br/>",new_name,
-  #                                       "Shanghai rank:",rank_shanghai,
-  #                                       "Times rank:",rank_times,
-  #                                       "CWUR rank:",rank_cwur))
-  # })
-  # 
-  # #Tab2: World map with universities - Data table
-  # output$uni.table <- renderDataTable({
-  #   df.2015.uni[,c('new_name','country','rank_shanghai','rank_times','rank_cwur')]
-  # })  
-
+  #Data: Table for Times stats for selected country
+  output$selectcountry.times.table <- renderDataTable({
+    df = df.2015.country %>%
+      filter(country %in% input$selectCountry) %>%
+      select(c(1,3,6,9,22:28))
+    
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$country
+    cbind(Metric = rownames(df.t), df.t)
+  })
+  
+  #Data: Table for CWUR stats for selected country
+  output$selectcountry.cwur.table <- renderDataTable({
+    df = df.2015.country %>%
+      filter(country %in% input$selectCountry) %>%
+      select(c(1,2,5,8,11:21))
+    
+    df.t = t(df[,2:ncol(df)])
+    colnames(df.t) = df$country
+    cbind(Metric = rownames(df.t), df.t)
+  })
+  
+  
+  #Ranks for one university
+  output$unirank.table <- renderDataTable({
+    df = rankings %>%
+      filter(new_name==input$selectUni) %>%
+      select(country, rank_shanghai, rank_times, rank_cwur)
+    colnames(df) = c('Country','Shanhai Rank','Times Rank','CWUR Rank')
+    df
+  }, options = list(searching=F, paging=F, bInfo=F))
   
   #Scoring criteria details for one university
   output$bar.shanghai <- renderGvis({
     df = rankings %>%
       filter(., new_name == input$selectUni) %>%
       select(., new_name, alumni, award, hici, ns, pub, pcp)
-    yvar = c("alumni", "award", "hici", "ns", "pub", "pcp")
+    colnames(df) = c('University','Alumni','Award','HiCi','NS','PUB','PCP')
+    yvar = c('Alumni','Award','HiCi','NS','PUB','PCP')
     args <- list(df, yvar)
     do.call(baruni, args)
   })  
@@ -154,7 +140,8 @@ shinyServer(function(input, output){
     df = rankings %>%
       filter(., new_name == input$selectUni) %>%
       select(., new_name, teaching, international, research, citations_times, income)
-    yvar = c('teaching','international','research','citations_times','income')
+    colnames(df) = c('University','Teaching','International','Research','Citations','Income')
+    yvar = c('Teaching','International','Research','Citations','Income')
     args <- list(df, yvar)
     do.call(baruni, args)
   })  
@@ -163,43 +150,20 @@ shinyServer(function(input, output){
     df = rankings %>%
       filter(., new_name == input$selectUni) %>%
       select(., new_name, quality_of_education,alumni_employment,quality_of_faculty,publications,influence,citations_cwur,broad_impact,patents)
-    yvar = c('quality_of_education','alumni_employment','quality_of_faculty','publications','influence','citations_cwur','broad_impact','patents')
+    colnames(df) = c('University','Education','Alumni','Faculty','Publications','Influence','Citations','Broad Impact','Patents')
+    yvar = c('Education','Alumni','Faculty','Publications','Influence','Citations','Broad Impact','Patents')
     args <- list(df, yvar)
     do.call(baruni, args)
   })  
   
   
   
-    
-  # #DELETE: Bar chart for school comparison
-  # output$compare.shanghai <- renderGvis({
-  #     df = shanghaiData %>%
-  #       filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
-  #       select(., new_name, alumni, award, hici, ns, pub, pcp) %>%
-  #       arrange(., desc(new_name))
-  #     yvar = c("alumni", "award", "hici", "ns", "pub", "pcp")
-  #     args <- list(df, yvar)
-  #     do.call(compuni, args)
-  # })
-  # 
-  # output$compare.times <- renderGvis({
-  #   df = timesData %>%
-  #     filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
-  #     select(., new_name, teaching, international, research, citations, income) %>%
-  #     arrange(., desc(new_name))
-  #   yvar = c('teaching','international','research','citations','income')
-  #   args <- list(df, yvar)
-  #   do.call(compuni, args)
-  # })
-  # 
-  # output$compare.cwur <- renderGvis({
-  #   df = cwur %>%
-  #     filter(., year == 2015 & new_name %in% c(input$uni1,input$uni2,input$uni3)) %>%
-  #     select(., new_name, quality_of_education,alumni_employment,quality_of_faculty,publications,influence,citations,broad_impact,patents) %>%
-  #     arrange(., desc(new_name))
-  #   yvar = c('quality_of_education','alumni_employment','quality_of_faculty','publications','influence','citations','broad_impact','patents')
-  #   args <- list(df, yvar)
-  #   do.call(compuni, args)
-  # })
+  
+  
+  #Tab1: World map with country stats - Data table
+  output$country.table <- renderDataTable({
+    df.2015.country[,c(1,4,3,2,7,6,5,10,9,8)]
+  })
+  
   
 })

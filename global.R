@@ -8,7 +8,6 @@ school_and_country_table = read.csv("./data/school_and_country_table.csv", strin
   rename(., university_name = school_name)
 cleanupCountry = read.csv("./data/cleanupCountry.csv", stringsAsFactors = F)
 cleanupRename = read.csv("./data/cleanupRename.csv", stringsAsFactors = F)
-cleanupCoord = read.csv("./data/cleanupCoord.csv", stringsAsFactors = F)
 
 
 cwur = read.csv("./data/cwurData.csv", stringsAsFactors = F) %>%
@@ -60,7 +59,6 @@ rankings = unique(rbind(cwur[,c('new_name','country','year')],
   mutate(., country = gsub('UK', 'United Kingdom', country)) %>%
   mutate(., country = gsub('Slovak Republic', 'Slovakia', country)) %>%
   mutate(., country = gsub('Russian Federation', 'Russia', country))) %>%
-  left_join(., cleanupCoord[,c('new_name','lon','lat')], by = c('new_name')) %>%
   left_join(., cwur[,c(1,4:15)], by = c('new_name', 'year')) %>%
   left_join(., timesData[,c(1,4:15)], by = c('new_name', 'year')) %>%
   left_join(., shanghaiData[,c(1,3:11,13)], by = c('new_name', 'year')) %>%
@@ -83,7 +81,7 @@ countries = sort(unique(rankings$country))
 universities = sort(unique(rankings$new_name))
 
 #Quick way to get the means of the scoring criteria
-df.2015.mean = rankings[,c(2,6:23,25,28,30:36)] %>%
+df.2015.mean = rankings[,c(2,4:21,26,28:34)] %>%
   group_by(country) %>% 
   summarise_each(funs(f = round(mean(., na.rm=TRUE))))
 
@@ -100,8 +98,4 @@ df.2015.country = rankings %>%
             count_times = sum(!is.na(rank_times)),
             count_shanghai = sum(!is.na(rank_shanghai))) %>%
   left_join(., df.2015.mean, by = 'country') #Adding columns for the means of scoring criteria
-
-#Data frame for mapping universities
-df.2015.uni = rankings %>%
-  filter(., !is.na(lon) & !is.na(lat)) ####---> Need to add more coordinates!!!!
 
