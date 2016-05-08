@@ -7,7 +7,7 @@ source('./helpers.R')
 
 ## server.R ##
 shinyServer(function(input, output){
-
+  
   
   ####################
   ####Scatter Plot####
@@ -104,8 +104,8 @@ shinyServer(function(input, output){
                income>=input$x.t.income[1],
                income<=input$x.t.income[2]
         )
-    } else if (input$sourceScatterX==3) {
-      df = rankings %>%
+    } else if (input$sourceScatterX==3) { #CWUR
+      df = df %>%
         filter(rank_cwur>=input$x.c.rank[1],
                rank_cwur<=input$x.c.rank[2],
                quality_of_education>=input$x.c.education[1],
@@ -136,10 +136,10 @@ shinyServer(function(input, output){
                     '2' = rank_times,
                     '3' = rank_cwur),
              University = new_name, Country = country)
-
+    
     #Only keep the country(ies) involved, or all by default
     if (!input$countryScatter=='All') {
-      df = df[df$country %in% input$countryScatter,]
+      df = df[df$Country %in% input$countryScatter,]
     }
     
     org.x = switch(input$sourceScatterX,
@@ -154,7 +154,7 @@ shinyServer(function(input, output){
     xaxis = list(title = org.x[[2]], rangemode='tozero') #x-axis title
     yaxis = list(title = org.y[[2]], rangemode='tozero') #y-axis title
     
-    if (input$sourceScatterY!=input$sourceScatterX & nrow(df) > 0) {
+    if ((input$sourceScatterY!=input$sourceScatterX) & (nrow(df) > 0)) {
       max=max(df[,1:2], na.rm=T)
       
       #Draw scatterplot
@@ -169,7 +169,7 @@ shinyServer(function(input, output){
              title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
         add_trace(x = c(0,max), y = c(0,max), mode = "line", color='black',
                   showlegend=F, name='')
-    } else if (input$sourceScatterY==input$sourceScatterX & nrow(df) > 0){
+    } else if ((input$sourceScatterY==input$sourceScatterX) & (nrow(df) > 0)) {
       max=max(df[,1], na.rm=T)
       
       #Draw scatterplot
@@ -185,19 +185,18 @@ shinyServer(function(input, output){
         add_trace(x = c(0,max), y = c(0,max), mode = "line", color='black',
                   showlegend=F, name='')
     } else { 
-      print(df)
       df=rbind(df,c(0,0,NA))
       plot_ly(df, x = df[,1], y = df[,1])
       layout(xaxis = xaxis,
              yaxis = yaxis,
              title = paste(org.y[[2]],'by',org.x[[2]], sep=' '))
-      }
+    }
   })
   
   
-  #################
-  ####World Map####
-  #################
+  #####################
+  ####Country Stats####
+  #####################
   
   #Reactive for world map data by country
   country = reactive({
@@ -257,17 +256,53 @@ shinyServer(function(input, output){
       } else {
         df.2015.country[order(var, decreasing = TRUE),c('country',stat)]
       }
-      
       df = df[complete.cases(df),]
       
-      gvisBarChart(data = df, 
-                   xvar = "country", 
-                   yvar = stat,
+      #Rename column for legend
+      colnames(df)[2] = switch(stat,
+                               'top_shanghai' = 'Shanghai Rankings - Top rank per country (smaller is better)',
+                               'median_shanghai' = 'Shanghai Rankings - Median rank per country (smaller is better)',
+                               'count_shanghai' = 'Shanghai Rankings - Count of ranked universities',
+                               'alumni' = 'Shanghai Rankings - Mean of alumni score',
+                               'award' = 'Shanghai Rankings - Mean of award score',
+                               'hici' = 'Shanghai Rankings - Mean of HiCi score', 
+                               'ns' = 'Shanghai Rankings - Mean of N&S score',
+                               'pub' = 'Shanghai Rankings - Mean of PUB score',
+                               'pcp' = 'Shanghai Rankings - Mean of PCP score',
+                               
+                               'top_times' = 'Times Rankings - Top rank per country (smaller is better)',
+                               'median_times' = 'Times Rankings - Median rank per country (smaller is better)',
+                               'count_times' = 'Times Rankings - Count of ranked universities',
+                               'teaching' = 'Times Rankings - Mean of teaching score',
+                               'international' = 'Times Rankings - Mean of international score',
+                               'research' = 'Times Rankings - Mean of research score',
+                               'citations_times' = 'Times Rankings - Mean of citations score',
+                               'income' = 'Times Rankings - Mean of income score',
+                               
+                               'top_cwur' = 'CWUR Rankings - Top rank per country (smaller is better)',
+                               'median_cwur' = 'CWUR Rankings - Median rank per country (smaller is better)',
+                               'count_cwur' = 'CWUR Rankings - Count of ranked universities',
+                               'quality_of_education' = 'CWUR Rankings - Mean of quality of education score',
+                               'alumni_employment' = 'CWUR Rankings - Mean of alumni employment score',
+                               'quality_of_faculty' = 'CWUR Rankings - Mean of quality of faculty score',
+                               'publications' = 'CWUR Rankings - Mean of publications score',
+                               'influence' = 'CWUR Rankings - Mean of influence score',
+                               'citations_cwur' = 'CWUR Rankings - Mean of citations score',
+                               'broad_impact' = 'CWUR Rankings - Mean of broad impact score',
+                               'patents' = 'CWUR Rankings - Mean of patents score'
+      )
+      
+      gvisBarChart(data = df,
+                   xvar = "country",
+                   yvar = colnames(df)[2],
                    options=list(legend="{position: 'top'}",
                                 height=900,
                                 align='top',
                                 fontSize=8)
-      )}
+      )
+      
+      
+    }
     
     do.call(barcountry, country())
     
@@ -277,7 +312,6 @@ shinyServer(function(input, output){
   ###################
   ####Uni Profile####
   ###################
-  
   
   #Ranks for one university
   output$unirank.table <- renderDataTable({

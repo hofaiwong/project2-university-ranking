@@ -12,6 +12,12 @@ shinyUI(
     id = "nav",
     theme = shinytheme("united"),
     
+    
+    
+    #####################
+    ####Country Stats####
+    #####################
+    
     tabPanel("Country Stats",
              
              fluidRow(
@@ -77,7 +83,11 @@ shinyUI(
                                                     "Mean broad impact score" = 11,
                                                     "Mean patents score" = 12),
                                      selected = 1)
-                      )
+                      ),
+                      hr(),
+                      em("Note:"),
+                      br(),
+                      helpText("Select an organization and their associated metrics. Please refer to the Reference tab for definitions")
                ),
                column(width = 9,
                       tabsetPanel(
@@ -86,9 +96,17 @@ shinyUI(
                                         htmlOutput("country.map"))),
                         tabPanel("Bar Chart",
                                  column(width = 12,
-                                        htmlOutput("country.bar")))
+                                        htmlOutput("country.bar")
+                                 ))
                       )
                ))),
+
+    
+    
+    
+    ####################
+    ####Scatter Plot####
+    ####################
     
     tabPanel("Org Comparison",
              fluidRow(
@@ -112,7 +130,11 @@ shinyUI(
                                   c('All',countries),
                                   multiple = TRUE,
                                   selected='All',
-                                  selectize = TRUE)
+                                  selectize = TRUE),
+                      hr(),
+                      em("Note:"),
+                      br(),
+                      helpText("Select organizations for X and Y axis. You can also zoom in on the map or search for a specific country")
                       
                ),
                column(9,
@@ -201,6 +223,11 @@ shinyUI(
     ),
     
     
+    
+    ###################
+    ####Uni Profile####
+    ###################
+    
     tabPanel("University Profile",
              fluidRow(
                column(width = 12,
@@ -227,6 +254,9 @@ shinyUI(
     ),    
     
     
+    ############
+    ####Data####
+    ############
     
     tabPanel("Data",
              tabsetPanel(
@@ -255,6 +285,12 @@ shinyUI(
                )
              )
     ),
+    
+    
+    
+    #################
+    ####Reference####
+    #################
     
     tabPanel("Reference",
              fluidRow(
