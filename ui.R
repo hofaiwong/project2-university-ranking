@@ -20,23 +20,103 @@ shinyUI(
                                    choices = list("Shanghai Rankings" = 1,
                                                   "Times World University Rankings" = 2,
                                                   "Center for World University Rankings" = 3),
-                                   selected = 2),
+                                   selected = 1),
                       radioButtons("sourceScatterX",
                                    "Select organization for x-axis",
                                    choices = list("Shanghai Rankings" = 1,
                                                   "Times World University Rankings" = 2,
                                                   "Center for World University Rankings" = 3),
-                                   selected = 1),
-                      br(),
+                                   selected = 2),
+                      hr(),
                       selectInput('countryScatter',
                                   'Select country',
                                   c('All',countries),
                                   multiple = TRUE,
                                   selected='All',
                                   selectize = TRUE)
+                      
                ),
                column(9,
+                      fluidRow(
+                               column(12, 
                       plotlyOutput('country.scatter')
+                               )
+                      ),
+                      fluidRow(
+                        column(6,
+                               h4(paste0('Modify Y-axis criteria')),
+                                  
+                               conditionalPanel(
+                                 condition = "input.sourceScatterY == 1", #Shanghai
+                                 sliderInput("y.sh.rank", "Shanghai rank:", min=0, max=500, value=c(1,500)),
+                                 sliderInput("y.sh.alumni", "Alumni score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.award", "award score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.hici", "hici score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.ns", "ns score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.pub", "pub score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.sh.pcp", "pcp score:", min=0, max=100, value=c(0,100))
+                               ),
+                               
+                               conditionalPanel(
+                                 condition = "input.sourceScatterY == 2", #Times
+                                 sliderInput("y.t.rank", "Times rank:", min=0, max=400, value=c(1,400)),
+                                 sliderInput("y.t.teaching", "Teaching score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.t.international", "International score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.t.research", "Research score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.t.citations_times", "Citations score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.t.income", "Income score:", min=0, max=100, value=c(0,100))
+                               ),
+                               
+                               conditionalPanel(
+                                 condition = "input.sourceScatterY == 3", #CWUR
+                                 sliderInput("y.c.rank", "CWUR rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("y.c.education", "Education score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.c.alumni", "Alumni employment score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.c.faculty", "Faculty score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.c.pub", "Publications score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.c.influence", "Influence score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.c.citations", "Citations score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.c.impact", "Broad impact score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("y.c.patents", "Patents score:", min=0, max=100, value=c(0,100))
+                               ) ),
+                        
+                        column(6,
+                               h4(paste0('Modify X-axis criteria')),
+                               
+                               conditionalPanel(
+                                 condition = "input.sourceScatterX == 1", #Shanghai
+                                 sliderInput("x.sh.rank", "Shanghai rank:", min=0, max=500, value=c(1,500)),
+                                 sliderInput("x.sh.alumni", "Alumni score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.award", "award score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.hici", "hici score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.ns", "ns score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.pub", "pub score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.sh.pcp", "pcp score:", min=0, max=100, value=c(0,100))
+                               ),
+                               
+                               conditionalPanel(
+                                 condition = "input.sourceScatterX == 2", #Times
+                                 sliderInput("x.t.rank", "Times rank:", min=0, max=400, value=c(1,400)),
+                                 sliderInput("x.t.teaching", "Teaching score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.t.international", "International score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.t.research", "Research score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.t.citations_times", "Citations score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.t.income", "Income score:", min=0, max=100, value=c(0,100))
+                               ),
+                               
+                               conditionalPanel(
+                                 condition = "input.sourceScatterX == 3", #CWUR
+                                 sliderInput("x.c.rank", "CWUR rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("x.c.education", "Education score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.c.alumni", "Alumni employment score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.c.faculty", "Faculty score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.c.pub", "Publications score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.c.influence", "Influence score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.c.citations", "Citations score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.c.impact", "Broad impact score:", min=0, max=100, value=c(0,100)),
+                                 sliderInput("x.c.patents", "Patents score:", min=0, max=100, value=c(0,100))
+                               ) )
+                      )
                )
              )
     ),

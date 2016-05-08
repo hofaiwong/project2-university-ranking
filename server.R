@@ -10,23 +10,137 @@ shinyServer(function(input, output){
   
   #Scatter plot
   output$country.scatter = renderPlotly({
-
-    df = rankings[,c(26,15,4,1,2)] %>%
-      select(as.numeric(input$sourceScatterX), 
-             as.numeric(input$sourceScatterY),
-             University = new_name,
-             country)
-    #Only keep the 2 rankings selected for the scatter
-    df = df[complete.cases(df),]
+    
+    #Y-axis sliders
+    if (input$sourceScatterY==1) { #Shanghai
+      df = rankings %>%
+        filter(rank_shanghai>=input$y.sh.rank[1],
+               rank_shanghai<=input$y.sh.rank[2],
+               alumni>=input$y.sh.alumni[1],
+               alumni<=input$y.sh.alumni[2],
+               award>=input$y.sh.award[1],
+               award<=input$y.sh.award[2],
+               hici>=input$y.sh.hici[1],
+               hici<=input$y.sh.hici[2],
+               ns>=input$y.sh.ns[1],
+               ns<=input$y.sh.ns[2],
+               pub>=input$y.sh.pub[1],
+               pub<=input$y.sh.pub[2],
+               pcp>=input$y.sh.pcp[1],
+               pcp<=input$y.sh.pcp[2]
+        )
+    } else if (input$sourceScatterY==2) { #Times
+      df = rankings %>%
+        filter(rank_times>=input$y.t.rank[1],
+               rank_times<=input$y.t.rank[2],
+               teaching>=input$y.t.teaching[1],
+               teaching<=input$y.t.teaching[2],
+               international>=input$y.t.international[1],
+               international<=input$y.t.international[2],
+               research>=input$y.t.research[1],
+               research<=input$y.t.research[2],
+               citations_times>=input$y.t.citations_times[1],
+               citations_times<=input$y.t.citations_times[2],
+               income>=input$y.t.income[1],
+               income<=input$y.t.income[2]
+        )
+    } else if (input$sourceScatterY==3) {
+      df = rankings %>%
+        filter(rank_cwur>=input$y.c.rank[1],
+               rank_cwur<=input$y.c.rank[2],
+               quality_of_education>=input$y.c.education[1],
+               quality_of_education<=input$y.c.education[2],
+               alumni_employment>=input$y.c.alumni[1],
+               alumni_employment<=input$y.c.alumni[2],
+               quality_of_faculty>=input$y.c.faculty[1],
+               quality_of_faculty<=input$y.c.faculty[2],
+               publications>=input$y.c.pub[1],
+               publications<=input$y.c.pub[2],
+               influence>=input$y.c.influence[1],
+               influence<=input$y.c.influence[2],
+               citations_cwur>=input$y.c.citations[1],
+               citations_cwur<=input$y.c.citations[2],
+               broad_impact>=input$y.c.impact[1],
+               broad_impact<=input$y.c.impact[2],
+               patents>=input$y.c.patents[1],
+               patents<=input$y.c.patents[2])
+    }
+    
+    #X-axis sliders
+    if (input$sourceScatterX==1) { #Shanghai
+      df = df %>%
+        filter(rank_shanghai>=input$x.sh.rank[1],
+               rank_shanghai<=input$x.sh.rank[2],
+               alumni>=input$x.sh.alumni[1],
+               alumni<=input$x.sh.alumni[2],
+               award>=input$x.sh.award[1],
+               award<=input$x.sh.award[2],
+               hici>=input$x.sh.hici[1],
+               hici<=input$x.sh.hici[2],
+               ns>=input$x.sh.ns[1],
+               ns<=input$x.sh.ns[2],
+               pub>=input$x.sh.pub[1],
+               pub<=input$x.sh.pub[2],
+               pcp>=input$x.sh.pcp[1],
+               pcp<=input$x.sh.pcp[2]
+        )
+    } else if (input$sourceScatterX==2) { #Times
+      df = df %>%
+        filter(rank_times>=input$x.t.rank[1],
+               rank_times<=input$x.t.rank[2],
+               teaching>=input$x.t.teaching[1],
+               teaching<=input$x.t.teaching[2],
+               international>=input$x.t.international[1],
+               international<=input$x.t.international[2],
+               research>=input$x.t.research[1],
+               research<=input$x.t.research[2],
+               citations_times>=input$x.t.citations_times[1],
+               citations_times<=input$x.t.citations_times[2],
+               income>=input$x.t.income[1],
+               income<=input$x.t.income[2]
+        )
+    } else if (input$sourceScatterX==3) {
+      df = rankings %>%
+        filter(rank_cwur>=input$x.c.rank[1],
+               rank_cwur<=input$x.c.rank[2],
+               quality_of_education>=input$x.c.education[1],
+               quality_of_education<=input$x.c.education[2],
+               alumni_employment>=input$x.c.alumni[1],
+               alumni_employment<=input$x.c.alumni[2],
+               quality_of_faculty>=input$x.c.faculty[1],
+               quality_of_faculty<=input$x.c.faculty[2],
+               publications>=input$x.c.pub[1],
+               publications<=input$x.c.pub[2],
+               influence>=input$x.c.influence[1],
+               influence<=input$x.c.influence[2],
+               citations_cwur>=input$x.c.citations[1],
+               citations_cwur<=input$x.c.citations[2],
+               broad_impact>=input$x.c.impact[1],
+               broad_impact<=input$x.c.impact[2],
+               patents>=input$x.c.patents[1],
+               patents<=input$x.c.patents[2])
+    }
+    
+    df = df %>%
+      select(switch(input$sourceScatterX,
+                    '1' = rank_shanghai,
+                    '2' = rank_times,
+                    '3' = rank_cwur),
+             switch(input$sourceScatterY,
+                    '1' = rank_shanghai,
+                    '2' = rank_times,
+                    '3' = rank_cwur),
+             University = new_name, Country = country)
+    
     #Only keep the country(ies) involved, or all by default
     if (!input$countryScatter=='All') {
       df = df[df$country %in% input$countryScatter,]
     }
     
     org.x = switch(input$sourceScatterX,
-                 '1' = list(df$rank_shanghai,'Shanghai Ranking'),
-                 '2' = list(df$rank_times,'Times Ranking'),
-                 '3' = list(df$rank_cwur,'CWUR Ranking'))
+                   '1' = list(df$rank_shanghai,'Shanghai Ranking'),
+                   '2' = list(df$rank_times,'Times Ranking'),
+                   '3' = list(df$rank_cwur,'CWUR Ranking'))
     org.y = switch(input$sourceScatterY,
                    '1' = list(df$rank_shanghai,'Shanghai Ranking'),
                    '2' = list(df$rank_times,'Times Ranking'),
@@ -34,21 +148,41 @@ shinyServer(function(input, output){
     
     xaxis = list(title = org.x[[2]]) #x-axis title
     yaxis = list(title = org.y[[2]]) #y-axis title
-    max=max(df[,1:2])
     
-    #Draw scatterplot
-    plot_ly(df, x = org.x[[1]], y = org.y[[1]],
-            text = paste(University,
-                         paste0(org.y[[2]],': ',org.y[[1]]),
-                         paste0(org.x[[2]],': ',org.x[[1]]), sep='<br>'),
-            mode = "markers",
-            color = country,
-            colors = 'Set1') %>%
-            layout(xaxis = xaxis, 
-                   yaxis = yaxis, 
-                   title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
-      add_trace(x = c(0,max), y = c(0,max), mode = "line", 
-                showlegend=T, name='')
+    
+    if (input$sourceScatterY!=input$sourceScatterX) {
+      max=max(df[,1:2], na.rm=T)
+      
+      #Draw scatterplot
+      plot_ly(df, x = df[,1], y = df[,2],
+              text = paste(University,
+                           paste0(org.y[[2]],': ',org.y[[1]]),
+                           paste0(org.x[[2]],': ',org.x[[1]]), sep='<br>'),
+              mode = "markers",
+              color = Country,
+              colors = 'OrRd')
+      layout(xaxis = xaxis,
+             yaxis = yaxis,
+             title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
+        add_trace(x = c(0,max), y = c(0,max), mode = "line", color='black',
+                  showlegend=F, name='')
+    } else {
+      max=max(df[,1], na.rm=T)
+      
+      #Draw scatterplot
+      plot_ly(df, x = df[,1], y = df[,1],
+              text = paste(University,
+                           paste0(org.y[[2]],': ',org.y[[1]]),
+                           paste0(org.x[[2]],': ',org.x[[1]]), sep='<br>'),
+              mode = "markers",
+              color = Country,
+              colors = 'OrRd')
+      layout(xaxis = xaxis,
+             yaxis = yaxis,
+             title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
+        add_trace(x = c(0,max), y = c(0,max), mode = "line", color='black',
+                  showlegend=F, name='')
+    }
   })
   
   
