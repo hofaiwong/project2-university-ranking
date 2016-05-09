@@ -10,7 +10,8 @@ cleanupCountry = read.csv("./data/cleanupCountry.csv", stringsAsFactors = F)
 cleanupRename = read.csv("./data/cleanupRename.csv", stringsAsFactors = F)
 
 
-cwur = read.csv("./data/cwurData.csv", stringsAsFactors = F) %>%
+cwur.src = read.csv("./data/cwurData.csv", stringsAsFactors = F)
+cwur = cwur.src %>%
   rename(., university_name = institution, total_score = score) %>%
   mutate(., university_name = ifelse (grepl('^The ', university_name), 
                                       gsub('The ','',university_name), 
@@ -22,7 +23,8 @@ cwur = read.csv("./data/cwurData.csv", stringsAsFactors = F) %>%
 cwur[,c(5:12)] = sapply(cwur[,c(5:12)], ranktoscore) #Convert CWUR ranks to scores
 
 
-shanghaiData = read.csv("./data/shanghaiData.csv", stringsAsFactors = F) %>%
+shanghaiData.src = read.csv("./data/shanghaiData.csv", stringsAsFactors = F)
+shanghaiData = shanghaiData.src %>%
   left_join(., rbind(school_and_country_table,cleanupCountry), by = c('university_name')) %>%
   mutate(., university_name = ifelse (grepl('^The ', university_name), 
                                       gsub('The ','',university_name), 
@@ -31,10 +33,11 @@ shanghaiData = read.csv("./data/shanghaiData.csv", stringsAsFactors = F) %>%
   mutate(., new_name = ifelse(is.na(new_name), university_name, new_name)) %>%
   filter(., year == 2015)
 #Missingness check: total_score is missing for universities ranked >100 (do not use; take rank instead); use kNN for imputing ns NAs (sqrt(n) ~ 70)
-# shanghaiData.i = kNN(shanghaiData, k = 70)
-# shanghaiData = shanghaiData.i[,1:13]
+shanghaiData.i = kNN(shanghaiData, k = 70)
+shanghaiData = shanghaiData.i[,1:13]
 
-timesData = read.csv("./data/timesData.csv", stringsAsFactors = F) %>%
+timesData.src = read.csv("./data/timesData.csv", stringsAsFactors = F)
+timesData = timesData.src %>%
   mutate(., university_name = ifelse (grepl('^The ', university_name), 
                                       gsub('The ','',university_name), 
                                       university_name)) %>%
@@ -45,8 +48,8 @@ timesData = read.csv("./data/timesData.csv", stringsAsFactors = F) %>%
          total_score = as.numeric(total_score)) %>%
   filter(., year == 2015)
 #Missingness check: total_score is missing for universities ranked >200 (do not use; take rank instead); use kNN for imputing NAs (sqrt(n) ~ 51)
-# timesData.i = kNN(timesData, k = 51)
-# timesData = timesData.i[,1:15]
+timesData.i = kNN(timesData, k = 51)
+timesData = timesData.i[,1:15]
 
 #Data frame of unique universities ranked in 2015
 rankings = unique(rbind(cwur[,c('new_name','country','year')],

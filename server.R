@@ -426,4 +426,34 @@ shinyServer(function(input, output){
     cbind(Metric = rownames(df.t), df.t)
   }, options = list(searching=F, paging=F, bInfo=T))
   
+  
+  ######################
+  ####About the data####
+  ######################
+  library(corrplot)  
+  
+  #Correlation: Shanghai
+  output$shanghai.correlation <- renderPlot({
+    df = shanghaiData[shanghaiData$year==2015,c(5:10)]
+    corrplot(cor(df), order = "hclust")
+  })
+  
+  #Correlation: Times
+  output$times.correlation <- renderPlot({
+    df = timesData[timesData$year==2015,c(4:8)]
+    corrplot(cor(df), order = "hclust")
+  })
+  
+  #Correlation: CWUR
+  output$cwur.correlation <- renderPlot({
+    df = cwur.src[cwur.src$year==2015,c(5:12)]
+    corrplot(cor(df), order = "hclust")
+  })
+  
+  output$overlap <- renderPlot({
+    df = rankings[,c(26,15,4)]
+    colnames(df) = c('Shanghai','Times','CWUR')
+    aggr(df, numbers=T)
+  })
+  
 })
