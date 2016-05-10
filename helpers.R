@@ -1,3 +1,11 @@
+########################################
+#### Project 2 - Shiny Visualization####
+#### Ho Fai Wong - May 8, 2016      ####
+########################################
+
+
+## helpers.R ##
+
 #Split range of ranks
 split_rank <- function(rank) {
   if (grepl('-',rank)) {
@@ -37,8 +45,7 @@ baruni <- function(df, yvar) {
                             )
   }
 
-
-#Convert rank to score
-ranktoscore <- function(x) { 
-  return((1-x/1000) * 100) #n=1000 obs in CWUR 2015
-}
+# #Convert rank to score
+# ranktoscore <- function(x) { 
+#   return((1-x/1000) * 100) #n=1000 obs in CWUR 2015
+# }

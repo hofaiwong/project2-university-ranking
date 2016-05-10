@@ -1,9 +1,8 @@
-library(plotly)
-library(shiny)
-library(shinydashboard)
-library(googleVis)
-library(leaflet)
-library(shinythemes)
+########################################
+#### Project 2 - Shiny Visualization####
+#### Ho Fai Wong - May 8, 2016      ####
+########################################
+
 
 ## ui.R ##
 shinyUI(
@@ -11,8 +10,6 @@ shinyUI(
     title = "2015 World University Rankings",
     id = "nav",
     theme = shinytheme("united"),
-    
-    
     
     #####################
     ####Country Stats####
@@ -74,14 +71,14 @@ shinyUI(
                                      choices = list("Top rank" = 1, 
                                                     "Median rank" = 2,
                                                     "Count of ranked universities" = 3,
-                                                    "Mean education score" = 5,
-                                                    "Mean alumni employment score" = 6,
-                                                    "Mean faculty score" = 7,
-                                                    "Mean publications score" = 8,
-                                                    "Mean influence score" = 9,
-                                                    "Mean citations score" = 10,
-                                                    "Mean broad impact score" = 11,
-                                                    "Mean patents score" = 12),
+                                                    "Mean education rank" = 5,
+                                                    "Mean alumni employment rank" = 6,
+                                                    "Mean faculty rank" = 7,
+                                                    "Mean publications rank" = 8,
+                                                    "Mean influence rank" = 9,
+                                                    "Mean citations rank" = 10,
+                                                    "Mean broad impact rank" = 11,
+                                                    "Mean patents rank" = 12),
                                      selected = 1)
                       ),
                       hr(),
@@ -92,16 +89,12 @@ shinyUI(
                column(width = 9,
                       tabsetPanel(
                         tabPanel("Map",
-                                 column(width = 12,
-                                        htmlOutput("country.map"))),
+                                 htmlOutput("country.map")),
                         tabPanel("Bar Chart",
-                                 column(width = 12,
-                                        htmlOutput("country.bar")
-                                 ))
+                                  htmlOutput("country.bar")
+                                 )
                       )
                ))),
-    
-    
     
     
     ####################
@@ -172,14 +165,14 @@ shinyUI(
                                conditionalPanel(
                                  condition = "input.sourceScatterY == 3", #CWUR
                                  sliderInput("y.c.rank", "CWUR rank:", min=0, max=1000, value=c(1,1000)),
-                                 sliderInput("y.c.education", "Education score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.c.alumni", "Alumni employment score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.c.faculty", "Faculty score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.c.pub", "Publications score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.c.influence", "Influence score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.c.citations", "Citations score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.c.impact", "Broad impact score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("y.c.patents", "Patents score:", min=0, max=100, value=c(0,100))
+                                 sliderInput("y.c.education", "Education rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("y.c.alumni", "Alumni employment rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("y.c.faculty", "Faculty rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("y.c.pub", "Publications rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("y.c.influence", "Influence rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("y.c.citations", "Citations rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("y.c.impact", "Broad impact rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("y.c.patents", "Patents rank:", min=0, max=1000, value=c(1,1000))
                                ) ),
                         
                         column(6,
@@ -209,14 +202,14 @@ shinyUI(
                                conditionalPanel(
                                  condition = "input.sourceScatterX == 3", #CWUR
                                  sliderInput("x.c.rank", "CWUR rank:", min=0, max=1000, value=c(1,1000)),
-                                 sliderInput("x.c.education", "Education score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.c.alumni", "Alumni employment score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.c.faculty", "Faculty score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.c.pub", "Publications score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.c.influence", "Influence score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.c.citations", "Citations score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.c.impact", "Broad impact score:", min=0, max=100, value=c(0,100)),
-                                 sliderInput("x.c.patents", "Patents score:", min=0, max=100, value=c(0,100))
+                                 sliderInput("x.c.education", "Education rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("x.c.alumni", "Alumni employment rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("x.c.faculty", "Faculty rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("x.c.pub", "Publications rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("x.c.influence", "Influence rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("x.c.citations", "Citations rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("x.c.impact", "Broad impact rank:", min=0, max=1000, value=c(1,1000)),
+                                 sliderInput("x.c.patents", "Patents rank:", min=0, max=1000, value=c(1,1000))
                                ) )
                       )
                )
@@ -244,14 +237,14 @@ shinyUI(
              hr(),
              fluidRow(width=12,
                       box(width = 4,
-                          h4("Shanghai Scores"),
+                          h4("Shanghai Scores (out of 100)"),
                           htmlOutput("bar.shanghai")
                       ),
                       box(width = 4,
-                          h4("Times Scores"),
+                          h4("Times Scores (out of 100)"),
                           htmlOutput("bar.times")),
                       box(width = 4,
-                          h4("CWUR Scores*"),
+                          h4("CWUR Ranks (out of 1000 universities)"),
                           htmlOutput("bar.cwur"))
              )
     ),    
@@ -370,7 +363,8 @@ shinyUI(
                                           ),
                                           br(),
                                           p('Missing data, assumed to be Missing At Random, was imputed using K-Nearest Neigbhors with k=sqrt(n).'),
-                                          p('In cases where the world rank was a range, the middle of the range was used for visualization purposes.')
+                                          p('In cases where the world rank was a range, the middle of the range was used for visualization purposes.'),
+                                          p('Times and Shanghai data contained scores for sub-criteria, but CWUR data contained rankings. For this visualization project, CWUR rankings were not converted to scores.')
                                    ),
                                    column(8,
                                           h4('Gaps in ranked universities across the 3 ranking organizations'),

@@ -1,21 +1,145 @@
-library(plotly)
-library(shiny)
-library(leaflet)
-library(googleVis)
-library(htmltools)
-source('./helpers.R')
+########################################
+#### Project 2 - Shiny Visualization####
+#### Ho Fai Wong - May 8, 2016      ####
+########################################
+
 
 ## server.R ##
+source('./helpers.R')
+
 shinyServer(function(input, output){
+  
+  #####################
+  ####Country Stats####
+  #####################
+  
+  #Reactive function for world map data (by country)
+  country = reactive({
+    args = if (input$sourceCountry == 1) { #Shanghai
+      switch(input$selectedStat_shanghai,
+             '1' = list(df.2015.country$top_shanghai, 'top_shanghai', "{colors: [\'green\', \'yellow\', \'red\']}"),
+             '2' = list(df.2015.country$median_shanghai, 'median_shanghai', "{colors: [\'green\', \'yellow\', \'red\']}"),
+             '3' = list(df.2015.country$count_shanghai, 'count_shanghai', "{colors: [\'orange\', \'yellow\', \'green\']}"),
+             '5' = list(df.2015.country$alumni, 'alumni', "{colors: [\'red\', \'yellow\', \'green\']}"),
+             '6' = list(df.2015.country$award, 'award', "{colors: [\'red\', \'yellow\', \'green\']}"),
+             '7' = list(df.2015.country$hici, 'hici', "{colors: [\'red\', \'yellow\', \'green\']}"),
+             '8' = list(df.2015.country$ns, 'ns', "{colors: [\'red\', \'yellow\', \'green\']}"),
+             '9' = list(df.2015.country$pub, 'pub', "{colors: [\'red\', \'yellow\', \'green\']}"),
+             '10' = list(df.2015.country$pcp, 'pcp', "{colors: [\'red\', \'yellow\', \'green\']}")
+             
+      )} else if (input$sourceCountry == 2) { #Times
+        switch(input$selectedStat_times,
+               '1' = list(df.2015.country$top_times, 'top_times', "{colors: [\'green\', \'yellow\', \'red\']}"),
+               '2' = list(df.2015.country$median_times, 'median_times', "{colors: [\'green\', \'yellow\', \'red\']}"),
+               '3' = list(df.2015.country$count_times, 'count_times', "{colors: [\'orange\', \'yellow\', \'green\']}"),
+               '5' = list(df.2015.country$teaching, 'teaching', "{colors: [\'red\', \'yellow\', \'green\']}"),
+               '6' = list(df.2015.country$international, 'international', "{colors: [\'red\', \'yellow\', \'green\']}"),
+               '7' = list(df.2015.country$research, 'research', "{colors: [\'red\', \'yellow\', \'green\']}"),
+               '8' = list(df.2015.country$citations_times, 'citations_times', "{colors: [\'red\', \'yellow\', \'green\']}"),
+               '9' = list(df.2015.country$income, 'income', "{colors: [\'red\', \'yellow\', \'green\']}")
+               
+        )} else if (input$sourceCountry == 3) { #CWUR
+          switch(input$selectedStat_cwur,
+                 '1' = list(df.2015.country$top_cwur, 'top_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '2' = list(df.2015.country$median_cwur, 'median_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '3' = list(df.2015.country$count_cwur, 'count_cwur', "{colors: [\'orange\', \'yellow\', \'green\']}"),
+                 '5' = list(df.2015.country$quality_of_education, 'quality_of_education', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '6' = list(df.2015.country$alumni_employment, 'alumni_employment', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '7' = list(df.2015.country$quality_of_faculty, 'quality_of_faculty', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '8' = list(df.2015.country$publications, 'publications', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '9' = list(df.2015.country$influence, 'influence', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '10' = list(df.2015.country$citations_cwur, 'citations_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '11' = list(df.2015.country$broad_impact, 'broad_impact', "{colors: [\'green\', \'yellow\', \'red\']}"),
+                 '12' = list(df.2015.country$patents, 'patents', "{colors: [\'green\', \'yellow\', \'red\']}")
+          )}
+  })
+  
+  #Output: World map with country stats
+  output$country.map <- renderGvis({
+    do.call(world_map, country())
+  })
+  
+  
+  #Output: Bar chart with selected stats (by country)
+  output$country.bar <- renderGvis({
+    
+    #Draw bar chart for countries by metric
+    barcountry <- function(var, stat, color) {
+      
+      df = if (grepl('top',stat) | grepl('median',stat)) {
+        df.2015.country[order(var),c('country',stat)]
+      } else {
+        df.2015.country[order(var, decreasing = TRUE),c('country',stat)]
+      }
+      df = df[complete.cases(df),]
+      
+      #Rename column for legend
+      colnames(df)[2] = switch(stat,
+                               'top_shanghai' = 'Shanghai Rankings - Top rank per country (smaller is better)',
+                               'median_shanghai' = 'Shanghai Rankings - Median rank per country (smaller is better)',
+                               'count_shanghai' = 'Shanghai Rankings - Count of ranked universities',
+                               'alumni' = 'Shanghai Rankings - Mean of alumni score',
+                               'award' = 'Shanghai Rankings - Mean of award score',
+                               'hici' = 'Shanghai Rankings - Mean of HiCi score', 
+                               'ns' = 'Shanghai Rankings - Mean of N&S score',
+                               'pub' = 'Shanghai Rankings - Mean of PUB score',
+                               'pcp' = 'Shanghai Rankings - Mean of PCP score',
+                               
+                               'top_times' = 'Times Rankings - Top rank per country (smaller is better)',
+                               'median_times' = 'Times Rankings - Median rank per country (smaller is better)',
+                               'count_times' = 'Times Rankings - Count of ranked universities',
+                               'teaching' = 'Times Rankings - Mean of teaching score',
+                               'international' = 'Times Rankings - Mean of international score',
+                               'research' = 'Times Rankings - Mean of research score',
+                               'citations_times' = 'Times Rankings - Mean of citations score',
+                               'income' = 'Times Rankings - Mean of income score',
+                               
+                               'top_cwur' = 'CWUR Rankings - Top rank per country (smaller is better)',
+                               'median_cwur' = 'CWUR Rankings - Median rank per country (smaller is better)',
+                               'count_cwur' = 'CWUR Rankings - Count of ranked universities',
+                               'quality_of_education' = 'CWUR Rankings - Mean of quality of education rank',
+                               'alumni_employment' = 'CWUR Rankings - Mean of alumni employment rank',
+                               'quality_of_faculty' = 'CWUR Rankings - Mean of quality of faculty rank',
+                               'publications' = 'CWUR Rankings - Mean of publications rank',
+                               'influence' = 'CWUR Rankings - Mean of influence rank',
+                               'citations_cwur' = 'CWUR Rankings - Mean of citations rank',
+                               'broad_impact' = 'CWUR Rankings - Mean of broad impact rank',
+                               'patents' = 'CWUR Rankings - Mean of patents rank'
+      )
+      
+      df = as.data.frame(df)
+      df = if (grepl('CWUR',colnames(df)[2]) & !grepl('Count',colnames(df)[2])) {
+        df[order(df[,2]),]
+      } else {
+        df
+      }
+      
+      gvisBarChart(data = df,
+                   xvar = "country",
+                   yvar = colnames(df)[2],
+                   options=list(legend="{position: 'top'}",
+                                height=900,
+                                align='top',
+                                chartArea='{left:200, top:50, width:\'100%\', height:\'100%\'}',
+                                fontSize=10)
+      )
+    }
+    
+    do.call(barcountry, country())
+    
+  })
+  
+  
   
   
   ####################
   ####Scatter Plot####
   ####################
   
-  #Scatter plot
+  #Output: Scatter plot
   output$country.scatter = renderPlotly({
     df = rankings %>% arrange(country)
+    
     #Y-axis sliders
     if (input$sourceScatterY==1) { #Shanghai
       df = df %>%
@@ -49,7 +173,7 @@ shinyServer(function(input, output){
                income>=input$y.t.income[1],
                income<=input$y.t.income[2]
         )
-    } else if (input$sourceScatterY==3) {
+    } else if (input$sourceScatterY==3) { #CWUR
       df = df %>%
         filter(rank_cwur>=input$y.c.rank[1],
                rank_cwur<=input$y.c.rank[2],
@@ -126,6 +250,7 @@ shinyServer(function(input, output){
                patents<=input$x.c.patents[2])
     }
     
+    #Simplify data frame for output
     df = df %>%
       select(switch(input$sourceScatterX,
                     '1' = rank_shanghai,
@@ -142,6 +267,7 @@ shinyServer(function(input, output){
       df = df[df$Country %in% input$countryScatter,]
     }
     
+    #Prep lists to pass to plotly
     org.x = switch(input$sourceScatterX,
                    '1' = list(df$rank_shanghai,'Shanghai Ranking'),
                    '2' = list(df$rank_times,'Times Ranking'),
@@ -154,7 +280,8 @@ shinyServer(function(input, output){
     xaxis = list(title = org.x[[2]], rangemode='tozero') #x-axis title
     yaxis = list(title = org.y[[2]], rangemode='tozero') #y-axis title
     
-    if ((input$sourceScatterY!=input$sourceScatterX) & (nrow(df) > 0)) {
+    #Draw scatterplots depending on scenario
+    if ((input$sourceScatterY!=input$sourceScatterX) & (nrow(df) > 0)) { #Different orgs and available data
       max=max(df[,1:2], na.rm=T)
       
       #Draw scatterplot
@@ -169,7 +296,8 @@ shinyServer(function(input, output){
              title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
         add_trace(x = c(0,max), y = c(0,max), mode = "line", color='black',
                   showlegend=F, name='')
-    } else if ((input$sourceScatterY==input$sourceScatterX) & (nrow(df) > 0)) {
+      
+    } else if ((input$sourceScatterY==input$sourceScatterX) & (nrow(df) > 0)) { #Same org and actual data
       max=max(df[,1], na.rm=T)
       
       #Draw scatterplot
@@ -184,7 +312,8 @@ shinyServer(function(input, output){
              title = paste(org.y[[2]],'by',org.x[[2]], sep=' ')) %>%
         add_trace(x = c(0,max), y = c(0,max), mode = "line", color='black',
                   showlegend=F, name='')
-    } else { 
+      
+    } else { #No data, draw blank plot
       df=rbind(df,c(0,0,NA))
       plot_ly(df, x = df[,1], y = df[,1])
       layout(xaxis = xaxis,
@@ -193,120 +322,6 @@ shinyServer(function(input, output){
     }
   })
   
-  
-  #####################
-  ####Country Stats####
-  #####################
-  
-  #Reactive for world map data by country
-  country = reactive({
-    args = if (input$sourceCountry == 1) { #Shanghai
-      switch(input$selectedStat_shanghai,
-             '1' = list(df.2015.country$top_shanghai, 'top_shanghai', "{colors: [\'green\', \'yellow\', \'red\']}"),
-             '2' = list(df.2015.country$median_shanghai, 'median_shanghai', "{colors: [\'green\', \'yellow\', \'red\']}"),
-             '3' = list(df.2015.country$count_shanghai, 'count_shanghai', "{colors: [\'orange\', \'yellow\', \'green\']}"),
-             '5' = list(df.2015.country$alumni, 'alumni', "{colors: [\'red\', \'yellow\', \'green\']}"),
-             '6' = list(df.2015.country$award, 'award', "{colors: [\'red\', \'yellow\', \'green\']}"),
-             '7' = list(df.2015.country$hici, 'hici', "{colors: [\'red\', \'yellow\', \'green\']}"),
-             '8' = list(df.2015.country$ns, 'ns', "{colors: [\'red\', \'yellow\', \'green\']}"),
-             '9' = list(df.2015.country$pub, 'pub', "{colors: [\'red\', \'yellow\', \'green\']}"),
-             '10' = list(df.2015.country$pcp, 'pcp', "{colors: [\'red\', \'yellow\', \'green\']}")
-             
-      )} else if (input$sourceCountry == 2) { #Times
-        switch(input$selectedStat_times,
-               '1' = list(df.2015.country$top_times, 'top_times', "{colors: [\'green\', \'yellow\', \'red\']}"),
-               '2' = list(df.2015.country$median_times, 'median_times', "{colors: [\'green\', \'yellow\', \'red\']}"),
-               '3' = list(df.2015.country$count_times, 'count_times', "{colors: [\'orange\', \'yellow\', \'green\']}"),
-               '5' = list(df.2015.country$teaching, 'teaching', "{colors: [\'red\', \'yellow\', \'green\']}"),
-               '6' = list(df.2015.country$international, 'international', "{colors: [\'red\', \'yellow\', \'green\']}"),
-               '7' = list(df.2015.country$research, 'research', "{colors: [\'red\', \'yellow\', \'green\']}"),
-               '8' = list(df.2015.country$citations_times, 'citations_times', "{colors: [\'red\', \'yellow\', \'green\']}"),
-               '9' = list(df.2015.country$income, 'income', "{colors: [\'red\', \'yellow\', \'green\']}")
-               
-        )} else if (input$sourceCountry == 3) { #CWUR
-          switch(input$selectedStat_cwur,
-                 '1' = list(df.2015.country$top_cwur, 'top_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
-                 '2' = list(df.2015.country$median_cwur, 'median_cwur', "{colors: [\'green\', \'yellow\', \'red\']}"),
-                 '3' = list(df.2015.country$count_cwur, 'count_cwur', "{colors: [\'orange\', \'yellow\', \'green\']}"),
-                 '5' = list(df.2015.country$quality_of_education, 'quality_of_education', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                 '6' = list(df.2015.country$alumni_employment, 'alumni_employment', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                 '7' = list(df.2015.country$quality_of_faculty, 'quality_of_faculty', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                 '8' = list(df.2015.country$publications, 'publications', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                 '9' = list(df.2015.country$influence, 'influence', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                 '10' = list(df.2015.country$citations_cwur, 'citations_cwur', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                 '11' = list(df.2015.country$broad_impact, 'broad_impact', "{colors: [\'red\', \'yellow\', \'green\']}"),
-                 '12' = list(df.2015.country$patents, 'patents', "{colors: [\'red\', \'yellow\', \'green\']}")
-          )}
-  })
-  
-  #Tab1: World map with country stats
-  output$country.map <- renderGvis({
-    do.call(world_map, country())
-  })
-  
-  
-  #Tab1: Selected stat bar chart by country
-  output$country.bar <- renderGvis({
-    
-    #Draw bar chart for countries by metric
-    barcountry <- function(var, stat, color) {
-      
-      df = if (grepl('top',stat) | grepl('median',stat)) {
-        df.2015.country[order(var),c('country',stat)]
-      } else {
-        df.2015.country[order(var, decreasing = TRUE),c('country',stat)]
-      }
-      df = df[complete.cases(df),]
-      
-      #Rename column for legend
-      colnames(df)[2] = switch(stat,
-                               'top_shanghai' = 'Shanghai Rankings - Top rank per country (smaller is better)',
-                               'median_shanghai' = 'Shanghai Rankings - Median rank per country (smaller is better)',
-                               'count_shanghai' = 'Shanghai Rankings - Count of ranked universities',
-                               'alumni' = 'Shanghai Rankings - Mean of alumni score',
-                               'award' = 'Shanghai Rankings - Mean of award score',
-                               'hici' = 'Shanghai Rankings - Mean of HiCi score', 
-                               'ns' = 'Shanghai Rankings - Mean of N&S score',
-                               'pub' = 'Shanghai Rankings - Mean of PUB score',
-                               'pcp' = 'Shanghai Rankings - Mean of PCP score',
-                               
-                               'top_times' = 'Times Rankings - Top rank per country (smaller is better)',
-                               'median_times' = 'Times Rankings - Median rank per country (smaller is better)',
-                               'count_times' = 'Times Rankings - Count of ranked universities',
-                               'teaching' = 'Times Rankings - Mean of teaching score',
-                               'international' = 'Times Rankings - Mean of international score',
-                               'research' = 'Times Rankings - Mean of research score',
-                               'citations_times' = 'Times Rankings - Mean of citations score',
-                               'income' = 'Times Rankings - Mean of income score',
-                               
-                               'top_cwur' = 'CWUR Rankings - Top rank per country (smaller is better)',
-                               'median_cwur' = 'CWUR Rankings - Median rank per country (smaller is better)',
-                               'count_cwur' = 'CWUR Rankings - Count of ranked universities',
-                               'quality_of_education' = 'CWUR Rankings - Mean of quality of education score',
-                               'alumni_employment' = 'CWUR Rankings - Mean of alumni employment score',
-                               'quality_of_faculty' = 'CWUR Rankings - Mean of quality of faculty score',
-                               'publications' = 'CWUR Rankings - Mean of publications score',
-                               'influence' = 'CWUR Rankings - Mean of influence score',
-                               'citations_cwur' = 'CWUR Rankings - Mean of citations score',
-                               'broad_impact' = 'CWUR Rankings - Mean of broad impact score',
-                               'patents' = 'CWUR Rankings - Mean of patents score'
-      )
-      
-      gvisBarChart(data = df,
-                   xvar = "country",
-                   yvar = colnames(df)[2],
-                   options=list(legend="{position: 'top'}",
-                                height=900,
-                                align='top',
-                                fontSize=8)
-      )
-      
-      
-    }
-    
-    do.call(barcountry, country())
-    
-  })
   
   
   ###################
@@ -323,7 +338,7 @@ shinyServer(function(input, output){
   }, options = list(searching=F, paging=F, bInfo=F))
   
   #Scoring criteria details for one university
-  output$bar.shanghai <- renderGvis({
+  output$bar.shanghai <- renderGvis({ #Shanghai
     df = rankings %>%
       filter(., new_name == input$selectUni) %>%
       select(., new_name, alumni, award, hici, ns, pub, pcp)
@@ -333,7 +348,7 @@ shinyServer(function(input, output){
     do.call(baruni, args)
   })  
   
-  output$bar.times <- renderGvis({
+  output$bar.times <- renderGvis({ #Times
     df = rankings %>%
       filter(., new_name == input$selectUni) %>%
       select(., new_name, teaching, international, research, citations_times, income)
@@ -343,7 +358,7 @@ shinyServer(function(input, output){
     do.call(baruni, args)
   })  
   
-  output$bar.cwur <- renderGvis({
+  output$bar.cwur <- renderGvis({ #CWUR
     df = rankings %>%
       filter(., new_name == input$selectUni) %>%
       select(., new_name, quality_of_education,alumni_employment,quality_of_faculty,publications,influence,citations_cwur,broad_impact,patents)
@@ -359,8 +374,8 @@ shinyServer(function(input, output){
   ####Data Tab####
   ################
   
-  #Data: Table for Shanghai stats for selected country
-  output$selectcountry.shanghai.table <- renderDataTable({
+  #Data: Table for stats for selected country
+  output$selectcountry.shanghai.table <- renderDataTable({ #Shanghai
     df = df.2015.country %>%
       filter(country %in% input$selectCountry) %>%
       select(c(1,4,7,10,29:36))
@@ -370,8 +385,7 @@ shinyServer(function(input, output){
     cbind(Metric = rownames(df.t), df.t)
   }, options = list(searching=F, paging=F, bInfo=T))
   
-  #Data: Table for Times stats for selected country
-  output$selectcountry.times.table <- renderDataTable({
+  output$selectcountry.times.table <- renderDataTable({ #Times
     df = df.2015.country %>%
       filter(country %in% input$selectCountry) %>%
       select(c(1,3,6,9,22:28))
@@ -381,8 +395,7 @@ shinyServer(function(input, output){
     cbind(Metric = rownames(df.t), df.t)
   }, options = list(searching=F, paging=F, bInfo=T))
   
-  #Data: Table for CWUR stats for selected country
-  output$selectcountry.cwur.table <- renderDataTable({
+  output$selectcountry.cwur.table <- renderDataTable({ #CWUR
     df = df.2015.country %>%
       filter(country %in% input$selectCountry) %>%
       select(c(1,2,5,8,11:21))
@@ -393,8 +406,8 @@ shinyServer(function(input, output){
   }, options = list(searching=F, paging=F, bInfo=T))
   
   
-  #Data: Table for Shanghai stats for selected university
-  output$selectuni.shanghai.table <- renderDataTable({
+  #Data: Table for stats for selected university
+  output$selectuni.shanghai.table <- renderDataTable({ #Shanghai
     df = rankings %>%
       filter(new_name %in% input$selectUniData) %>%
       select(c(1:3,26:34))
@@ -404,8 +417,7 @@ shinyServer(function(input, output){
     cbind(Metric = rownames(df.t), df.t)
   }, options = list(searching=F, paging=F, bInfo=T))
   
-  #Data: Table for Times stats for selected university
-  output$selectuni.times.table <- renderDataTable({
+  output$selectuni.times.table <- renderDataTable({ #Times
     df = rankings %>%
       filter(new_name %in% input$selectUniData) %>%
       select(c(1:3,15:25))
@@ -415,8 +427,7 @@ shinyServer(function(input, output){
     cbind(Metric = rownames(df.t), df.t)
   }, options = list(searching=F, paging=F, bInfo=T))
   
-  #Data: Table for CWUR stats for selected university
-  output$selectuni.cwur.table <- renderDataTable({
+  output$selectuni.cwur.table <- renderDataTable({ #CWUR
     df = rankings %>%
       filter(new_name %in% input$selectUniData) %>%
       select(c(1:3,4:14))
@@ -431,6 +442,13 @@ shinyServer(function(input, output){
   ####About the data####
   ######################
   library(corrplot)  
+  
+  #Gaps/Overlap in university ranking scope by organization
+  output$overlap <- renderPlot({
+    df = rankings[,c(26,15,4)]
+    colnames(df) = c('Shanghai','Times','CWUR')
+    aggr(df, numbers=T)
+  })
   
   #Correlation: Shanghai
   output$shanghai.correlation <- renderPlot({
@@ -448,12 +466,6 @@ shinyServer(function(input, output){
   output$cwur.correlation <- renderPlot({
     df = cwur.src[cwur.src$year==2015,c(5:12)]
     corrplot(cor(df), order = "hclust")
-  })
-  
-  output$overlap <- renderPlot({
-    df = rankings[,c(26,15,4)]
-    colnames(df) = c('Shanghai','Times','CWUR')
-    aggr(df, numbers=T)
   })
   
 })
