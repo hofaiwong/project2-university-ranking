@@ -4,7 +4,7 @@
 ########################################
 
 
-## helpers.R ##
+## helpers.R ## Moved to Global.r because of ShinyApps.IO
 
 #Split range of ranks
 split_rank <- function(rank) {
