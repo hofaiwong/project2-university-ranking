@@ -388,21 +388,20 @@ shinyUI(
                                         tags$ul(
                                           tags$li(strong('world_rank'),' - world rank for university.'),
                                           tags$li(strong('national_rank'),' - rank of university within its country.'),
-                                          tags$li(strong('quality_of_education - rank for quality of education.'),
-                                                  tags$li(strong('alumni_employment'),' - rank for alumni employment.'),
-                                                  tags$li(strong('quality_of_faculty'),' - rank for quality of faculty.'),
-                                                  tags$li(strong('publications'),' - rank for publications.'),
-                                                  tags$li(strong('influence'),' - rank for influence.'),
-                                                  tags$li(strong('citations'),' - rank for citations.'),
-                                                  tags$li(strong('broad_impact'),' - rank for broad impact (only available for 2014 and 2015)'),
-                                                  tags$li(strong('patents'),' - rank for patents.')
-                                          )
+                                          tags$li(strong('quality_of_education')," - measured by the number of a university's alumni who have won major international awards, prizes, and medals relative to the university's size."),
+                                          tags$li(strong('alumni_employment'),"measured by the number of a university's alumni who have held CEO positions at the world's top companies relative to the university's size"),
+                                          tags$li(strong('quality_of_faculty'),"measured by the number of academics who have won major international awards, prizes, and medals"),
+                                          tags$li(strong('publications'),"measured by the number of research papers appearing in reputable journals"),
+                                          tags$li(strong('influence'),"measured by the number of research papers appearing in highly-influential journals"),
+                                          tags$li(strong('citations'),"measured by the number of highly-cited research papers"),
+                                          tags$li(strong('broad_impact'),"measured by the university's h-index"),
+                                          tags$li(strong('patents'),"measured by the number of international patent filings")
                                         )
                                  )
                         )
                       )
-                      
                )
+               
              )
     )
   )
