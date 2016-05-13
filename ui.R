@@ -333,6 +333,7 @@ shinyUI(
                                  fluidRow(
                                    column(6,
                                           h4('Summary'),
+                                          p("This Shiny application was developed by Ho Fai Wong as part of the NYC Data Science Academy bootcamp and last updated on 5/13/2016."),
                                           p(a("Kaggle", href="https://www.kaggle.com/mylesoneill/world-university-rankings")," provided world university rankings from 3 different ranking organizations. 
                                             This Shiny application focuses on the 2015 rankings, covering 1015 institutions across 61 countries."),
                                           tags$ul(
@@ -348,7 +349,7 @@ shinyUI(
                                           tags$ul(
                                             tags$li('University and country names were reconciled across organizations, and missing countries filled in when necessary.'),
                                             tags$li('When a university\'s world rank is a range, the middle of the range was used for visualization purposes.'),
-                                            tags$li('CWUR sub-criteria rankings were converted to scores out of 100 for consistency and comparison with Times and Shanghai rankings: score = (1-rank/max)*100'),
+                                            tags$li('CWUR sub-criteria rankings were converted to scores out of 100 for consistency and comparison with Times and Shanghai data: score = (1-rank/max)*100'),
                                             tags$li('Missing sub-criteria ranks/scores, assumed to be Missing At Random, were imputed using K-Nearest Neigbhors with k=sqrt(n).')
                                           )
                                    ),
