@@ -2,9 +2,9 @@ name: world-university-ranking
 account: hofaiwong
 server: shinyapps.io
 appId: 101236
-bundleId: 448158
+bundleId: 449532
 url: https://hofaiwong.shinyapps.io/world-university-ranking/
-when: 1462993986.0144
+when: 1463092644.95995
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: helpers.R|data/cleanupCoord.csv|data/countries.geojson|data/education_expenditure_supplementary_data.csv|data/educational_attainment_supplementary_data.csv
+ignoredFiles: data/cleanupCoord.csv|data/countries.geojson|data/education_expenditure_supplementary_data.csv|data/educational_attainment_supplementary_data.csv
